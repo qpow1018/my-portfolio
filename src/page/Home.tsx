@@ -1,21 +1,13 @@
 import { Box } from '@mui/material';
 
-// import theme from '@/style/theme';
-
 import AboutMe from '@/components/AboutMe';
+import Project from '@/components/Project';
 
 export default function Home() {
   return (
-    <Box
-      sx={{
-
-      }}
-    >
+    <Box>
       <AboutMe />
-
-      <Box>
-        Project
-      </Box>
+      <Project />
     </Box>
   );
 }
