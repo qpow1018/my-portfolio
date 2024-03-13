@@ -5,4 +5,5 @@ html, body, h1, input, select, button {
 body {
   line-height: 1.5;
   letter-spacing: -0.3px;
+  color: #333;
 }
