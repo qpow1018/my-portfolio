@@ -1,0 +1,8 @@
+html, body, h1, input, select, button {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  line-height: 1.5;
+  letter-spacing: -0.3px;
+}
