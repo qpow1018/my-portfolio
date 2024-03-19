@@ -186,7 +186,7 @@ function Skills(
         width: 420,
         borderTop: `2px solid ${theme.color.primary}`,
         marginTop: '80px',
-        paddingTop: '8px'
+        paddingTop: '12px'
       }}
     >
       { props.skills.map((skill, index) =>
