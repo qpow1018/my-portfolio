@@ -4,20 +4,16 @@ const theme = {
     secondary: '#e23e57',
     text: {
       primary: '#333',
-      secondary: '#50555c',
+      secondary: '#505050',
+      light: '#8b8b8b',
     },
-    // border: {
-    //   default: '#505050',
-    //   light: '#818181',
-    //   dark: '#3c3c3c',
-    // },
-    // dark: {
-    //   gray1: '#1f1f1f',
-    //   gray2: '#292929',
-    //   gray3: '#3c3c3c',
-    //   gray4: '#464646',
-    //   gray5: '#505050',
-    // },
+    border: {
+      default: '#e0e0e0',
+      dark: '#bdbdbd',
+    },
+    dark: {
+      grayF: '#f5f5f5'
+    },
   },
   size: {
     containerWidth: 960,
