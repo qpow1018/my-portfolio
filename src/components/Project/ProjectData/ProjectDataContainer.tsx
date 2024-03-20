@@ -4,16 +4,22 @@ import theme from '@/style/theme';
 export default function ProjectDataContainer(
   props: {
     title: string;
+    description: string[];
+    skills: string;
 
+    website?: string;
 
-    children: React.ReactNode;
+    children?: React.ReactNode;
   }
 ) {
   return (
     <Box
       sx={{
-        boxShadow: '0 0 1px red',
         display: 'flex',
+        marginBottom: '80px',
+        '&:last-of-type': {
+          marginBottom: 0,
+        }
       }}
     >
       <Thumbnail
@@ -23,23 +29,31 @@ export default function ProjectDataContainer(
       <Box
         sx={{
           flex: 1,
-          marginLeft: '30px'
+          marginLeft: '40px'
         }}
       >
-        <Box>
-          { props.title }
+        <Title
+          title={props.title}
+        />
+
+        <Description
+          description={props.description}
+        />
+
+        <Skills
+          skills={props.skills}
+        />
+
+        <Box
+          sx={{
+            marginBottom: '24px',
+          }}
+        >
+          { props.children }
         </Box>
+
         <Box>
-          프로젝트 소개, 설명
-        </Box>
-        <Box>
-          사용된 스킬
-        </Box>
-        <Box>
-          참여 개발 내용
-        </Box>
-        <Box>
-          링크 있으면 링크
+          링크 있으면 링크 / { props.website }
         </Box>
       </Box>
     </Box>
@@ -60,6 +74,72 @@ function Thumbnail() {
       이미지<br />
       모달 추가<br />
       스와이퍼
+    </Box>
+  );
+}
+
+function Title(
+  props: {
+    title: string;
+  }
+) {
+  return (
+    <Box
+      sx={{
+        fontSize: '22px',
+        fontWeight: 700,
+      }}
+    >
+      { props.title }
+    </Box>
+  );
+}
+
+function Description(
+  props: {
+    description: string[];
+  }
+) {
+  return (
+    <Box
+      sx={{
+        marginTop: '4px'
+      }}
+    >
+      { props.description.map((desc, index) =>
+        <Box
+          key={index}
+          sx={{
+            fontSize: '15px',
+            color: theme.color.text.secondary,
+            marginBottom: '2px',
+            '&:last-of-type': {
+              marginBottom: 0,
+            }
+          }}
+        >
+          { desc }
+        </Box>
+      )}
+    </Box>
+  );
+}
+
+function Skills(
+  props: {
+    skills: string;
+  }
+) {
+  return (
+    <Box
+      sx={{
+        fontSize: '13px',
+        fontWeight: 500,
+        color: theme.color.primary,
+        margin: '8px 0 16px 0',
+      }}
+    >
+      { props.skills }
     </Box>
   );
 }
