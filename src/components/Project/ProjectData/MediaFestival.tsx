@@ -1,18 +1,44 @@
 import { Box } from '@mui/material';
 
 import ProjectDataContainer from './ProjectDataContainer';
+import ProjectText from './ProjectText';
 
 export default function MediaFestival() {
   return (
     <ProjectDataContainer
       title='2022 1인 미디어 대전'
       description={[
-        '- 행사 소개 및 참가 신청 웹',
+        '- 행사 소개 및 참가 신청 웹사이트',
       ]}
       skills={'Html, Css, JavaScript'}
       website='https://www.koreacreatorfesta.co.kr'
     >
-- 현재 링크는 2023버전이지만 페이지 구성 및 기능은 동일한걸로 보임
+      <Box sx={{ marginBottom: '8px' }}>
+        <ProjectText type='dot'>
+          CSS 미디어쿼리를 이용하여 반응형 웹 구현
+        </ProjectText>
+      </Box>
+
+      <Box sx={{ marginBottom: '8px' }}>
+        <ProjectText type='dot'>
+          Quill 라이브러리를 이용한 게시판 구현
+        </ProjectText>
+      </Box>
+
+      <Box sx={{ marginBottom: '8px' }}>
+        <ProjectText type='dot'>
+          Jquery - ajax를 이용하여 서버 통신
+        </ProjectText>
+      </Box>
+
+      <Box sx={{ marginBottom: '8px' }}>
+        <ProjectText type='dot'>
+          Jquery - load 메소드를 이용하여 공통된 Header, Footer 처리
+        </ProjectText>
+      </Box>
+
+      - 현재 링크는 2023버전이지만 페이지 구성 및 기능은 동일한걸로 보임
+
     </ProjectDataContainer>
   );
 }
