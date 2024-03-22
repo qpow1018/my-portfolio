@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 import theme from '@/style/theme';
 
-import ProjectDataContainer from './ProjectDataContainer';
-import ProjectText from './ProjectText';
+import ProjectDataContainer from './shared/ProjectDataContainer';
+import ProjectText from './shared/ProjectText';
 
 export default function DiscoveryMall() {
   return (
