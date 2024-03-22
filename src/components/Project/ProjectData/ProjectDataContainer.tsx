@@ -6,9 +6,6 @@ export default function ProjectDataContainer(
     title: string;
     description: string[];
     skills: string;
-
-    website?: string;
-
     children?: React.ReactNode;
   }
 ) {
@@ -44,17 +41,7 @@ export default function ProjectDataContainer(
           skills={props.skills}
         />
 
-        <Box
-          sx={{
-            marginBottom: '24px',
-          }}
-        >
-          { props.children }
-        </Box>
-
-        <Box>
-          링크 있으면 링크 / { props.website }
-        </Box>
+        { props.children }
       </Box>
     </Box>
   );

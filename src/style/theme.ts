@@ -16,7 +16,7 @@ const theme = {
     },
   },
   size: {
-    containerWidth: 1080,
+    containerWidth: 960,
   },
   common: {
     fontFamily: `'Noto Sans KR', sans-serif`,

@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import theme from '@/style/theme';
 
 import ProjectDataContainer from './ProjectDataContainer';
 import ProjectText from './ProjectText';
@@ -11,7 +12,6 @@ export default function DiscoveryMall() {
         '- 의류 브랜드 \'디스커버리\'의 공식 온라인 쇼핑몰 리뉴얼 프로젝트',
       ]}
       skills={'Next.js, TypeScript, MUI, Axios'}
-      website='https://www.discovery-expedition.com/'
     >
       <Box sx={{ marginBottom: '8px' }}>
         <ProjectText type='dot'>
@@ -46,9 +46,24 @@ export default function DiscoveryMall() {
         </ProjectText>
       </Box>
 
-      <Box>
+      <Box sx={{ marginBottom: '8px' }}>
         <ProjectText type='dot'>
           기타 버그 수정
+        </ProjectText>
+      </Box>
+
+      <Box>
+        <ProjectText type='dot'>
+          <Box
+            component={'a'}
+            target='blank'
+            href='https://www.discovery-expedition.com'
+            sx={{
+              color: theme.color.primary,
+            }}
+          >
+            https://www.discovery-expedition.com
+          </Box>
         </ProjectText>
       </Box>
     </ProjectDataContainer>

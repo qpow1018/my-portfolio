@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import theme from '@/style/theme';
 
 import ProjectDataContainer from './ProjectDataContainer';
 import ProjectText from './ProjectText';
@@ -12,7 +13,6 @@ export default function FlaboCommunity() {
         '- 게임 \'디아블로2\' 거래소 서비스 (상점 생성, 아이템 등록, 아이템 검색, 채팅방)',
       ]}
       skills={'React, TypeScript, Scss, Axios, Redux'}
-      website='비오픈'
     >
       <Box sx={{ marginBottom: '8px' }}>
         <ProjectText>
@@ -50,9 +50,20 @@ export default function FlaboCommunity() {
         </ProjectText>
       </Box>
 
-      <Box>
+      <Box sx={{ marginBottom: '8px' }}>
         <ProjectText type='dot'>
           Redux를 사용하여 로그인 유저 정보, 새 알림 여부, 스낵바 메시지 등 공통 상태관리
+        </ProjectText>
+      </Box>
+
+      <Box>
+        <ProjectText
+          type='dot'
+          sx={{
+            color: theme.color.secondary
+          }}
+        >
+          중단된 서비스
         </ProjectText>
       </Box>
     </ProjectDataContainer>

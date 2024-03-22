@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import theme from '@/style/theme';
 
 import ProjectDataContainer from './ProjectDataContainer';
 import ProjectText from './ProjectText';
@@ -11,7 +12,6 @@ export default function MediaFestival() {
         '- 행사 소개 및 참가 신청 웹사이트',
       ]}
       skills={'Html, Css, JavaScript'}
-      website='https://www.koreacreatorfesta.co.kr'
     >
       <Box sx={{ marginBottom: '8px' }}>
         <ProjectText type='dot'>
@@ -37,8 +37,23 @@ export default function MediaFestival() {
         </ProjectText>
       </Box>
 
-      - 현재 링크는 2023버전이지만 페이지 구성 및 기능은 동일한걸로 보임
-
+      <Box>
+        <ProjectText type='dot'>
+          <Box
+            component={'a'}
+            target='blank'
+            href='https://www.koreacreatorfesta.co.kr'
+            sx={{
+              color: theme.color.primary
+            }}
+          >
+            https://www.koreacreatorfesta.co.kr
+          </Box>
+        </ProjectText>
+        <ProjectText type='indent'>
+          현재 2023 버전이지만 페이지 구성 및 기능은 동일한걸로 보임
+        </ProjectText>
+      </Box>
     </ProjectDataContainer>
   );
 }

@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import theme from '@/style/theme';
 
 import ProjectDataContainer from './ProjectDataContainer';
 import ProjectText from './ProjectText';
@@ -12,7 +13,6 @@ export default function FlaboAdPlatform() {
         '- MCN은 소속 인플루언서의 계약정보 관리, 일정 관리, 정산 관리 등 기존에 수기로 하던 작업을 자동화',
       ]}
       skills={'React, Typescript, MUI, Axios, Redux'}
-      website='비오픈'
     >
       <Box sx={{ marginBottom: '8px' }}>
         <ProjectText type='dot'>
@@ -29,9 +29,20 @@ export default function FlaboAdPlatform() {
         </ProjectText>
       </Box>
 
-      <Box>
+      <Box sx={{ marginBottom: '8px' }}>
         <ProjectText type='dot'>
           자주 사용되는 Form Validation을 위한 유효성 검사 모듈 제작
+        </ProjectText>
+      </Box>
+
+      <Box>
+        <ProjectText
+          type='dot'
+          sx={{
+            color: theme.color.secondary
+          }}
+        >
+          중단된 프로젝트
         </ProjectText>
       </Box>
     </ProjectDataContainer>
