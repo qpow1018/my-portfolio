@@ -18,6 +18,9 @@ const theme = {
   size: {
     containerWidth: 960,
   },
+  breakpoint: {
+    md: 1024,
+  },
   common: {
     fontFamily: `'Noto Sans KR', sans-serif`,
     letterSpacing: '-0.3px',
