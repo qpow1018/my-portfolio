@@ -4,12 +4,27 @@ import theme from '@/style/theme';
 import ProjectDataContainer from './shared/ProjectDataContainer';
 import ProjectText from './shared/ProjectText';
 
+import DiscoveryImage1 from '@/images/discovery/discovery_1.jpg';
+import DiscoveryImage2 from '@/images/discovery/discovery_2.jpg';
+import DiscoveryImage3 from '@/images/discovery/discovery_3.jpg';
+import DiscoveryImage4 from '@/images/discovery/discovery_4.jpg';
+import DiscoveryImage5 from '@/images/discovery/discovery_5.jpg';
+import DiscoveryImage6 from '@/images/discovery/discovery_6.jpg';
+
 export default function DiscoveryMall() {
   return (
     <ProjectDataContainer
       title='디스커버리 공식 온라인몰'
       description={[
         '- 의류 브랜드 \'디스커버리\'의 공식 온라인 쇼핑몰 리뉴얼 프로젝트',
+      ]}
+      images={[
+        DiscoveryImage1,
+        DiscoveryImage2,
+        DiscoveryImage3,
+        DiscoveryImage4,
+        DiscoveryImage5,
+        DiscoveryImage6,
       ]}
       skills={'Next.js, TypeScript, MUI, Axios'}
     >

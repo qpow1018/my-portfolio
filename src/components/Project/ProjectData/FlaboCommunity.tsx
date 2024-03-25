@@ -4,6 +4,17 @@ import theme from '@/style/theme';
 import ProjectDataContainer from './shared/ProjectDataContainer';
 import ProjectText from './shared/ProjectText';
 
+import FlaboCommunityImage1 from '@/images/flaboCommunity/flaboCommunity_1.webp';
+import FlaboCommunityImage2 from '@/images/flaboCommunity/flaboCommunity_2.webp';
+import FlaboCommunityImage3 from '@/images/flaboCommunity/flaboCommunity_3.webp';
+import FlaboCommunityImage4 from '@/images/flaboCommunity/flaboCommunity_4.webp';
+import FlaboCommunityImage5 from '@/images/flaboCommunity/flaboCommunity_5.webp';
+import FlaboCommunityImage6 from '@/images/flaboCommunity/flaboCommunity_6.webp';
+import FlaboCommunityImage7 from '@/images/flaboCommunity/flaboCommunity_7.webp';
+import FlaboCommunityImage8 from '@/images/flaboCommunity/flaboCommunity_8.webp';
+import FlaboCommunityImage9 from '@/images/flaboCommunity/flaboCommunity_9.webp';
+import FlaboCommunityImage10 from '@/images/flaboCommunity/flaboCommunity_10.webp';
+
 export default function FlaboCommunity() {
   return (
     <ProjectDataContainer
@@ -11,6 +22,18 @@ export default function FlaboCommunity() {
       description={[
         '- 여러가지 주제를 다루는 커뮤니티 서비스 (유머, 영화, 게임 등)',
         '- 게임 \'디아블로2\' 거래소 서비스 (상점 생성, 아이템 등록, 아이템 검색, 채팅방)',
+      ]}
+      images={[
+        FlaboCommunityImage1,
+        FlaboCommunityImage2,
+        FlaboCommunityImage3,
+        FlaboCommunityImage4,
+        FlaboCommunityImage5,
+        FlaboCommunityImage6,
+        FlaboCommunityImage7,
+        FlaboCommunityImage8,
+        FlaboCommunityImage9,
+        FlaboCommunityImage10,
       ]}
       skills={'React, TypeScript, Scss, Axios, Redux'}
     >

@@ -4,6 +4,11 @@ import theme from '@/style/theme';
 import ProjectDataContainer from './shared/ProjectDataContainer';
 import ProjectText from './shared/ProjectText';
 
+import FlaboAdPlatformImage1 from '@/images/flaboAdPlatform/flaboAdPlatform_1.jpg';
+import FlaboAdPlatformImage2 from '@/images/flaboAdPlatform/flaboAdPlatform_2.jpg';
+import FlaboAdPlatformImage3 from '@/images/flaboAdPlatform/flaboAdPlatform_3.jpg';
+import FlaboAdPlatformImage4 from '@/images/flaboAdPlatform/flaboAdPlatform_4.jpg';
+
 export default function FlaboAdPlatform() {
   return (
     <ProjectDataContainer
@@ -11,6 +16,12 @@ export default function FlaboAdPlatform() {
       description={[
         '- 광고주가 광고를 등록하면 MCN이 소속 인플루언서를 제안하고, 소통 및 진행 상황 공유',
         '- MCN은 소속 인플루언서의 계약정보 관리, 일정 관리, 정산 관리 등 기존에 수기로 하던 작업을 자동화',
+      ]}
+      images={[
+        FlaboAdPlatformImage1,
+        FlaboAdPlatformImage2,
+        FlaboAdPlatformImage3,
+        FlaboAdPlatformImage4,
       ]}
       skills={'React, Typescript, MUI, Axios, Redux'}
     >

@@ -4,12 +4,19 @@ import theme from '@/style/theme';
 import ProjectDataContainer from './shared/ProjectDataContainer';
 import ProjectText from './shared/ProjectText';
 
+import MediaFestivalImage1 from '@/images/mediaFestival/mediaFestival_1.jpg';
+import MediaFestivalImage2 from '@/images/mediaFestival/mediaFestival_2.jpg';
+
 export default function MediaFestival() {
   return (
     <ProjectDataContainer
       title='2022 1인 미디어 대전'
       description={[
         '- 행사 소개 및 참가 신청 웹사이트',
+      ]}
+      images={[
+        MediaFestivalImage1,
+        MediaFestivalImage2,
       ]}
       skills={'Html, Css, JavaScript'}
     >
