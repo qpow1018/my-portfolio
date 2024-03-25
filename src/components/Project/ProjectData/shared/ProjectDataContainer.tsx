@@ -1,11 +1,14 @@
 import { Box } from '@mui/material';
 import theme from '@/style/theme';
 
+import ProjectThumbnail from './ProjectThumbnail';
+
 export default function ProjectDataContainer(
   props: {
     title: string;
     description: string[];
     skills: string;
+    images: string[],
     children?: React.ReactNode;
   }
 ) {
@@ -19,8 +22,8 @@ export default function ProjectDataContainer(
         }
       }}
     >
-      <Thumbnail
-      
+      <ProjectThumbnail
+        images={props.images}
       />
 
       <Box
@@ -43,24 +46,6 @@ export default function ProjectDataContainer(
 
         { props.children }
       </Box>
-    </Box>
-  );
-}
-
-function Thumbnail() {
-  return (
-    <Box
-      sx={{
-        flexShrink: 0,
-        width: '240px',
-        height: '160px',
-        borderRadius: theme.common.borderRadius,
-        backgroundColor: theme.color.dark.grayF,
-      }}
-    >
-      이미지<br />
-      모달 추가<br />
-      스와이퍼
     </Box>
   );
 }
