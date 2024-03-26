@@ -1,6 +1,8 @@
 import { Box } from '@mui/material';
 import theme from '@/style/theme';
 
+import useWindowSize from '@/hooks/useWindowSize';
+
 import BackdropImage from './BackdropImage';
 
 import {
@@ -9,40 +11,70 @@ import {
 } from '@mui/icons-material';
 
 export default function AboutMe() {
+  const { isDesktop } = useWindowSize();
+
   return (
     <Box
-      sx={{
-        position: 'relative',
-        height: 800,
-        background: theme.color.dark.grayF,
-      }}
+      sx={[
+        {
+          background: theme.color.dark.grayF,
+          position: 'relative',
+        },
+        isDesktop === true && {
+          height: 800,
+        }
+      ]}
     >
-      <BackdropImage />
+      <BackdropImage
+        isDesktop={isDesktop}
+      />
 
       <Box
-        sx={{
-          position: 'relative',
-          zIndex: 1,
-          margin: '0 auto',
-          width: theme.size.containerWidth,
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          paddingBottom: '60px',
-        }}
+        sx={[
+          {
+            position: 'relative',
+            zIndex: 1,
+          },
+          isDesktop && {
+            width: theme.size.containerWidth,
+            height: '100%',
+            margin: '0 auto',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            paddingBottom: '60px',
+          }
+        ]}
       >
-        <Title>
-          안녕하세요.<br />
-          최원진의 포트폴리오 입니다.
-        </Title>
+        <Box
+          sx={[
+            {
+              height: '260px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              padding: '0 20px',
+            },
+            isDesktop === true && {
+              display: 'block',
+              height: 'auto',
+              padding: 0,
+            }
+          ]}
+        >
+          <Title isDesktop={isDesktop}>
+            안녕하세요.<br />
+            최원진의 포트폴리오 입니다.
+          </Title>
 
-        <Introduction>
-          사용자에겐 깔끔한 인터페이스와 편리한 사용성을,<br />
-          개발자에겐 이해하기 쉽고 정돈된 코드 작성을 위해 노력합니다.
-        </Introduction>
+          <Introduction isDesktop={isDesktop}>
+            사용자에겐 깔끔한 인터페이스와 편리한 사용성을,<br />
+            개발자에겐 이해하기 쉽고 정돈된 코드 작성을 위해 노력합니다.
+          </Introduction>
+        </Box>
 
         <Contact
+          isDesktop={isDesktop}
           contactData={[
             {
               icon: <MailOutlineIcon />,
@@ -58,6 +90,7 @@ export default function AboutMe() {
         />
 
         <Skills
+          isDesktop={isDesktop}
           skills={[
             'React',
             'JavaScript',
@@ -73,18 +106,29 @@ export default function AboutMe() {
 
 function Title(
   props: {
+    isDesktop: boolean;
     children?: React.ReactNode;
   }
 ) {
+  const { isDesktop } = props;
+
   return (
     <Box
-      sx={{
-        color: '#000',
-        fontSize: '32px',
-        lineHeight: '40px',
-        fontWeight: 700,
-        marginBottom: '28px'
-      }}
+      sx={[
+        {
+          color: '#fff',
+          fontSize: '24px',
+          lineHeight: '32px',
+          fontWeight: 700,
+          marginBottom: '16px'
+        },
+        isDesktop === true && {
+          color: '#000',
+          fontSize: '32px',
+          lineHeight: '40px',
+          marginBottom: '28px'
+        }
+      ]}
     >
       { props.children }
     </Box>
@@ -93,15 +137,25 @@ function Title(
 
 function Introduction(
   props: {
+    isDesktop: boolean;
     children?: React.ReactNode;
   }
 ) {
+  const { isDesktop } = props;
+
   return (
     <Box
-      sx={{
-        fontSize: '16px',
-        // color: theme.color.text.secondary,
-      }}
+      sx={[
+        {
+          wordBreak: 'keep-all',
+          fontSize: '14px',
+          color: '#f1f1f1',
+        },
+        isDesktop === true && {
+          fontSize: '16px',
+          color: theme.color.text.primary,
+        }
+      ]}
     >
       { props.children }
     </Box>
@@ -110,6 +164,7 @@ function Introduction(
 
 function Contact(
   props: {
+    isDesktop: boolean;
     contactData: {
       icon: React.ReactNode;
       text: string;
@@ -117,11 +172,20 @@ function Contact(
     }[];
   }
 ) {
+  const { isDesktop } = props;
+
   return (
     <Box
-      sx={{
-        marginTop: '40px'
-      }}
+      sx={[
+        {
+          marginTop: '24px',
+          padding: '0 20px',
+        },
+        isDesktop === true && {
+          marginTop: '40px',
+          padding: 0,
+        }
+      ]}
     >
       { props.contactData.map((data, index) =>
         <Box
@@ -136,7 +200,7 @@ function Contact(
             sx={{
               display: 'flex',
               alignItems: 'center',
-              marginRight: '12px',
+              marginRight: '8px',
               '& .MuiSvgIcon-root': {
                 fontSize: '20px',
                 color: theme.color.text.secondary,
@@ -175,34 +239,49 @@ function Contact(
 
 function Skills(
   props: {
+    isDesktop: boolean;
     skills: string[];
   }
 ) {
+  const { isDesktop } = props;
+
   return (
     <Box
-      sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        width: 420,
-        borderTop: `2px solid ${theme.color.primary}`,
-        marginTop: '80px',
-        paddingTop: '12px'
-      }}
+      sx={[
+        {
+          display: 'flex',
+          flexWrap: 'wrap',
+          borderTop: `2px solid ${theme.color.primary}`,
+          width: 'calc(100% - 40px)',
+          margin: '36px 20px 0 20px',
+          padding: '12px 0 20px 0',
+        },
+        isDesktop === true && {
+          width: 420,
+          margin: '80px 0 0 0',
+          padding: '12px 0 0 0',
+        }
+      ]}
     >
       { props.skills.map((skill, index) =>
         <Box
           key={index}
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            padding: '4px 10px 5px 10px',
-            minWidth: 54,
-            backgroundColor: theme.color.primary,
-            color: '#fff',
-            borderRadius: '30px',
-            fontSize: '12px',
-            margin: '0 8px 8px 0',
-          }}
+          sx={[
+            {
+              display: 'flex',
+              justifyContent: 'center',
+              padding: '4px 10px 5px 10px',
+              minWidth: 54,
+              backgroundColor: theme.color.primary,
+              color: '#fff',
+              borderRadius: '30px',
+              fontSize: '12px',
+              margin: '0 4px 4px 0',
+            },
+            isDesktop === true && {
+              margin: '0 8px 8px 0',
+            }
+          ]}
         >
           { skill }
         </Box>
