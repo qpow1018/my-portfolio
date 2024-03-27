@@ -10,25 +10,34 @@ import 'swiper/css/pagination';
 
 export default function ProjectThumbnail(
   props: {
+    isDesktop: boolean;
     images: string[];
   }
 ) {
+  const { isDesktop } = props;
+
   const [isProjectImagesModalOpen, setIsProjectImagesModalOpen] = useState<boolean>(false);
 
   return (
     <>
       <Box
         onClick={() => setIsProjectImagesModalOpen(true)}
-        sx={{
-          flexShrink: 0,
-          width: '260px',
-          height: '160px',
-          borderRadius: theme.common.borderRadius,
-          backgroundColor: theme.color.dark.grayF,
-          cursor: 'pointer',
-          overflow: 'hidden',
-          border: `1px solid ${theme.color.border.default}`
-        }}
+        sx={[
+          {
+            flexShrink: 0,
+            width: '100%',
+            height: '200px',
+            borderRadius: theme.common.borderRadius,
+            backgroundColor: theme.color.dark.grayF,
+            cursor: 'pointer',
+            overflow: 'hidden',
+            border: `1px solid ${theme.color.border.default}`
+          },
+          isDesktop === true && {
+            width: '260px',
+            height: '160px',
+          }
+        ]}
       >
         { props.images.length > 0 &&
           <Box
@@ -46,13 +55,19 @@ export default function ProjectThumbnail(
 
       { isProjectImagesModalOpen === true &&
         <ModalContainer
+          isDesktop={isDesktop}
           isOpen={isProjectImagesModalOpen}
           onClose={() => setIsProjectImagesModalOpen(false)}
         >
           <Box
-            sx={{
-              padding: '16px',
-            }}
+            sx={[
+              {
+                width: '100%'
+              },
+              isDesktop === true && {
+                padding: '16px',
+              }
+            ]}
           >
             <Swiper
               modules={[Navigation, Pagination]}
@@ -64,13 +79,18 @@ export default function ProjectThumbnail(
               { props.images.map((image, index) =>
                 <SwiperSlide key={index}>
                   <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: '100%',
-                      height: 520,
-                    }}
+                    sx={[
+                      {
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '100%',
+                        height: 360,
+                      },
+                      isDesktop === true && {
+                        height: 520,
+                      }
+                    ]}
                   >
                     <Box
                       component={'img'}
@@ -100,15 +120,20 @@ export default function ProjectThumbnail(
           >
             <ButtonBase
               onClick={() => setIsProjectImagesModalOpen(false)}
-              sx={{
-                borderRadius: theme.common.borderRadius,
-                width: 80,
-                height: 36,
-                backgroundColor: theme.color.primary,
-                color: '#fff',
-                fontSize: '15px',
-                fontWeight: 500,
-              }}
+              sx={[
+                {
+                  borderRadius: theme.common.borderRadius,
+                  width: 80,
+                  height: 36,
+                  backgroundColor: theme.color.primary,
+                  color: '#fff',
+                  fontSize: '13px',
+                  fontWeight: 500,
+                },
+                isDesktop === true && {
+                  fontSize: '15px',
+                }
+              ]}
             >
               닫기
             </ButtonBase>
@@ -121,11 +146,14 @@ export default function ProjectThumbnail(
 
 function ModalContainer(
   props: {
+    isDesktop: boolean;
     isOpen: boolean;
     onClose: () => void;
     children: React.ReactNode;
   }
 ) {
+  const { isDesktop } = props;
+
   return (
     <Modal
       open={props.isOpen}
@@ -138,12 +166,17 @@ function ModalContainer(
     >
       <div style={{ outline: 'none' }}>
         <Box
-          sx={{
-            borderRadius: theme.common.borderRadius,
-            width: '900px',
-            background: '#fff',
-            overflow: 'hidden',
-          }}
+          sx={[
+            {
+              borderRadius: theme.common.borderRadius,
+              background: '#fff',
+              overflow: 'hidden',
+              width: 'calc(100vw - 32px)',
+            },
+            isDesktop === true && {
+              width: '900px',
+            }
+          ]}
         >
           { props.children }
         </Box>
