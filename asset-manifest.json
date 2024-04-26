@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/my-portfolio/static/css/main.903e908c.css",
-    "main.js": "/my-portfolio/static/js/main.45ae0bae.js",
+    "main.js": "/my-portfolio/static/js/main.d5f662dd.js",
     "static/media/main_banner_1.jpg": "/my-portfolio/static/media/main_banner_1.e8948c9a926c452ac7dd.jpg",
     "static/media/noto-sans-kr-v27-latin_korean-900.woff": "/my-portfolio/static/media/noto-sans-kr-v27-latin_korean-900.f1f8721ba20a810b5183.woff",
     "static/media/noto-sans-kr-v27-latin_korean-700.woff": "/my-portfolio/static/media/noto-sans-kr-v27-latin_korean-700.8596b7f7d8fc0396fe8a.woff",
@@ -21,9 +21,14 @@
     "static/media/mediaFestival_2.jpg": "/my-portfolio/static/media/mediaFestival_2.1e3e20d4c9ca864fafa7.jpg",
     "static/media/discovery_2.jpg": "/my-portfolio/static/media/discovery_2.dbb8b779bd3b00e09f14.jpg",
     "static/media/discovery_6.jpg": "/my-portfolio/static/media/discovery_6.45296308424cb8e1032a.jpg",
+    "static/media/img5.jpg": "/my-portfolio/static/media/img5.715feb5cb1717e9f0005.jpg",
     "static/media/flaboAdPlatform_2.jpg": "/my-portfolio/static/media/flaboAdPlatform_2.36b38c5628d220df6b8f.jpg",
+    "static/media/img4.jpg": "/my-portfolio/static/media/img4.cdeefdab8cda82b6a98a.jpg",
     "static/media/discovery_5.jpg": "/my-portfolio/static/media/discovery_5.f9823e53d5387056904a.jpg",
     "static/media/flaboCommunity_1.webp": "/my-portfolio/static/media/flaboCommunity_1.905a4b29d614182bb0b9.webp",
+    "static/media/img2.jpg": "/my-portfolio/static/media/img2.c7fa66ee4afb103d03a4.jpg",
+    "static/media/img3.jpg": "/my-portfolio/static/media/img3.5f6ffbc41093453053c0.jpg",
+    "static/media/img1.jpg": "/my-portfolio/static/media/img1.c4e0d5a7c986100fc143.jpg",
     "static/media/flaboCommunity_2.webp": "/my-portfolio/static/media/flaboCommunity_2.ae563c644af85f0bc14e.webp",
     "static/media/flaboCommunity_6.webp": "/my-portfolio/static/media/flaboCommunity_6.35e489c61502bc2af5f4.webp",
     "static/media/flaboCommunity_9.webp": "/my-portfolio/static/media/flaboCommunity_9.4e964a4cc54b006e7d11.webp",
@@ -35,10 +40,10 @@
     "static/media/flaboCommunity_10.webp": "/my-portfolio/static/media/flaboCommunity_10.6d40996f055e588c608d.webp",
     "index.html": "/my-portfolio/index.html",
     "main.903e908c.css.map": "/my-portfolio/static/css/main.903e908c.css.map",
-    "main.45ae0bae.js.map": "/my-portfolio/static/js/main.45ae0bae.js.map"
+    "main.d5f662dd.js.map": "/my-portfolio/static/js/main.d5f662dd.js.map"
   },
   "entrypoints": [
     "static/css/main.903e908c.css",
-    "static/js/main.45ae0bae.js"
+    "static/js/main.d5f662dd.js"
   ]
 }
