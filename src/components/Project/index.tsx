@@ -3,6 +3,7 @@ import theme from '@/style/theme';
 
 import useWindowSize from '@/hooks/useWindowSize';
 
+import EldenWiki from './ProjectData/EldenWiki';
 import DiscoveryMall from './ProjectData/DiscoveryMall';
 import FlaboCommunity from './ProjectData/FlaboCommunity';
 import MediaFestival from './ProjectData/MediaFestival';
@@ -35,6 +36,7 @@ export default function Project() {
           title={'My Project'}
         />
 
+        <EldenWiki />
         <DiscoveryMall />
         <FlaboCommunity />
         <MediaFestival />
