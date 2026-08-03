@@ -4,6 +4,11 @@ import theme from '@/style/theme';
 import ProjectDataContainer from './shared/ProjectDataContainer';
 import ProjectText from './shared/ProjectText';
 
+import WeddingbookHomeImage from '@/images/weddingbook/weddingbook_home.png';
+import WeddingbookHonsuImage from '@/images/weddingbook/weddingbook_honsu.png';
+import WeddingbookInvitationImage from '@/images/weddingbook/weddingbook_invitation.png';
+import WeddingbookWeddinghallImage from '@/images/weddingbook/weddingbook_weddinghall.png';
+
 export default function WeddingbookService() {
   return (
     <ProjectDataContainer
@@ -11,7 +16,12 @@ export default function WeddingbookService() {
       description={[
         '- 결혼 준비 플랫폼 웨딩북의 React 기반 앱 WebView 및 Next.js 웹 프론트엔드 개발·운영',
       ]}
-      images={[]}
+      images={[
+        WeddingbookInvitationImage,
+        WeddingbookWeddinghallImage,
+        WeddingbookHomeImage,
+        WeddingbookHonsuImage,
+      ]}
       skills={'Next.js, React, TypeScript, TanStack Query, Zustand, SCSS, CSS Modules, Axios'}
     >
       <Box sx={{ marginBottom: '8px' }}>
