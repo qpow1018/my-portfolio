@@ -15,6 +15,7 @@ export default function ProjectDataContainer(
   }
 ) {
   const { isDesktop } = useWindowSize();
+  const hasImages = props.images.length > 0;
 
   return (
     <Box
@@ -33,17 +34,19 @@ export default function ProjectDataContainer(
         }
       ]}
     >
-      <ProjectThumbnail
-        isDesktop={isDesktop}
-        images={props.images}
-      />
+      { hasImages === true &&
+        <ProjectThumbnail
+          isDesktop={isDesktop}
+          images={props.images}
+        />
+      }
 
       <Box
         sx={[
           {
             marginTop: '16px',
           },
-          isDesktop === true && {
+          isDesktop === true && hasImages === true && {
             flex: 1,
             margin: '0 0 0 40px',
           }
