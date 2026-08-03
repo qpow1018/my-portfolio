@@ -1,5 +1,4 @@
 import { Box } from '@mui/material';
-import theme from '@/style/theme';
 
 import ProjectDataContainer from './shared/ProjectDataContainer';
 import ProjectText from './shared/ProjectText';
@@ -14,8 +13,8 @@ export default function FlaboAdPlatform() {
     <ProjectDataContainer
       title='인플루언서 광고 플랫폼'
       description={[
-        '- 광고주가 광고를 등록하면 MCN이 소속 인플루언서를 제안하고, 소통 및 진행 상황 공유',
-        '- MCN은 소속 인플루언서의 계약정보 관리, 일정 관리, 정산 관리 등 기존에 수기로 하던 작업을 자동화',
+        '- 광고주·MCN·인플루언서 간 광고 제안 및 진행 현황 공유 플랫폼 개발',
+        '- MCN의 인플루언서 계약, 일정, 정산 관리 업무 자동화',
       ]}
       images={[
         FlaboAdPlatformImage1,
@@ -23,7 +22,7 @@ export default function FlaboAdPlatform() {
         FlaboAdPlatformImage3,
         FlaboAdPlatformImage4,
       ]}
-      skills={'React, Typescript, MUI, Axios, Redux'}
+      skills={'React, TypeScript, MUI, Axios, Redux'}
     >
       <Box sx={{ marginBottom: '8px' }}>
         <ProjectText type='dot'>
@@ -36,24 +35,13 @@ export default function FlaboAdPlatform() {
 
       <Box sx={{ marginBottom: '8px' }}>
         <ProjectText type='dot'>
-          자주 사용되는 색상, 크기 등을 MUI Theme를 이용한 Style 변수 관리
+          MUI Theme를 활용하여 색상, 크기 등 디자인 토큰 관리
         </ProjectText>
       </Box>
 
       <Box sx={{ marginBottom: '8px' }}>
         <ProjectText type='dot'>
           자주 사용되는 Form Validation을 위한 유효성 검사 모듈 제작
-        </ProjectText>
-      </Box>
-
-      <Box>
-        <ProjectText
-          type='dot'
-          sx={{
-            color: theme.color.secondary
-          }}
-        >
-          중단된 프로젝트
         </ProjectText>
       </Box>
     </ProjectDataContainer>
