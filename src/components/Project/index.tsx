@@ -3,7 +3,8 @@ import theme from '@/style/theme';
 
 import useWindowSize from '@/hooks/useWindowSize';
 
-import LoamService from './ProjectData/LoamService';
+// 다음 포트폴리오 버전에서 다시 노출
+// import LoamService from './ProjectData/LoamService';
 import WeddingbookService from './ProjectData/WeddingbookService';
 import DiscoveryMall from './ProjectData/DiscoveryMall';
 import FlaboCommunity from './ProjectData/FlaboCommunity';
@@ -37,7 +38,8 @@ export default function Project() {
           title={'My Project'}
         />
 
-        <LoamService />
+        {/* 다음 포트폴리오 버전에서 다시 노출 */}
+        {/* <LoamService /> */}
         <WeddingbookService />
         <DiscoveryMall />
         <FlaboCommunity />
