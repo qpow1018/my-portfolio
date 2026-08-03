@@ -3,6 +3,7 @@ import theme from '@/style/theme';
 
 import useWindowSize from '@/hooks/useWindowSize';
 
+import LoamService from './ProjectData/LoamService';
 import WeddingbookService from './ProjectData/WeddingbookService';
 import DiscoveryMall from './ProjectData/DiscoveryMall';
 import FlaboCommunity from './ProjectData/FlaboCommunity';
@@ -36,6 +37,7 @@ export default function Project() {
           title={'My Project'}
         />
 
+        <LoamService />
         <WeddingbookService />
         <DiscoveryMall />
         <FlaboCommunity />
