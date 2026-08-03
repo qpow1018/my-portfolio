@@ -49,7 +49,7 @@ export default function AboutMe() {
         <Box
           sx={[
             {
-              height: '260px',
+              height: '280px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
@@ -64,12 +64,13 @@ export default function AboutMe() {
         >
           <Title isDesktop={isDesktop}>
             안녕하세요.<br />
-            최원진의 포트폴리오 입니다.
+            6년 차 프론트엔드 개발자<br />
+            최원진입니다.
           </Title>
 
           <Introduction isDesktop={isDesktop}>
-            사용자에겐 깔끔한 인터페이스와 편리한 사용성을,<br />
-            개발자에겐 이해하기 쉽고 정돈된 코드 작성을 위해 노력합니다.
+            사용자에게는 깔끔한 인터페이스와 편리한 사용성을,<br />
+            개발자에게는 이해하기 쉽고 정돈된 코드를 제공하고자 합니다.
           </Introduction>
         </Box>
 
@@ -93,10 +94,12 @@ export default function AboutMe() {
           isDesktop={isDesktop}
           skills={[
             'React',
+            'Next.js',
             'JavaScript',
             'TypeScript',
             'HTML',
             'CSS',
+            'GitHub',
           ]}
         />
       </Box>

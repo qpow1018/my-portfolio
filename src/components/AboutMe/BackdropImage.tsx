@@ -18,7 +18,7 @@ export default function BackdropImage(
           top: 0,
           right: 0,
           width: '100%',
-          height: '260px',
+          height: '280px',
           '&::after': {
             content: '""',
             position: 'absolute',
