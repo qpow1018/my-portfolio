@@ -3,13 +3,8 @@ import theme from '@/style/theme';
 
 import useWindowSize from '@/hooks/useWindowSize';
 
-// 다음 포트폴리오 버전에서 다시 노출
-// import LoamService from './ProjectData/LoamService';
-import WeddingbookService from './ProjectData/WeddingbookService';
-import DiscoveryMall from './ProjectData/DiscoveryMall';
-import FlaboCommunity from './ProjectData/FlaboCommunity';
-import MediaFestival from './ProjectData/MediaFestival';
-import FlaboAdPlatform from './ProjectData/FlaboAdPlatform';
+import CurrentProjectsSection from './CurrentProject/CurrentProjectsSection';
+import EarlierProjectsSection from './EarlierProject/EarlierProjectsSection';
 
 export default function Project() {
   const { isDesktop } = useWindowSize();
@@ -18,10 +13,10 @@ export default function Project() {
     <Box
       sx={[
         {
-          padding: '40px 0 60px 0',
+          paddingTop: '40px',
         },
         isDesktop === true && {
-          padding: '60px 0 100px 0',
+          paddingTop: '60px',
         }
       ]}
     >
@@ -38,14 +33,10 @@ export default function Project() {
           title={'My Project'}
         />
 
-        {/* 다음 포트폴리오 버전에서 다시 노출 */}
-        {/* <LoamService /> */}
-        <WeddingbookService />
-        <DiscoveryMall />
-        <FlaboCommunity />
-        <MediaFestival />
-        <FlaboAdPlatform />
+        <CurrentProjectsSection isDesktop={isDesktop} />
       </Box>
+
+      <EarlierProjectsSection isDesktop={isDesktop} />
     </Box>
   );
 }
