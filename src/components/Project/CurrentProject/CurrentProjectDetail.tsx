@@ -1,4 +1,9 @@
+import { useState } from "react";
 import styles from "./CurrentProjectDetail.module.scss";
+
+import useWindowSize from "@/hooks/useWindowSize";
+
+import ProjectImagesModal from "../ProjectImagesModal";
 
 type Highlight = {
   title: string;
@@ -19,56 +24,68 @@ export default function CurrentProjectDetail(props: {
   return (
     <section className={styles["current-project-detail"]}>
       <header className={styles["project-header"]}>
-        <div>
+        <div className={styles["info-box"]}>
           <p className={styles["label"]}>{props.label}</p>
           <h4 className={styles["title"]}>{props.title}</h4>
+          <p className={styles["description"]}>{props.description}</p>
+          <p className={styles["skills"]}>{props.skills}</p>
         </div>
-        <p className={styles["description"]}>{props.description}</p>
+
+        {hasImages === true && (
+          <div className={styles["project-images"]}>
+            <ProjectImages images={props.images as string[]} />
+          </div>
+        )}
       </header>
 
-      <p
-        className={`${styles["skills"]} ${hasImages === true ? styles["skills-with-images"] : ""}`}
-      >
-        {props.skills}
-      </p>
-
-      {hasImages === true && (
-        <ProjectImages images={props.images as string[]} />
-      )}
-
-      <div className={styles["contributions"]}>
-        <h5 className={styles["contributions-title"]}>KEY CONTRIBUTIONS</h5>
-        <div>
+      <div className={styles["main-contents"]}>
+        <h5 className={styles["main-contents-title"]}>주요 내용</h5>
+        <div className={styles["highlight-box"]}>
           {props.highlights.map((highlight) => (
             <HighlightItem key={highlight.title} {...highlight} />
           ))}
+          <a
+            className={styles["project-link"]}
+            href={props.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {props.url}
+          </a>
         </div>
       </div>
-
-      <a
-        className={styles["project-link"]}
-        href={props.url}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {props.url}
-      </a>
     </section>
   );
 }
 
 function ProjectImages(props: { images: string[] }) {
+  const { isDesktop } = useWindowSize();
+  const [isProjectImagesModalOpen, setIsProjectImagesModalOpen] =
+    useState(false);
+
   return (
-    <div className={styles["images"]}>
-      {props.images.map((image) => (
+    <>
+      <button
+        className={styles["image-button"]}
+        type="button"
+        onClick={() => setIsProjectImagesModalOpen(true)}
+      >
         <img
           className={styles["image"]}
-          key={image}
-          src={image}
+          src={props.images[0]}
           alt="웨딩북 서비스 화면"
         />
-      ))}
-    </div>
+      </button>
+
+      {isProjectImagesModalOpen === true && (
+        <ProjectImagesModal
+          isDesktop={isDesktop}
+          isOpen={isProjectImagesModalOpen}
+          images={props.images}
+          onClose={() => setIsProjectImagesModalOpen(false)}
+        />
+      )}
+    </>
   );
 }
 
