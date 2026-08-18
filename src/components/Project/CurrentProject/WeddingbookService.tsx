@@ -1,4 +1,4 @@
-import ProjectCaseStudy from './ProjectCaseStudy';
+import CurrentProjectDetail from './CurrentProjectDetail';
 
 import WeddingbookHomeImage from '@/images/weddingbook/weddingbook_home.png';
 import WeddingbookHonsuImage from '@/images/weddingbook/weddingbook_honsu.png';
@@ -7,7 +7,7 @@ import WeddingbookWeddinghallImage from '@/images/weddingbook/weddingbook_weddin
 
 export default function WeddingbookService() {
   return (
-    <ProjectCaseStudy
+    <CurrentProjectDetail
       label='CURRENT PROJECT · 2024.05 — 2026.05'
       title='웨딩북 앱·웹 서비스'
       description='결혼 준비 플랫폼 웨딩북의 React 기반 앱 WebView 및 Next.js 웹 프론트엔드 개발·운영'

@@ -1,8 +1,8 @@
-import ProjectCaseStudy from './ProjectCaseStudy';
+import CurrentProjectDetail from './CurrentProjectDetail';
 
 export default function LoamService() {
   return (
-    <ProjectCaseStudy
+    <CurrentProjectDetail
       isSubsequent={true}
       label='PERSONAL PROJECT'
       title='LoaM - 로스트아크·메이플스토리 관리 서비스'
