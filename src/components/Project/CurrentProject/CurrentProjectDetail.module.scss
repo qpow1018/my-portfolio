@@ -1,165 +1,151 @@
 @use '../../../style/variables' as *;
 
-.root {
-  &.subsequent {
-    border-top: 1px solid $color-text-primary;
-    margin-top: 56px;
-    padding-top: 40px;
-  }
-}
-
-.project-header {
-  border-bottom: 1px solid $color-border-default;
-  padding-bottom: 28px;
-}
-
-.label,
-.skills,
-.contributions-title,
-.project-link {
-  color: $color-primary;
-}
-
-.label {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  margin: 0;
-}
-
-.title {
-  font-size: 28px;
-  line-height: 1.3;
-  margin: 10px 0 0;
-  word-break: keep-all;
-}
-
-.description {
-  color: $color-text-secondary;
-  font-size: 14px;
-  line-height: 1.7;
-  margin: 18px 0 0;
-  word-break: keep-all;
-}
-
-.skills {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.7;
-  margin: 16px 0 40px;
-  word-break: keep-all;
-}
-
-.skills-with-images {
-  margin-bottom: 28px;
-}
-
-.images {
-  display: grid;
-  gap: 4px;
-  grid-template-columns: minmax(0, 1fr) 0.5fr;
-  grid-template-rows: repeat(3, 84px);
-  margin: 0 -20px 40px;
-}
-
-.image {
-  display: block;
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
-
-.image:first-child {
-  grid-row: span 3;
-}
-
-.contributions {
-  display: grid;
-  gap: 32px;
-}
-
-.contributions-title {
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  margin: 0;
-}
-
-.highlight {
-  border-bottom: 1px solid $color-border-default;
-  margin-bottom: 28px;
-  padding-bottom: 28px;
-
-  &:last-child {
-    border-bottom: 0;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-}
-
-.highlight-title {
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0 0 12px;
-  word-break: keep-all;
-}
-
-.highlight-details {
-  color: $color-text-secondary;
-  font-size: 13px;
-  line-height: 1.7;
-  margin: 0;
-  padding-left: 20px;
-  word-break: keep-all;
-}
-
-.project-link {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 700;
-  margin-top: 32px;
-  text-decoration: none;
-}
-
-.desktop {
-  &.root.subsequent {
-    margin-top: 80px;
-    padding-top: 56px;
-  }
-
+.current-project-detail {
   .project-header {
-    display: grid;
-    gap: 80px;
-    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.75fr);
-    padding-bottom: 40px;
+    border-bottom: 1px solid $color-border-default;
+    padding-bottom: 28px;
+
+    .label {
+      color: $color-primary;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin: 0;
+    }
+
+    .title {
+      font-size: 28px;
+      line-height: 1.3;
+      margin: 10px 0 0;
+      word-break: keep-all;
+    }
+
+    .description {
+      color: $color-text-secondary;
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 18px 0 0;
+      word-break: keep-all;
+    }
   }
 
-  .title {
-    font-size: 38px;
-  }
+  .skills {
+    color: $color-primary;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.7;
+    margin: 16px 0 40px;
+    word-break: keep-all;
 
-  .description {
-    align-self: end;
-    font-size: 16px;
-    margin: 0;
+    &.skills-with-images {
+      margin-bottom: 28px;
+    }
   }
 
   .images {
-    grid-template-columns: minmax(0, 1fr) 280px;
-    grid-template-rows: repeat(3, 100px);
-    margin: 0 0 64px;
+    display: grid;
+    gap: 4px;
+    grid-template-columns: minmax(0, 1fr) 0.5fr;
+    grid-template-rows: repeat(3, 84px);
+    margin: 0 -20px 40px;
+
+    .image {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+
+      &:first-child {
+        grid-row: span 3;
+      }
+    }
   }
 
   .contributions {
-    gap: 56px;
-    grid-template-columns: 180px minmax(0, 1fr);
+    display: grid;
+    gap: 32px;
+
+    .contributions-title {
+      color: $color-primary;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      margin: 0;
+    }
+
+    .highlight {
+      border-bottom: 1px solid $color-border-default;
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+
+      &:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .highlight-title {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0 0 12px;
+        word-break: keep-all;
+      }
+
+      .highlight-details {
+        color: $color-text-secondary;
+        font-size: 13px;
+        line-height: 1.7;
+        margin: 0;
+        padding-left: 20px;
+        word-break: keep-all;
+      }
+    }
   }
 
-  .highlight {
-    margin-bottom: 32px;
-    padding-bottom: 32px;
+  .project-link {
+    color: $color-primary;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 32px;
+    text-decoration: none;
   }
 
-  .highlight-title {
-    font-size: 18px;
+  @media (min-width: $breakpoint-md) {
+    .project-header {
+      display: grid;
+      gap: 80px;
+      grid-template-columns: minmax(0, 1fr) minmax(340px, 0.75fr);
+      padding-bottom: 40px;
+
+      .title {
+        font-size: 38px;
+      }
+
+      .description {
+        align-self: end;
+        font-size: 16px;
+        margin: 0;
+      }
+    }
+
+    .images {
+      grid-template-columns: minmax(0, 1fr) 280px;
+      grid-template-rows: repeat(3, 100px);
+      margin: 0 0 64px;
+    }
+
+    .contributions {
+      gap: 56px;
+      grid-template-columns: 180px minmax(0, 1fr);
+
+      .highlight {
+        margin-bottom: 32px;
+        padding-bottom: 32px;
+
+        .highlight-title {
+          font-size: 18px;
+        }
+      }
+    }
   }
 }

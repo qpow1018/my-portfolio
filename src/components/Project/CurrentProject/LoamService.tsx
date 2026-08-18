@@ -3,7 +3,6 @@ import CurrentProjectDetail from './CurrentProjectDetail';
 export default function LoamService() {
   return (
     <CurrentProjectDetail
-      isSubsequent={true}
       label='PERSONAL PROJECT'
       title='LoaM - 로스트아크·메이플스토리 관리 서비스'
       description='로스트아크·메이플스토리 캐릭터 정보와 반복적인 플레이 의사결정을 관리하기 위해 개발·운영한 개인용 웹 서비스'
