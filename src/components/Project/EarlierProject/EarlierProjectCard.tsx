@@ -3,9 +3,9 @@ import theme from '@/style/theme';
 
 import useWindowSize from '@/hooks/useWindowSize';
 
-import ProjectThumbnail from './ProjectThumbnail';
+import EarlierProjectThumbnail from './EarlierProjectThumbnail';
 
-export default function ProjectDataContainer(
+export default function EarlierProjectCard(
   props: {
     title: string;
     description: string[];
@@ -35,7 +35,7 @@ export default function ProjectDataContainer(
       ]}
     >
       { hasImages === true &&
-        <ProjectThumbnail
+        <EarlierProjectThumbnail
           isDesktop={isDesktop}
           images={props.images}
         />

@@ -3,7 +3,7 @@ import theme from '@/style/theme';
 
 import useWindowSize from '@/hooks/useWindowSize';
 
-export default function ProjectText(
+export default function EarlierProjectText(
   props: {
     type?: 'default' | 'dot' | 'indent';
     children?: React.ReactNode;

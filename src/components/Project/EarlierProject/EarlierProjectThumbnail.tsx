@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export default function ProjectThumbnail(
+export default function EarlierProjectThumbnail(
   props: {
     isDesktop: boolean;
     images: string[];

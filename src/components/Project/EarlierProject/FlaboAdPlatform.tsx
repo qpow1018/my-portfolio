@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 
-import ProjectDataContainer from './shared/ProjectDataContainer';
-import ProjectText from './shared/ProjectText';
+import EarlierProjectCard from './EarlierProjectCard';
+import EarlierProjectText from './EarlierProjectText';
 
 import FlaboAdPlatformImage1 from '@/images/flaboAdPlatform/flaboAdPlatform_1.jpg';
 import FlaboAdPlatformImage2 from '@/images/flaboAdPlatform/flaboAdPlatform_2.jpg';
@@ -10,7 +10,7 @@ import FlaboAdPlatformImage4 from '@/images/flaboAdPlatform/flaboAdPlatform_4.jp
 
 export default function FlaboAdPlatform() {
   return (
-    <ProjectDataContainer
+    <EarlierProjectCard
       title='인플루언서 광고 플랫폼'
       description={[
         '- 광고주·MCN·인플루언서 간 광고 제안 및 진행 현황 공유 플랫폼 개발',
@@ -25,25 +25,25 @@ export default function FlaboAdPlatform() {
       skills={'React, TypeScript, MUI, Axios, Redux'}
     >
       <Box sx={{ marginBottom: '8px' }}>
-        <ProjectText type='dot'>
+        <EarlierProjectText type='dot'>
           공통 UI 컴포넌트 개발
-        </ProjectText>
-        <ProjectText type='indent'>
+        </EarlierProjectText>
+        <EarlierProjectText type='indent'>
           - 버튼, 텍스트인풋, 모달, 로딩박스 등
-        </ProjectText>
+        </EarlierProjectText>
       </Box>
 
       <Box sx={{ marginBottom: '8px' }}>
-        <ProjectText type='dot'>
+        <EarlierProjectText type='dot'>
           MUI Theme를 활용하여 색상, 크기 등 디자인 토큰 관리
-        </ProjectText>
+        </EarlierProjectText>
       </Box>
 
       <Box sx={{ marginBottom: '8px' }}>
-        <ProjectText type='dot'>
+        <EarlierProjectText type='dot'>
           자주 사용되는 Form Validation을 위한 유효성 검사 모듈 제작
-        </ProjectText>
+        </EarlierProjectText>
       </Box>
-    </ProjectDataContainer>
+    </EarlierProjectCard>
   );
 }

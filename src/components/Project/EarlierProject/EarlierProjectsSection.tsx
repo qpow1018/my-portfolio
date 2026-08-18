@@ -1,10 +1,10 @@
 import { Box } from '@mui/material';
 import theme from '@/style/theme';
 
-import DiscoveryMall from '../ProjectData/DiscoveryMall';
-import FlaboCommunity from '../ProjectData/FlaboCommunity';
-import MediaFestival from '../ProjectData/MediaFestival';
-import FlaboAdPlatform from '../ProjectData/FlaboAdPlatform';
+import DiscoveryMall from './DiscoveryMall';
+import FlaboCommunity from './FlaboCommunity';
+import MediaFestival from './MediaFestival';
+import FlaboAdPlatform from './FlaboAdPlatform';
 
 export default function EarlierProjectsSection(
   props: {

@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 import theme from '@/style/theme';
 
-import ProjectDataContainer from './shared/ProjectDataContainer';
-import ProjectText from './shared/ProjectText';
+import EarlierProjectCard from './EarlierProjectCard';
+import EarlierProjectText from './EarlierProjectText';
 
 import DiscoveryImage1 from '@/images/discovery/discovery_1.jpg';
 import DiscoveryImage2 from '@/images/discovery/discovery_2.jpg';
@@ -13,7 +13,7 @@ import DiscoveryImage6 from '@/images/discovery/discovery_6.jpg';
 
 export default function DiscoveryMall() {
   return (
-    <ProjectDataContainer
+    <EarlierProjectCard
       title='디스커버리 공식 온라인몰 리뉴얼'
       description={[
         '- 의류 브랜드 \'디스커버리\'의 공식 온라인 쇼핑몰 리뉴얼 프로젝트 참여',
@@ -29,37 +29,37 @@ export default function DiscoveryMall() {
       skills={'Next.js, TypeScript, MUI, Axios'}
     >
       <Box sx={{ marginBottom: '8px' }}>
-        <ProjectText type='dot'>
+        <EarlierProjectText type='dot'>
           고객센터 기능 개발: 공지사항, FAQ, 매장 안내, 매장 교환 서비스
-        </ProjectText>
-        <ProjectText type='indent'>
+        </EarlierProjectText>
+        <EarlierProjectText type='indent'>
           - URL 파라미터에 따라 필요한 UI 구성 및 유효하지 않은 파라미터일 경우 기본값 설정
-        </ProjectText>
-        <ProjectText type='indent'>
+        </EarlierProjectText>
+        <EarlierProjectText type='indent'>
           - SessionStorage 활용하여 중복되는 게시물 조회수 증가 요청을 최소화
-        </ProjectText>
-        <ProjectText type='indent'>
+        </EarlierProjectText>
+        <EarlierProjectText type='indent'>
           - Geolocation API를 사용하여 유저의 위치정보에 따른 거리순/이름순 목록 요청
-        </ProjectText>
+        </EarlierProjectText>
       </Box>
 
       <Box sx={{ marginBottom: '8px' }}>
-        <ProjectText type='dot'>
+        <EarlierProjectText type='dot'>
           디자인 명세와 구현 결과의 차이 수정
-        </ProjectText>
-        <ProjectText type='indent'>
+        </EarlierProjectText>
+        <EarlierProjectText type='indent'>
           - 마이페이지, 트렌드 페이지, 프로모션 페이지 등
-        </ProjectText>
+        </EarlierProjectText>
       </Box>
 
       <Box sx={{ marginBottom: '8px' }}>
-        <ProjectText type='dot'>
+        <EarlierProjectText type='dot'>
           프로모션 이벤트 기능 개발 및 수정
-        </ProjectText>
+        </EarlierProjectText>
       </Box>
 
       <Box>
-        <ProjectText type='dot'>
+        <EarlierProjectText type='dot'>
           <Box
             component={'a'}
             target='blank'
@@ -70,8 +70,8 @@ export default function DiscoveryMall() {
           >
             https://www.discovery-expedition.com
           </Box>
-        </ProjectText>
+        </EarlierProjectText>
       </Box>
-    </ProjectDataContainer>
+    </EarlierProjectCard>
   );
 }
