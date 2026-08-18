@@ -4,26 +4,27 @@ export default function LoamService() {
   return (
     <CurrentProjectDetail
       label='PERSONAL PROJECT'
-      title='LoaM - 로스트아크·메이플스토리 관리 서비스'
-      description='로스트아크·메이플스토리 캐릭터 정보와 반복적인 플레이 의사결정을 관리하기 위해 개발·운영한 개인용 웹 서비스'
-      skills='Next.js, React, TypeScript, TanStack Query, Supabase, Sass, Vitest'
+      title='LoaM - 로스트아크 개인 유틸리티'
+      description={`로스트아크 투두리스트를 중심으로 캐릭터 정보 조회와
+재련·주간 골드 계산 기능을 제공하는 개인 유틸리티`}
+      skills='Next.js, React, TypeScript, TanStack Query, SCSS, CSS Modules, Vitest'
       highlights={[
         {
-          title: '재련 조건·보유 재료·시세를 반영해 기대 비용과 시도별 권장 전략을 계산하는 재련 최적화 기능 개발',
+          title: '일일·주간 초기화를 지원하는 로스트아크 투두리스트 구현',
           details: [
-            '고정 게임 규칙과 변동 입력값을 분리하고, 계산 엔진을 Web Worker에서 실행',
+            '캐릭터와 반복 콘텐츠를 직접 구성하고, 오전 6시 기준 일일·주간 초기화와 체크박스·텍스트·요일 선택 등 할 일 성격에 맞는 입력 방식 제공',
           ],
         },
         {
-          title: '입장 레벨, 레이드 선호 조건, 일반·귀속 골드를 기준으로 주간 클리어 골드 전략을 계산·제공',
+          title: 'AI 도구를 활용한 재련 비용·전략 계산 기능 구현',
           details: [
-            '보상 횟수 내에서 일반 골드와 총 골드 기준의 추천 레이드 조합을 각각 산출',
+            '강화 조건·보유 재료·시세에 따라 기대 비용과 시도별 권장 전략을 계산하고, 연산은 Web Worker에서 분리해 실행',
           ],
         },
         {
-          title: '외부 로스트아크 API와 캐릭터 데이터를 연결해 원정대 캐릭터 조회·등록, 메인 캐릭터 정렬, 스펙 요약·상세 기능 구현',
+          title: '외부 로스트아크 API 기반 캐릭터 정보 관리 기능 구현',
           details: [
-            'API 키는 Supabase Edge Function에서 관리해 클라이언트 노출 방지',
+            '원정대 캐릭터 데이터를 조회하고, 메인 캐릭터 등록·정렬과 스펙 요약·상세 탐색 기능 제공',
           ],
         },
       ]}
