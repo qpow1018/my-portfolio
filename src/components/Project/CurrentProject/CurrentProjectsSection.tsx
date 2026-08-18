@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
 
 import WeddingbookService from './WeddingbookService';
+import LoamService from './LoamService';
 
 export default function CurrentProjectsSection(
   props: {
@@ -21,9 +22,8 @@ export default function CurrentProjectsSection(
         }
       ]}
     >
-      {/* 다음 포트폴리오 버전에서 다시 노출 */}
-      {/* <LoamService /> */}
       <WeddingbookService />
+      <LoamService />
     </Box>
   );
 }
