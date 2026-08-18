@@ -28,7 +28,6 @@ export default function LoamService() {
           ],
         },
       ]}
-      url='https://loam-client.vercel.app/'
     />
   );
 }

@@ -16,7 +16,7 @@ export default function CurrentProjectDetail(props: {
   description: string;
   skills: string;
   highlights: Highlight[];
-  url: string;
+  url?: string;
   images?: string[];
 }) {
   const hasImages = props.images !== undefined && props.images.length > 0;
@@ -44,14 +44,16 @@ export default function CurrentProjectDetail(props: {
           {props.highlights.map((highlight) => (
             <HighlightItem key={highlight.title} {...highlight} />
           ))}
-          <a
-            className={styles["project-link"]}
-            href={props.url}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {props.url}
-          </a>
+          {props.url !== undefined && (
+            <a
+              className={styles["project-link"]}
+              href={props.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {props.url}
+            </a>
+          )}
         </div>
       </div>
     </section>
