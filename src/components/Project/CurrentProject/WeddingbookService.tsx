@@ -20,9 +20,10 @@ export default function WeddingbookService() {
       ]}
       highlights={[
         {
-          title: "React WebView에서 Next.js로 웹 프론트엔드 마이그레이션",
+          title: "검색 유입을 위한 Next.js 웹 구축 및 WebView 기능 마이그레이션",
           details: [
-            "주요 기능을 점진적으로 이전해, 이중으로 개발·운영되던 앱 WebView와 웹 프론트엔드 구조를 단일 프로젝트로 통합",
+            "앱 다운로드를 전제로 한 기존 React 기반 WebView 화면에 웹 검색을 통한 유입 요구가 더해져, 접근성과 검색 노출을 고려한 Next.js 기반 웹 프론트엔드를 구축",
+            "앱 WebView와 웹의 중복 개발 부담을 줄이기 위해, 기존 WebView 기능을 웹으로 점진적으로 이전",
           ],
         },
         {
@@ -35,7 +36,7 @@ export default function WeddingbookService() {
         {
           title: "웹 전환에 맞춘 인증·접근 제어 구조 개선",
           details: [
-            "로그인 전제 WebView를 비로그인 사용자도 진입하는 웹 환경으로 확장하면서, 청첩장 관리·예약·마이페이지 등 개인화 기능의 개별 로그인 확인을 미들웨어 인증 경로 정책으로 통합",
+            "로그인 전제 WebView를 비로그인 사용자도 진입하는 웹 환경으로 확장하면서, 청첩장 관리·예약·마이페이지 등 개인화 기능에서 페이지마다 개별 처리하던 로그인 여부 확인 로직을 미들웨어 인증 경로 정책으로 통합",
           ],
         },
         {

@@ -18,6 +18,7 @@ export default function CurrentProjectDetail(props: {
   highlights: Highlight[];
   url?: string;
   images?: string[];
+  imageAlt?: string;
 }) {
   const hasImages = props.images !== undefined && props.images.length > 0;
 
@@ -33,7 +34,10 @@ export default function CurrentProjectDetail(props: {
 
         {hasImages === true && (
           <div className={styles["project-images"]}>
-            <ProjectImages images={props.images as string[]} />
+            <ProjectImages
+              images={props.images as string[]}
+              imageAlt={props.imageAlt ?? "프로젝트 서비스 화면"}
+            />
           </div>
         )}
       </header>
@@ -60,7 +64,7 @@ export default function CurrentProjectDetail(props: {
   );
 }
 
-function ProjectImages(props: { images: string[] }) {
+function ProjectImages(props: { images: string[]; imageAlt: string }) {
   const { isDesktop } = useWindowSize();
   const [isProjectImagesModalOpen, setIsProjectImagesModalOpen] =
     useState(false);
@@ -75,7 +79,7 @@ function ProjectImages(props: { images: string[] }) {
         <img
           className={styles["image"]}
           src={props.images[0]}
-          alt="웨딩북 서비스 화면"
+          alt={props.imageAlt}
         />
       </button>
 
