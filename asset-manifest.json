@@ -1,13 +1,17 @@
 {
   "files": {
     "main.css": "/my-portfolio/static/css/main.16cf1862.css",
-    "main.js": "/my-portfolio/static/js/main.d407d253.js",
+    "main.js": "/my-portfolio/static/js/main.9aa9ddc5.js",
     "static/media/weddingbook_weddinghall.png": "/my-portfolio/static/media/weddingbook_weddinghall.74b25756698f007cebbb.png",
     "static/media/weddingbook_honsu.png": "/my-portfolio/static/media/weddingbook_honsu.5d7d77cfe9d2ee1194b1.png",
     "static/media/weddingbook_home.png": "/my-portfolio/static/media/weddingbook_home.55538a9e59eabbb1b21d.png",
     "static/media/main_banner_1.jpg": "/my-portfolio/static/media/main_banner_1.e8948c9a926c452ac7dd.jpg",
+    "static/media/loam-refining.png": "/my-portfolio/static/media/loam-refining.dfc71a99a2b90d3cb24c.png",
+    "static/media/loam-task-table.png": "/my-portfolio/static/media/loam-task-table.e3579865b39fc631e4b3.png",
+    "static/media/loam-clear-gold.png": "/my-portfolio/static/media/loam-clear-gold.ff9278d8fbd8d8c6a9da.png",
     "static/media/weddingbook_invitation.png": "/my-portfolio/static/media/weddingbook_invitation.4806cb85cf267b7ddd4d.png",
     "static/media/noto-sans-kr-v27-latin_korean-900.woff": "/my-portfolio/static/media/noto-sans-kr-v27-latin_korean-900.f1f8721ba20a810b5183.woff",
+    "static/media/loam-main-characters.png": "/my-portfolio/static/media/loam-main-characters.c424f251be66e899c086.png",
     "static/media/noto-sans-kr-v27-latin_korean-700.woff": "/my-portfolio/static/media/noto-sans-kr-v27-latin_korean-700.8596b7f7d8fc0396fe8a.woff",
     "static/media/noto-sans-kr-v27-latin_korean-500.woff": "/my-portfolio/static/media/noto-sans-kr-v27-latin_korean-500.bca301e61093bfe5224a.woff",
     "static/media/noto-sans-kr-v27-latin_korean-regular.woff": "/my-portfolio/static/media/noto-sans-kr-v27-latin_korean-regular.65bde2e6aeb80b426b82.woff",
@@ -39,10 +43,10 @@
     "static/media/flaboCommunity_10.webp": "/my-portfolio/static/media/flaboCommunity_10.6d40996f055e588c608d.webp",
     "index.html": "/my-portfolio/index.html",
     "main.16cf1862.css.map": "/my-portfolio/static/css/main.16cf1862.css.map",
-    "main.d407d253.js.map": "/my-portfolio/static/js/main.d407d253.js.map"
+    "main.9aa9ddc5.js.map": "/my-portfolio/static/js/main.9aa9ddc5.js.map"
   },
   "entrypoints": [
     "static/css/main.16cf1862.css",
-    "static/js/main.d407d253.js"
+    "static/js/main.9aa9ddc5.js"
   ]
 }
