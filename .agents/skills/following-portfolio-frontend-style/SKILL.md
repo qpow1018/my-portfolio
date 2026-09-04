@@ -1,11 +1,13 @@
 ---
 name: following-portfolio-frontend-style
-description: Use when writing, modifying, reviewing, or refactoring frontend TypeScript, React, UI, or SCSS code in the my-portfolio repository. Applies the project's component placement, naming, import, and SCSS Module conventions while preserving the staged MUI-to-HTML/SCSS migration.
+description: Use when writing, modifying, reviewing, or refactoring frontend TypeScript, React, UI, or SCSS code in the my-portfolio repository. Applies the project's component placement, naming, accessibility, and SCSS Module conventions while preserving legacy MUI code as reference during the staged migration.
 ---
 
 # 포트폴리오 프론트엔드 스타일
 
 포트폴리오 프론트엔드 코드를 작성하거나 수정할 때 다음 규칙을 적용한다.
+
+새 규칙은 새로 작성하거나 현재 요청으로 수정하는 코드에 우선 적용한다. 요청 범위 밖의 legacy code를 convention에 맞추기 위해 정리하지 않는다.
 
 ## 파일 배치
 
@@ -38,10 +40,23 @@ description: Use when writing, modifying, reviewing, or refactoring frontend Typ
 
 ## UI 마이그레이션 경계
 
-- 새 UI는 semantic HTML과 SCSS Module을 우선한다.
-- 기존 MUI 컴포넌트는 현재 화면과 내용을 보존해야 하는 참고 구현이다. 명시적 요청 없이 일괄 삭제하거나 전환하지 않는다.
-- MUI를 전환할 때는 한 화면 또는 한 컴포넌트 단위로만 바꾸고, 기존 콘텐츠·인터랙션·반응형 동작을 유지한다.
+- 새 portfolio UI와 component에는 MUI component, MUI `sx`, MUI/Emotion `styled`, MUI theme 의존 구현을 새로 도입하지 않는다.
+- 새 UI는 semantic HTML과 SCSS Module로 작성한다.
+- 기존 MUI component, copy, project data, image/asset 연결, styling, legacy implementation은 reference 자료로 보존한다. 새 구현에서 사용하지 않는다는 이유만으로 삭제하거나 자동 migration하지 않는다.
+- 필요한 경우 기존 구현에서 content·data·asset을 확인한 뒤, 새 non-MUI component 구조로 다시 구현한다.
+- 기존 MUI component의 전환은 명시적으로 요청된 화면 또는 component 단위에서만 수행하며, 기존 콘텐츠·인터랙션·반응형 동작을 유지한다.
+- MUI dependency와 legacy implementation의 최종 제거는 별도 cleanup task와 사용자 승인 후에만 수행한다.
 - 페이지가 적다는 이유로 단일 페이지의 표현용 요소를 성급히 공용화하지 않는다.
+
+## 수정 전 확인과 접근성
+
+- 수정 전에 관련 기존 구현, 호출부, import/export 관계, 사용 중인 data와 asset을 확인한다.
+- 의미 있는 이미지는 내용을 설명하는 `alt`를 제공한다.
+- icon-only button에는 접근 가능한 이름을 제공한다.
+- 동작에는 `button`, 탐색에는 `a`를 사용한다.
+- heading은 페이지·section 구조에 맞는 순서를 유지한다.
+- 키보드로 동작하는 control과 modal은 keyboard interaction을 유지한다.
+- 새 탭으로 여는 외부 링크에는 적절한 `rel`을 제공한다.
 
 ## SCSS Modules
 
