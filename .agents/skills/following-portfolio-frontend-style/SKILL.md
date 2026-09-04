@@ -17,7 +17,7 @@ description: Use when writing, modifying, reviewing, or refactoring frontend Typ
 - 도메인과 무관하게 재사용되는 UI 컴포넌트는 `src/components/common/`에 둔다.
 - React 생명주기에 의존하는 재사용 로직은 `src/hooks/`에 둔다.
 - 여러 기능에서 재사용되는 범용 유틸은 `src/utils/`에 둔다.
-- 컴포넌트 폴더명은 lowercase 또는 lower camel case로 작성한다.
+- 컴포넌트 폴더명은 PascalCase로 작성한다.
 - 컴포넌트 파일명은 PascalCase를 사용한다.
 
 ## Import

@@ -1,13 +1,11 @@
-import { Box } from '@mui/material';
-
-import AboutMe from '@/components/AboutMe';
+import Intro from '@/components/Intro/Intro';
 import Project from '@/components/Project';
 
 export default function Home() {
   return (
-    <Box>
-      <AboutMe />
+    <>
+      <Intro />
       <Project />
-    </Box>
+    </>
   );
 }
