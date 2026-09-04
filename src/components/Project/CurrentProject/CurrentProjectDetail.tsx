@@ -5,52 +5,39 @@ import useWindowSize from "@/hooks/useWindowSize";
 
 import ProjectImagesModal from "../ProjectImagesModal";
 
-type Highlight = {
+type THighlight = {
   title: string;
   details: string[];
 };
 
-export default function CurrentProjectDetail(props: {
+type TProjectHeaderProps = {
   label: string;
   title: string;
   description: string;
   skills: string;
-  highlights: Highlight[];
-  url?: string;
   images?: string[];
   imageAlt?: string;
-}) {
-  const hasImages = props.images !== undefined && props.images.length > 0;
+};
 
+type TCurrentProjectDetailProps = TProjectHeaderProps & {
+  highlights: THighlight[];
+  url?: string;
+};
+
+export default function CurrentProjectDetail(props: TCurrentProjectDetailProps) {
   return (
-    <section className={styles["current-project-detail"]}>
-      <header className={styles["project-header"]}>
-        <div className={styles["info-box"]}>
-          <p className={styles["label"]}>{props.label}</p>
-          <h4 className={styles["title"]}>{props.title}</h4>
-          <p className={styles["description"]}>{props.description}</p>
-          <p className={styles["skills"]}>{props.skills}</p>
-        </div>
+    <section className={styles['current-project-detail']}>
+      <ProjectHeader {...props} />
 
-        {hasImages === true && (
-          <div className={styles["project-images"]}>
-            <ProjectImages
-              images={props.images as string[]}
-              imageAlt={props.imageAlt ?? "프로젝트 서비스 화면"}
-            />
-          </div>
-        )}
-      </header>
-
-      <div className={styles["main-contents"]}>
-        <h5 className={styles["main-contents-title"]}>주요 내용</h5>
-        <div className={styles["highlight-box"]}>
+      <div className={styles['main-contents']}>
+        <h5 className={styles['main-contents-title']}>주요 내용</h5>
+        <div className={styles['highlight-box']}>
           {props.highlights.map((highlight) => (
             <HighlightItem key={highlight.title} {...highlight} />
           ))}
           {props.url !== undefined && (
             <a
-              className={styles["project-link"]}
+              className={styles['project-link']}
               href={props.url}
               target="_blank"
               rel="noreferrer"
@@ -61,6 +48,30 @@ export default function CurrentProjectDetail(props: {
         </div>
       </div>
     </section>
+  );
+}
+
+export function ProjectHeader(props: TProjectHeaderProps) {
+  const hasImages = props.images !== undefined && props.images.length > 0;
+
+  return (
+    <header className={styles['project-header']}>
+      <div className={styles['info-box']}>
+        <p className={styles['label']}>{props.label}</p>
+        <h4 className={styles['title']}>{props.title}</h4>
+        <p className={styles['description']}>{props.description}</p>
+        <p className={styles['skills']}>{props.skills}</p>
+      </div>
+
+      {hasImages === true && (
+        <div className={styles['project-images']}>
+          <ProjectImages
+            images={props.images as string[]}
+            imageAlt={props.imageAlt ?? '프로젝트 서비스 화면'}
+          />
+        </div>
+      )}
+    </header>
   );
 }
 
@@ -95,7 +106,7 @@ function ProjectImages(props: { images: string[]; imageAlt: string }) {
   );
 }
 
-function HighlightItem(props: Highlight) {
+function HighlightItem(props: THighlight) {
   return (
     <article className={styles["highlight"]}>
       <h6 className={styles["highlight-title"]}>{props.title}</h6>

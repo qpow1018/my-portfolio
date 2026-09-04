@@ -1,0 +1,765 @@
+@use '../../../style/variables' as *;
+
+.weddingbook-case-study {
+  .case-study {
+    padding-top: 40px;
+  }
+
+  .case-header {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 56px;
+
+    .case-label {
+      color: $color-primary;
+      font-size: 24px;
+      font-weight: 700;
+      opacity: 0.5;
+    }
+
+    .case-title {
+      color: $color-text-primary;
+      font-size: 24px;
+      font-weight: 700;
+      word-break: keep-all;
+    }
+
+    .case-description {
+      margin-top: 12px;
+      color: $color-text-secondary;
+      font-size: 15px;
+      word-break: keep-all;
+    }
+  }
+
+  .case-list {
+    margin-top: 40px;
+    border-top: 1px solid $color-border-default;
+  }
+
+  .case-item {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 56px;
+    padding: 32px 0;
+    border-bottom: 1px solid $color-border-default;
+  }
+
+  .case-number {
+    color: $color-primary;
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 0.5;
+  }
+
+  .case-content {
+    h6 {
+      margin-bottom: 12px;
+      color: $color-text-primary;
+      font-size: 17px;
+      font-weight: 500;
+      word-break: keep-all;
+    }
+
+    > p {
+      color: $color-text-secondary;
+      font-size: 15px;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+  }
+
+  .navigation-flow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(0, 1fr);
+    align-items: stretch;
+    margin-top: 20px;
+
+    > div {
+      min-width: 0;
+      padding: 14px 16px;
+      border: 1px solid $color-border-default;
+      border-radius: $border-radius-default;
+      background-color: $color-gray-f;
+    }
+  }
+
+  .navigation-inputs,
+  .navigation-results {
+    display: grid;
+    gap: 8px;
+
+    ul {
+      display: grid;
+      gap: 4px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: $color-text-primary;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+  }
+
+  .navigation-handler {
+    display: grid;
+    align-content: center;
+    gap: 8px;
+  }
+
+  .navigation-arrow,
+  .auth-arrow {
+    position: relative;
+    align-self: center;
+    height: 1px;
+    background-color: $color-border-default;
+
+    &::after {
+      position: absolute;
+      top: -3px;
+      right: 0;
+      width: 6px;
+      height: 6px;
+      border-top: 1px solid $color-border-default;
+      border-right: 1px solid $color-border-default;
+      content: '';
+      transform: rotate(45deg);
+    }
+  }
+
+  .state-comparison {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+
+    > div {
+      padding: 14px 16px;
+      border: 1px solid $color-border-default;
+      border-radius: $border-radius-default;
+      background-color: $color-gray-f;
+    }
+  }
+
+  .state-response {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 16px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid $color-border-default;
+  }
+
+  .auth-flow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1.25fr) 24px minmax(0, 1fr);
+    align-items: stretch;
+    margin-top: 20px;
+
+    > div {
+      display: grid;
+      align-content: center;
+      gap: 8px;
+      min-width: 0;
+      padding: 14px 16px;
+      border: 1px solid $color-border-default;
+      border-radius: $border-radius-default;
+      background-color: $color-gray-f;
+    }
+  }
+
+  .navigation-flow,
+  .state-comparison,
+  .state-response,
+  .auth-flow {
+    span {
+      display: block;
+      margin-bottom: 4px;
+      color: $color-primary;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    strong {
+      color: $color-text-primary;
+      font-size: 14px;
+      font-weight: 500;
+      word-break: keep-all;
+    }
+  }
+
+  .example {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 4px 16px;
+    margin-top: 20px;
+    padding: 16px 0 0 16px;
+    border-top: 1px solid $color-border-default;
+    border-left: 2px solid $color-primary;
+
+    p {
+      grid-row: span 2;
+      color: $color-primary;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    strong {
+      color: $color-text-primary;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    span {
+      color: $color-text-secondary;
+      font-size: 14px;
+      word-break: keep-all;
+    }
+  }
+
+  .project-link {
+    display: inline-block;
+    margin-top: 32px;
+    color: $color-primary;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .case-section {
+    padding-top: 72px;
+
+    &.medium-case,
+    &.compact-case {
+      padding-top: 64px;
+    }
+  }
+
+  .large-case-content,
+  .medium-case-content,
+  .compact-list {
+    margin-left: 236px;
+    margin-top: 40px;
+  }
+
+  .large-case-content,
+  .medium-case-content {
+    display: grid;
+    gap: 24px;
+  }
+
+  .search-diagram,
+  .invitation-flow,
+  .honsu-flow {
+    display: grid;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .search-diagram {
+    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1.15fr) 24px minmax(0, 1fr);
+  }
+
+  .invitation-flow {
+    grid-template-columns: repeat(4, minmax(0, 1fr) 20px) minmax(0, 1fr);
+  }
+
+  .honsu-flow {
+    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr);
+  }
+
+  .search-domains,
+  .search-results,
+  .diagram-emphasis,
+  .invitation-flow > div,
+  .honsu-before,
+  .honsu-after {
+    display: grid;
+    align-content: center;
+    gap: 8px;
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid $color-border-default;
+    border-radius: $border-radius-default;
+    background-color: $color-gray-f;
+
+    span {
+      color: $color-primary;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    strong {
+      color: $color-text-primary;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+      word-break: keep-all;
+    }
+
+    p {
+      color: $color-text-secondary;
+      font-size: 13px;
+      line-height: 1.55;
+      word-break: keep-all;
+    }
+  }
+
+  .search-domains,
+  .search-results {
+    ul {
+      display: grid;
+      gap: 4px;
+      margin: 0;
+      padding: 0;
+      color: $color-text-primary;
+      font-size: 14px;
+      font-weight: 500;
+      list-style: none;
+    }
+  }
+
+  .diagram-emphasis {
+    border-color: $color-border-dark;
+    background-color: #fff;
+  }
+
+  .diagram-arrow {
+    position: relative;
+    align-self: center;
+    height: 1px;
+    background-color: $color-border-default;
+
+    &::after {
+      position: absolute;
+      top: -3px;
+      right: 0;
+      width: 6px;
+      height: 6px;
+      border-top: 1px solid $color-border-default;
+      border-right: 1px solid $color-border-default;
+      content: '';
+      transform: rotate(45deg);
+    }
+  }
+
+  .media-placeholder {
+    display: grid;
+    place-items: center;
+    min-height: 180px;
+    padding: 24px;
+    border: 1px dashed $color-border-dark;
+    border-radius: $border-radius-default;
+    background: $color-gray-f;
+    text-align: center;
+
+    span,
+    strong,
+    p {
+      display: block;
+    }
+
+    span {
+      color: $color-primary;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    strong {
+      margin-top: 8px;
+      color: $color-text-primary;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    p {
+      margin-top: 6px;
+      color: $color-text-secondary;
+      font-size: 13px;
+      word-break: keep-all;
+    }
+  }
+
+  .invitation-image-layout {
+    padding-top: 8px;
+
+    img {
+      display: block;
+      width: 100%;
+      border: 1px solid $color-border-default;
+      border-radius: $border-radius-default;
+    }
+
+    p {
+      margin-top: 8px;
+      color: $color-text-secondary;
+      font-size: 12px;
+    }
+  }
+
+  .subcase-list {
+    display: grid;
+    gap: 24px;
+  }
+
+  .subcase {
+    display: grid;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid $color-border-default;
+
+    h6 {
+      margin-top: 4px;
+      color: $color-text-primary;
+      font-size: 16px;
+      font-weight: 500;
+      word-break: keep-all;
+    }
+  }
+
+  .subcase-label,
+  .supporting-note > p {
+    color: $color-primary;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .inline-flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      color: $color-text-secondary;
+      font-size: 13px;
+
+      &:not(:last-child)::after {
+        width: 18px;
+        height: 1px;
+        margin: 0 8px;
+        background-color: $color-border-default;
+        content: '';
+      }
+    }
+  }
+
+  .exit-flow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr);
+    align-items: center;
+
+    > div {
+      display: grid;
+      gap: 6px;
+      padding: 14px 16px;
+      border-left: 2px solid $color-primary;
+      background-color: $color-gray-f;
+    }
+
+    span {
+      color: $color-primary;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    strong {
+      color: $color-text-primary;
+      font-size: 14px;
+      font-weight: 500;
+      word-break: keep-all;
+    }
+  }
+
+  .media-note {
+    color: $color-text-secondary;
+    font-size: 12px;
+  }
+
+  .supporting-note {
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 4px 16px;
+    padding: 20px 0 0 16px;
+    border-top: 1px solid $color-border-default;
+    border-left: 2px solid $color-primary;
+
+    > p {
+      grid-row: span 2;
+    }
+
+    strong {
+      color: $color-text-primary;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    span {
+      color: $color-text-secondary;
+      font-size: 13px;
+      word-break: keep-all;
+    }
+  }
+
+  .compact-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+
+    article {
+      padding-top: 16px;
+      border-top: 1px solid $color-border-default;
+    }
+
+    h6 {
+      color: $color-text-primary;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    p {
+      margin-top: 10px;
+      color: $color-text-secondary;
+      font-size: 13px;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .weddingbook-case-study {
+    .case-study {
+      padding: 32px 20px 0;
+    }
+
+    .case-header,
+    .case-item {
+      display: block;
+    }
+
+    .case-header {
+      .case-label {
+        margin-bottom: 24px;
+        font-size: 16px;
+      }
+
+      .case-title {
+        font-size: 20px;
+      }
+
+      .case-description {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+    }
+
+    .case-list {
+      margin-top: 24px;
+    }
+
+    .case-item {
+      padding: 24px 0;
+    }
+
+    .case-number {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .case-content {
+      h6 {
+        margin-bottom: 10px;
+        font-size: 15px;
+      }
+
+      > p {
+        font-size: 13px;
+      }
+    }
+
+    .navigation-flow,
+    .auth-flow {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 16px;
+
+      > div {
+        padding: 12px;
+      }
+
+      .navigation-arrow,
+      .auth-arrow {
+        justify-self: center;
+        width: 1px;
+        height: 12px;
+
+        &::after {
+          top: auto;
+          right: -3px;
+          bottom: 0;
+          transform: rotate(135deg);
+        }
+      }
+    }
+
+    .state-comparison {
+      gap: 8px;
+      margin-top: 16px;
+
+      > div {
+        padding: 12px;
+      }
+    }
+
+    .state-response {
+      grid-template-columns: 64px minmax(0, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+      padding-top: 10px;
+    }
+
+    .navigation-flow,
+    .state-comparison,
+    .state-response,
+    .auth-flow {
+      strong {
+        font-size: 13px;
+      }
+    }
+
+    .example {
+      grid-template-columns: 64px minmax(0, 1fr);
+      gap: 4px 12px;
+      margin-top: 16px;
+      padding-left: 12px;
+
+      strong,
+      span {
+        font-size: 13px;
+      }
+    }
+
+    .case-section,
+    .case-section.medium-case,
+    .case-section.compact-case {
+      padding-top: 48px;
+    }
+
+    .large-case-content,
+    .medium-case-content,
+    .compact-list {
+      margin-top: 24px;
+      margin-left: 0;
+    }
+
+    .large-case-content,
+    .medium-case-content {
+      gap: 16px;
+    }
+
+    .search-diagram,
+    .invitation-flow,
+    .honsu-flow {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .diagram-arrow {
+      justify-self: center;
+      width: 1px;
+      height: 12px;
+
+      &::after {
+        top: auto;
+        right: -3px;
+        bottom: 0;
+        transform: rotate(135deg);
+      }
+    }
+
+    .search-domains,
+    .search-results,
+    .diagram-emphasis,
+    .invitation-flow > div,
+    .honsu-before,
+    .honsu-after {
+      padding: 12px;
+
+      strong {
+        font-size: 13px;
+      }
+    }
+
+    .media-placeholder {
+      min-height: 140px;
+      padding: 20px;
+    }
+
+    .subcase-list {
+      gap: 20px;
+    }
+
+    .subcase {
+      gap: 12px;
+      padding-top: 20px;
+
+      h6 {
+        font-size: 14px;
+      }
+    }
+
+    .inline-flow {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+
+      li {
+        &::after {
+          display: none;
+        }
+
+        &::before {
+          width: 4px;
+          height: 4px;
+          margin-right: 8px;
+          border-radius: 50%;
+          background-color: $color-primary;
+          content: '';
+        }
+      }
+    }
+
+    .exit-flow {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .supporting-note {
+      grid-template-columns: 1fr;
+      gap: 4px;
+      padding: 16px 0 0 12px;
+
+      > p {
+        grid-row: auto;
+      }
+    }
+
+    .compact-list {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 24px;
+
+      article {
+        padding-top: 12px;
+      }
+    }
+  }
+}
