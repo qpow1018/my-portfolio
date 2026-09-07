@@ -50,17 +50,17 @@ export default function WeddingbookCaseStudy() {
           <li className={styles['case-item']}>
             <p className={styles['case-number']}>02</p>
             <div className={styles['case-content']}>
-              <h6>App과 Web의 화면 이동 방식 차이 때문에 이전 화면의 데이터를 다뤄야 했던 문제</h6>
+              <h6>웹에서 이전 화면으로 돌아왔을 때 기존 데이터와 상태가 이어지지 않는 문제</h6>
               <p>
-                App에서는 이전 화면이 stack에 남지만, Web에서는 페이지 재방문을 별도로 고려해야 했다.
-                서버에서 조회한 데이터는 TanStack Query cache로 관리하고, URL로 표현하는 것이 적절한 상태는 URL과 동기화했다.
+                기존 앱에서는 새로운 WebView 화면을 열어도 이전 화면이 네이티브 화면 스택에 남아 있어, 다시 돌아왔을 때 기존 화면의 데이터와 상태가 유지되었습니다.
+              </p>
+              <p>
+                이러한 구조에서는 이전 화면의 데이터와 상태를 별도로 유지할 필요가 없었지만, 웹에서는 화면을 이동한 뒤에도 필요한 데이터와 상태가 이어지도록 관리해야 했습니다.
+              </p>
+              <p>
+                웹에서는 이전 화면으로 돌아왔을 때 데이터가 다시 조회되거나 상태가 초기화되지 않도록, 스크롤 위치는 브라우저의 기본 복원 동작을 활용하고 서버 데이터는 TanStack Query의 캐시를 활용했으며, 필요한 상태는 URL에 유지했습니다.
               </p>
               <NavigationStateDiagram />
-              <div className={styles['example']}>
-                <p>실제 적용 사례</p>
-                <strong>Product Detail</strong>
-                <span>productId와 tabId를 경로·URL에서 읽고 productQuery로 데이터를 조회</span>
-              </div>
             </div>
           </li>
 
@@ -267,22 +267,24 @@ function NavigationDiagram() {
 
 function NavigationStateDiagram() {
   return (
-    <>
-      <div className={styles['state-comparison']} aria-label="App과 Web의 이전 화면 처리 차이">
-        <div>
-          <span>App</span>
-          <strong>이전 화면이 stack에 남음</strong>
-        </div>
-        <div>
-          <span>Web</span>
-          <strong>URL과 cache 상태를 고려</strong>
-        </div>
+    <div className={styles['state-comparison']} aria-label="앱과 웹의 이전 화면 데이터와 상태 유지 방식">
+      <div>
+        <span>앱</span>
+        <ul>
+          <li>이전 WebView 화면이 네이티브 화면 스택에 남음</li>
+          <li>이전 화면으로 돌아왔을 때 기존 화면이 유지됨</li>
+          <li>별도의 데이터/상태 유지 처리가 필요하지 않았음</li>
+        </ul>
       </div>
-      <div className={styles['state-response']}>
-        <span>대응</span>
-        <strong>cache와 URL 상태를 함께 고려</strong>
+      <div>
+        <span>웹</span>
+        <ul>
+          <li>스크롤 위치 → 브라우저 기본 복원 동작</li>
+          <li>서버 데이터 → TanStack Query 캐시</li>
+          <li>필요한 상태 → URL에 유지</li>
+        </ul>
       </div>
-    </>
+    </div>
   );
 }
 

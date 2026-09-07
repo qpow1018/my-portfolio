@@ -156,15 +156,6 @@
     }
   }
 
-  .state-response {
-    display: grid;
-    grid-template-columns: 80px minmax(0, 1fr);
-    gap: 16px;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid $color-border-default;
-  }
-
   .auth-flow {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1.25fr) 24px minmax(0, 1fr);
@@ -203,7 +194,6 @@
   }
 
   .state-comparison,
-  .state-response,
   .auth-flow {
     span {
       display: block;
@@ -221,33 +211,15 @@
     }
   }
 
-  .example {
+  .state-comparison ul {
     display: grid;
-    grid-template-columns: 80px minmax(0, 1fr);
-    gap: 4px 16px;
-    margin-top: 20px;
-    padding: 16px 0 0 16px;
-    border-top: 1px solid $color-border-default;
-    border-left: 2px solid $color-primary;
-
-    p {
-      grid-row: span 2;
-      color: $color-primary;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    strong {
-      color: $color-text-primary;
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    span {
-      color: $color-text-secondary;
-      font-size: 14px;
-      word-break: keep-all;
-    }
+    gap: 4px;
+    margin: 0;
+    padding-left: 20px;
+    color: $color-text-secondary;
+    font-size: 14px;
+    line-height: 1.6;
+    word-break: keep-all;
   }
 
   .project-link {
@@ -685,29 +657,9 @@
       }
     }
 
-    .state-response {
-      grid-template-columns: 64px minmax(0, 1fr);
-      gap: 12px;
-      margin-top: 8px;
-      padding-top: 10px;
-    }
-
     .state-comparison,
-    .state-response,
     .auth-flow {
       strong {
-        font-size: 13px;
-      }
-    }
-
-    .example {
-      grid-template-columns: 64px minmax(0, 1fr);
-      gap: 4px 12px;
-      margin-top: 16px;
-      padding-left: 12px;
-
-      strong,
-      span {
         font-size: 13px;
       }
     }
