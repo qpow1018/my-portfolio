@@ -5,19 +5,17 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 40px;
-    padding-bottom: 40px;
+    gap: 64px;
+    padding: 24px 0 80px;
     border-bottom: 1px solid $color-border-default;
 
-    .label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      color: $color-primary;
+    .info-box {
+      max-width: 440px;
+      padding-top: 20px;
     }
 
     .title {
-      font-size: 32px;
+      font-size: 48px;
       font-weight: 700;
       word-break: keep-all;
     }
@@ -25,21 +23,25 @@
     .description {
       white-space: pre-line;
       word-break: keep-all;
-      margin-top: 20px;
-      font-size: 16px;
+      margin-top: 24px;
+      font-size: 18px;
       color: $color-text-secondary;
     }
 
     .skills {
-      margin-top: 16px;
+      margin-top: 20px;
       font-size: 12px;
       font-weight: 500;
       color: $color-primary;
     }
 
+    .project-link {
+      margin-top: 20px;
+    }
+
     .project-images {
       flex-shrink: 0;
-      width: 320px;
+      width: 440px;
 
       .image-button {
         aspect-ratio: 16 / 9;
@@ -63,7 +65,7 @@
   }
 
   .case-study {
-    padding-top: 40px;
+    padding-top: 72px;
   }
 
   .case-header {
@@ -93,53 +95,140 @@
     }
   }
 
+  .web-expansion-header {
+    display: block;
+    max-width: 680px;
+  }
+
+  .web-expansion {
+    padding: 56px;
+    border-radius: 12px;
+    background-color: #f7faff;
+
+    .case-title {
+      font-size: 32px;
+      line-height: 1.35;
+    }
+
+    .case-description {
+      max-width: 640px;
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+  }
+
   .case-list {
-    margin-top: 40px;
-    border-top: 1px solid $color-border-default;
+    margin: 48px 0 0;
+    padding: 0;
+    list-style: none;
   }
 
   .case-item {
-    display: grid;
-    grid-template-columns: 180px minmax(0, 1fr);
-    gap: 56px;
-    padding: 32px 0;
-    border-bottom: 1px solid $color-border-default;
-  }
+    padding: 48px 0;
+    border-top: 1px solid #dfeaf3;
 
-  .case-number {
-    color: $color-primary;
-    font-size: 24px;
-    font-weight: 700;
-    opacity: 0.5;
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 
   .case-content {
+    .case-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .case-number {
+      flex: 0 0 auto;
+      color: $color-primary;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
     h6 {
-      margin-bottom: 12px;
       color: $color-text-primary;
-      font-size: 17px;
-      font-weight: 500;
+      font-size: 19px;
+      font-weight: 700;
       word-break: keep-all;
     }
 
-    > p {
-      color: $color-text-secondary;
-      font-size: 15px;
-      line-height: 1.6;
-      word-break: keep-all;
+    .case-copy {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      column-gap: 24px;
+      row-gap: 8px;
+      padding-top: 20px;
+
+      .copy-label {
+        grid-row: span 4;
+        color: $color-text-secondary;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      > p:not(.copy-label) {
+        color: $color-text-secondary;
+        font-size: 15px;
+        line-height: 1.6;
+        word-break: keep-all;
+      }
+    }
+
+    .case-copy + .case-copy {
+      margin-top: 12px;
+      border-top: 1px solid $color-border-light;
     }
   }
 
-  .navigation-structure {
+  .navigation-flow {
     display: grid;
-    margin-top: 20px;
-    gap: 8px;
-    margin-bottom: 0;
-    padding-left: 20px;
-    color: $color-text-secondary;
-    font-size: 14px;
-    line-height: 1.6;
-    word-break: keep-all;
+    grid-template-columns: minmax(0, 1.2fr) 24px minmax(0, 1fr) 24px minmax(0, 0.8fr);
+    align-items: stretch;
+    margin-top: 28px;
+
+    > div {
+      display: grid;
+      align-content: center;
+      gap: 8px;
+      min-width: 0;
+      padding: 16px;
+      border: 1px solid $color-border-default;
+      border-radius: $border-radius-default;
+      background-color: $color-gray-f;
+    }
+
+    .navigation-transform {
+      border-color: $color-border-dark;
+      background-color: #fff;
+    }
+
+    span {
+      color: $color-primary;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    strong {
+      color: $color-text-primary;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+      word-break: keep-all;
+    }
+
+    ul {
+      display: grid;
+      gap: 4px;
+      margin: 0;
+      padding-left: 20px;
+      color: $color-text-secondary;
+      font-size: 14px;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
   }
 
   .state-comparison {
@@ -553,15 +642,13 @@
   .weddingbook-case-study {
     .project-header {
       display: block;
-      padding: 0 20px 20px 20px;
+      padding: 0 20px 64px;
 
       .info-box {
-        .label {
-          font-size: 11px;
-        }
+        padding-top: 0;
 
         .title {
-          font-size: 28px;
+          font-size: 32px;
         }
 
         .description {
@@ -577,7 +664,7 @@
       }
 
       .project-images {
-        margin-top: 20px;
+        margin-top: 32px;
         width: 100%;
       }
     }
@@ -608,26 +695,58 @@
     }
 
     .case-list {
-      margin-top: 24px;
+      margin: 32px 0 0;
+    }
+
+    .web-expansion {
+      margin: 0 -20px;
+      padding: 36px 20px 48px;
+      border-radius: 0;
+
+      .case-title {
+        font-size: 24px;
+      }
+
+      .case-description {
+        margin-top: 12px;
+        font-size: 13px;
+      }
     }
 
     .case-item {
-      padding: 24px 0;
-    }
+      padding-bottom: 40px;
 
-    .case-number {
-      margin-bottom: 10px;
-      font-size: 16px;
+      & + & {
+        padding-top: 40px;
+      }
     }
 
     .case-content {
+      .case-heading {
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .case-number {
+        font-size: 16px;
+      }
+
       h6 {
-        margin-bottom: 10px;
         font-size: 15px;
       }
 
-      > p {
-        font-size: 13px;
+      .case-copy {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding-top: 16px;
+
+        .copy-label {
+          grid-row: auto;
+        }
+
+        > p:not(.copy-label) {
+          font-size: 13px;
+        }
       }
     }
 
@@ -654,9 +773,31 @@
       }
     }
 
-    .navigation-structure {
-      margin-top: 16px;
-      font-size: 13px;
+    .navigation-flow {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 20px;
+
+      > div {
+        padding: 12px;
+      }
+
+      .diagram-arrow {
+        justify-self: center;
+        width: 1px;
+        height: 12px;
+
+        &::after {
+          top: auto;
+          right: -3px;
+          bottom: 0;
+          transform: rotate(135deg);
+        }
+      }
+
+      ul {
+        font-size: 13px;
+      }
     }
 
     .state-comparison {
