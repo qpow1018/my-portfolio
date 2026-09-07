@@ -67,10 +67,21 @@ export default function WeddingbookCaseStudy() {
           <li className={styles['case-item']}>
             <p className={styles['case-number']}>03</p>
             <div className={styles['case-content']}>
-              <h6>Web 확장으로 로그인이 필요한 경로가 다양해진 문제</h6>
+              <h6>앱의 페이지 접근 제어를 웹에 그대로 적용할 수 없었던 문제</h6>
               <p>
-                Middleware는 기존에 존재했다. 동적 경로와 하위 경로까지 판단할 필요가 있어,
-                인증 대상 경로 판단을 path-to-regexp 패턴 매칭으로 확장했다.
+                기존 앱은 로그인 후 서비스를 이용하는 구조였기 때문에, 개별 페이지에 로그인 확인이 없더라도 실제 사용 과정에서 문제가 잘 드러나지 않았습니다.
+              </p>
+              <p>
+                웹에서는 비회원도 서비스를 탐색할 수 있어, 단순히 정보를 조회하는 페이지는 로그인 없이 접근할 수 있도록 변경하는 한편, 로그인이 필요한 페이지에는 비회원의 접근을 제한해야 했습니다.
+              </p>
+              <p>
+                기존에는 필요한 페이지에서 각각 로그인 여부를 확인하고 있어 같은 처리가 반복되었고, 일부 페이지에서는 이 처리가 누락되는 경우도 있었습니다.
+              </p>
+              <p>
+                페이지마다 로그인 여부를 개별적으로 처리하기보다, 접근 제어를 경로 단위의 공통 정책으로 관리하는 것이 적합하다고 판단했습니다.
+              </p>
+              <p>
+                기존 Next.js Middleware에서 로그인이 필요한 경로의 접근을 제어하고, 하위·동적 경로에도 같은 정책을 적용할 수 있도록 경로 패턴 매칭을 추가했습니다.
               </p>
               <AuthPatternDiagram />
             </div>
@@ -292,21 +303,30 @@ function AuthPatternDiagram() {
   return (
     <div
       className={styles['auth-flow']}
-      aria-label="기존의 단순 경로 판단이 Web 확장에 필요한 동적 경로와 하위 경로 판단을 거쳐 pattern 기반 판단으로 확장되는 흐름"
+      aria-label="페이지별 로그인 확인이 경로 단위의 공통 접근 제어로 변경된 구조"
     >
       <div className={styles['auth-step']}>
         <span>기존</span>
-        <strong>단순 경로 판단</strong>
+        <ul>
+          <li>페이지 A → 페이지 내부에서 로그인 확인</li>
+          <li>페이지 B → 페이지 내부에서 로그인 확인</li>
+          <li>페이지 C → 로그인 확인 누락</li>
+        </ul>
       </div>
       <span className={styles['auth-arrow']} aria-hidden="true" />
       <div className={styles['auth-condition']}>
-        <span>Web 확장</span>
-        <strong>동적 경로와 하위 경로까지 판단 필요</strong>
+        <span>변경</span>
+        <ul>
+          <li>요청 경로</li>
+          <li>Next.js Middleware</li>
+          <li>경로를 기준으로 접근 제어</li>
+          <li>각 페이지로 연결</li>
+        </ul>
       </div>
       <span className={styles['auth-arrow']} aria-hidden="true" />
       <div className={styles['auth-step']}>
-        <span>변경</span>
-        <strong>pattern 기반 경로 판단</strong>
+        <span>하위·동적 경로</span>
+        <strong>경로 패턴 매칭</strong>
       </div>
     </div>
   );
