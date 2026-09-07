@@ -1,4 +1,4 @@
-import CurrentProjectDetail from './CurrentProjectDetail';
+import LoamProjectDetail from './LoamProjectDetail';
 
 import LoamTaskTableImage from '@/images/loam/loam-task-table.png';
 import LoamClearGoldImage from '@/images/loam/loam-clear-gold.png';
@@ -7,7 +7,7 @@ import LoamRefiningImage from '@/images/loam/loam-refining.png';
 
 export default function LoamService() {
   return (
-    <CurrentProjectDetail
+    <LoamProjectDetail
       label='PERSONAL PROJECT'
       title='LoaM - 로스트아크 개인 유틸리티'
       description={`로스트아크 투두리스트를 중심으로 캐릭터 정보 조회와

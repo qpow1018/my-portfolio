@@ -1,29 +1,19 @@
+import { useState } from "react";
+
 import WeddingbookHomeImage from '@/images/weddingbook/weddingbook_home.png';
 import WeddingbookHonsuImage from '@/images/weddingbook/weddingbook_honsu.png';
 import WeddingbookInvitationImage from '@/images/weddingbook/weddingbook_invitation.png';
 import WeddingbookWeddinghallImage from '@/images/weddingbook/weddingbook_weddinghall.png';
 
-import { ProjectHeader } from './CurrentProjectDetail';
-import currentProjectStyles from './CurrentProjectDetail.module.scss';
+import useWindowSize from '@/hooks/useWindowSize';
+
+import ProjectImagesModal from '../ProjectImagesModal';
 import styles from './WeddingbookCaseStudy.module.scss';
 
 export default function WeddingbookCaseStudy() {
   return (
-    <section
-      className={`${currentProjectStyles['current-project-detail']} ${styles['weddingbook-case-study']}`}
-    >
-      <ProjectHeader
-        label="CURRENT PROJECT"
-        title="웨딩북 앱·웹 서비스"
-        description={`결혼 준비 플랫폼 웨딩북의 React 기반 앱 WebView\n및 Next.js 웹 프론트엔드 개발·운영`}
-        skills="Next.js, React, TypeScript, TanStack Query, Zustand, SCSS, CSS Modules, Axios"
-        images={[
-          WeddingbookInvitationImage,
-          WeddingbookWeddinghallImage,
-          WeddingbookHomeImage,
-          WeddingbookHonsuImage,
-        ]}
-      />
+    <section className={styles['weddingbook-case-study']}>
+      <WeddingbookHeader />
 
       <div className={styles['case-study']}>
         <header className={styles['case-header']}>
@@ -97,6 +87,51 @@ export default function WeddingbookCaseStudy() {
         </a>
       </div>
     </section>
+  );
+}
+
+function WeddingbookHeader() {
+  const { isDesktop } = useWindowSize();
+  const [isProjectImagesModalOpen, setIsProjectImagesModalOpen] = useState(false);
+  const images = [
+    WeddingbookInvitationImage,
+    WeddingbookWeddinghallImage,
+    WeddingbookHomeImage,
+    WeddingbookHonsuImage,
+  ];
+
+  return (
+    <header className={styles['project-header']}>
+      <div className={styles['info-box']}>
+        <p className={styles['label']}>CURRENT PROJECT</p>
+        <h4 className={styles['title']}>웨딩북 앱·웹 서비스</h4>
+        <p className={styles['description']}>
+          {`결혼 준비 플랫폼 웨딩북의 React 기반 앱 WebView\n및 Next.js 웹 프론트엔드 개발·운영`}
+        </p>
+        <p className={styles['skills']}>
+          Next.js, React, TypeScript, TanStack Query, Zustand, SCSS, CSS Modules, Axios
+        </p>
+      </div>
+
+      <div className={styles['project-images']}>
+        <button
+          className={styles['image-button']}
+          type="button"
+          onClick={() => setIsProjectImagesModalOpen(true)}
+        >
+          <img className={styles['image']} src={images[0]} alt="프로젝트 서비스 화면" />
+        </button>
+
+        {isProjectImagesModalOpen === true && (
+          <ProjectImagesModal
+            isDesktop={isDesktop}
+            isOpen={isProjectImagesModalOpen}
+            images={images}
+            onClose={() => setIsProjectImagesModalOpen(false)}
+          />
+        )}
+      </div>
+    </header>
   );
 }
 

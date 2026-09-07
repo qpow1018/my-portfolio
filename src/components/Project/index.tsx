@@ -3,7 +3,7 @@ import theme from '@/style/theme';
 
 import useWindowSize from '@/hooks/useWindowSize';
 
-import CurrentProjectsSection from './CurrentProject/CurrentProjectsSection';
+import WeddingbookService from './Weddingbook/WeddingbookService';
 
 export default function Project() {
   const { isDesktop } = useWindowSize();
@@ -32,7 +32,19 @@ export default function Project() {
           title={'My Project'}
         />
 
-        <CurrentProjectsSection isDesktop={isDesktop} />
+        <Box
+          component={'section'}
+          sx={[
+            {
+              paddingBottom: '60px',
+            },
+            isDesktop === true && {
+              paddingBottom: '80px',
+            },
+          ]}
+        >
+          <WeddingbookService />
+        </Box>
       </Box>
     </Box>
   );

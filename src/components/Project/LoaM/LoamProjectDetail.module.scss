@@ -1,6 +1,6 @@
 @use "../../../style/variables" as *;
 
-.current-project-detail {
+.loam-project-detail {
   .project-header {
     display: flex;
     align-items: flex-start;
@@ -132,7 +132,7 @@
 }
 
 @media (max-width: $breakpoint-md) {
-  .current-project-detail {
+  .loam-project-detail {
     .project-header {
       display: block;
       padding: 0 20px 20px 20px;

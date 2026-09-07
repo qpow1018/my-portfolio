@@ -1,6 +1,67 @@
 @use '../../../style/variables' as *;
 
 .weddingbook-case-study {
+  .project-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $color-border-default;
+
+    .label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: $color-primary;
+    }
+
+    .title {
+      font-size: 32px;
+      font-weight: 700;
+      word-break: keep-all;
+    }
+
+    .description {
+      white-space: pre-line;
+      word-break: keep-all;
+      margin-top: 20px;
+      font-size: 16px;
+      color: $color-text-secondary;
+    }
+
+    .skills {
+      margin-top: 16px;
+      font-size: 12px;
+      font-weight: 500;
+      color: $color-primary;
+    }
+
+    .project-images {
+      flex-shrink: 0;
+      width: 320px;
+
+      .image-button {
+        aspect-ratio: 16 / 9;
+        background: $color-gray-f;
+        border: 1px solid $color-border-default;
+        border-radius: $border-radius-default;
+        cursor: pointer;
+        display: block;
+        overflow: hidden;
+        padding: 0;
+        width: 100%;
+
+        .image {
+          display: block;
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+  }
+
   .case-study {
     padding-top: 40px;
   }
@@ -507,6 +568,37 @@
 
 @media (max-width: $breakpoint-md) {
   .weddingbook-case-study {
+    .project-header {
+      display: block;
+      padding: 0 20px 20px 20px;
+
+      .info-box {
+        .label {
+          font-size: 11px;
+        }
+
+        .title {
+          font-size: 28px;
+        }
+
+        .description {
+          font-size: 14px;
+          line-height: 1.65;
+          margin-top: 16px;
+        }
+
+        .skills {
+          line-height: 1.6;
+          margin-top: 14px;
+        }
+      }
+
+      .project-images {
+        margin-top: 20px;
+        width: 100%;
+      }
+    }
+
     .case-study {
       padding: 32px 20px 0;
     }

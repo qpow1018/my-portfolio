@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./CurrentProjectDetail.module.scss";
+import styles from "./LoamProjectDetail.module.scss";
 
 import useWindowSize from "@/hooks/useWindowSize";
 
@@ -19,14 +19,14 @@ type TProjectHeaderProps = {
   imageAlt?: string;
 };
 
-type TCurrentProjectDetailProps = TProjectHeaderProps & {
+type TLoamProjectDetailProps = TProjectHeaderProps & {
   highlights: THighlight[];
   url?: string;
 };
 
-export default function CurrentProjectDetail(props: TCurrentProjectDetailProps) {
+export default function LoamProjectDetail(props: TLoamProjectDetailProps) {
   return (
-    <section className={styles['current-project-detail']}>
+    <section className={styles['loam-project-detail']}>
       <ProjectHeader {...props} />
 
       <div className={styles['main-contents']}>
@@ -51,7 +51,7 @@ export default function CurrentProjectDetail(props: TCurrentProjectDetailProps) 
   );
 }
 
-export function ProjectHeader(props: TProjectHeaderProps) {
+function ProjectHeader(props: TProjectHeaderProps) {
   const hasImages = props.images !== undefined && props.images.length > 0;
 
   return (
