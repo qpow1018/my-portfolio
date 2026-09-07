@@ -4,7 +4,6 @@ import theme from '@/style/theme';
 import useWindowSize from '@/hooks/useWindowSize';
 
 import CurrentProjectsSection from './CurrentProject/CurrentProjectsSection';
-import EarlierProjectsSection from './EarlierProject/EarlierProjectsSection';
 
 export default function Project() {
   const { isDesktop } = useWindowSize();
@@ -35,8 +34,6 @@ export default function Project() {
 
         <CurrentProjectsSection isDesktop={isDesktop} />
       </Box>
-
-      <EarlierProjectsSection isDesktop={isDesktop} />
     </Box>
   );
 }

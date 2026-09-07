@@ -29,9 +29,9 @@ export default function WeddingbookCaseStudy() {
         <header className={styles['case-header']}>
           <p className={styles['case-label']}>주요 내용</p>
           <div>
-            <h5 className={styles['case-title']}>App 중심 서비스의 Web 확장</h5>
+            <h5 className={styles['case-title']}>앱 중심 서비스의 웹 확장</h5>
             <p className={styles['case-description']}>
-              App 환경에서 사용하던 화면 이동과 접근 제어 방식을 Web 환경에 맞게 다뤘다.
+              앱 외부의 유입 경로를 넓히기 위해, React 기반 WebView 중심으로 제공하던 서비스를 Next.js 기반 웹까지 단계적으로 확장했습니다.
             </p>
           </div>
         </header>
@@ -40,10 +40,18 @@ export default function WeddingbookCaseStudy() {
           <li className={styles['case-item']}>
             <p className={styles['case-number']}>01</p>
             <div className={styles['case-content']}>
-              <h6>App에서 사용하던 이동 방식이 Web에서는 그대로 동작하지 않았던 문제</h6>
+              <h6>앱에서 사용하던 주소 형식을 웹에서 그대로 사용할 수 없었던 문제</h6>
               <p>
-                App Scheme과 URL이 함께 쓰이던 이동 경로는 Web에서 같은 방식으로 실행할 수 없었다.
-                navigation을 처리하는 공통 지점에서 URL과 실행 환경에 따라 이동 방식을 나누었다.
+                기존 앱에서는 화면 이동에 앱 Scheme과 URL을 함께 사용하고 있었고, WebView로 이동하는 URL은 기존 React 프로젝트의 도메인을 기준으로 하고 있었습니다.
+              </p>
+              <p>
+                서비스를 Next.js 웹으로 확장하면서 이러한 주소 형식을 그대로 사용할 수 없었습니다. 앱 Scheme은 일반 웹에서 같은 방식으로 처리할 수 없었고, 기존 도메인이 포함된 URL은 새로운 웹이 아닌 이전 React 프로젝트로 이동하는 문제가 있었습니다.
+              </p>
+              <p>
+                기존 주소가 서비스 전반에 광범위하게 사용되고 있었고, 사용처가 한곳에서 관리되는 구조가 아니어서 모든 주소를 파악하고 각각 수정하기 어려웠습니다. 따라서 기존 주소를 하나씩 변경하기보다, 주소 형식에 따라 변환해 웹에서도 사용할 수 있도록 처리하는 방식을 선택했습니다.
+              </p>
+              <p>
+                앱 Scheme은 대응하는 웹 경로로 변환하고, 기존 React 프로젝트를 가리키는 URL은 현재 웹에서 사용할 수 있는 경로로 변환했습니다.
               </p>
               <NavigationDiagram />
             </div>
@@ -214,31 +222,11 @@ function SharedImprovements() {
 
 function NavigationDiagram() {
   return (
-    <div
-      className={styles['navigation-flow']}
-      aria-label="기존 이동 방식이 공통 navigation 처리 지점을 거쳐 App과 Web 환경에 맞게 처리되는 흐름"
-    >
-      <div className={styles['navigation-inputs']}>
-        <span>기존 이동</span>
-        <ul>
-          <li>App Scheme</li>
-          <li>기존 URL</li>
-        </ul>
-      </div>
-      <span className={styles['navigation-arrow']} aria-hidden="true" />
-      <div className={styles['navigation-handler']}>
-        <span>공통 처리</span>
-        <strong>navigation 처리 지점</strong>
-      </div>
-      <span className={styles['navigation-arrow']} aria-hidden="true" />
-      <div className={styles['navigation-results']}>
-        <span>실행 환경</span>
-        <ul>
-          <li>App</li>
-          <li>Web</li>
-        </ul>
-      </div>
-    </div>
+    <ul className={styles['navigation-structure']} aria-label="주소 형식 변환 구조">
+      <li>앱 Scheme → 대응하는 웹 경로</li>
+      <li>WebView Scheme 안에 포함된 기존 URL → 현재 웹 경로</li>
+      <li>기존 React 프로젝트 URL → 현재 웹 경로</li>
+    </ul>
   );
 }
 
