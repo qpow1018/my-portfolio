@@ -9,6 +9,16 @@ import WeddingbookHonsuImage from "@/images/weddingbook/weddingbook_honsu.png";
 import WeddingbookInvitationImage from "@/images/weddingbook/weddingbook_invitation.png";
 import WeddingbookWeddinghallImage from "@/images/weddingbook/weddingbook_weddinghall.png";
 
+const PROJECT_SKILLS = [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "TanStack Query",
+  "Zustand",
+  "SCSS",
+  "CSS Modules",
+] as const;
+
 const PROJECT_IMAGES = [
   { src: WeddingbookInvitationImage, alt: "웨딩북 청첩장 화면" },
   { src: WeddingbookWeddinghallImage, alt: "웨딩북 웨딩홀 화면" },
@@ -27,16 +37,23 @@ export default function WeddingbookHeader() {
         <p className={styles["description"]}>
           결혼 준비 서비스를 제공하는 플랫폼
         </p>
-        <p className={styles["skills"]}>
-          Next.js, React, TypeScript, TanStack Query, Zustand, SCSS, CSS Modules
-        </p>
+        <div className={styles["skills"]}>
+          <ul className={styles["skills-list"]} aria-label="사용 기술">
+            {PROJECT_SKILLS.map((skill) => (
+              <li key={skill}>
+                <span className={styles["skill-separator"]} aria-hidden="true">·</span>
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </div>
         <a
           className={styles["project-link"]}
           href="https://www.weddingbook.com"
           target="_blank"
           rel="noreferrer"
         >
-          https://www.weddingbook.com
+          웨딩북 웹사이트 <span aria-hidden="true">↗</span>
         </a>
       </div>
 

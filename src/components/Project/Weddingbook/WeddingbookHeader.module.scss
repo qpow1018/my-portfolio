@@ -2,11 +2,10 @@
 
 .project-header {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 72px;
+  grid-template-columns: minmax(0, 1fr) 400px;
+  gap: 48px;
   align-items: end;
-  padding: 40px 0 88px;
-  border-bottom: 1px solid $blue-light;
+  padding: 40px 0 48px;
 
   .info-box {
     max-width: 520px;
@@ -23,7 +22,7 @@
   .title {
     margin-top: 20px;
     color: $text;
-    font-size: 60px;
+    font-size: 48px;
     font-weight: 900;
     letter-spacing: -0.06em;
     line-height: 1;
@@ -37,20 +36,39 @@
     line-height: 1.65;
     word-break: keep-all;
   }
-  .skills,
-  .project-link {
-    color: $text-sec;
-    font-size: 13px;
-    line-height: 1.65;
-  }
   .skills {
-    margin-top: 18px;
+    margin-top: 24px;
+    overflow: hidden;
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: $text-sec;
+      font-size: 13px;
+      line-height: 1.65;
+
+      li {
+        position: relative;
+        white-space: nowrap;
+
+        .skill-separator {
+          position: absolute;
+          left: -10px;
+        }
+      }
+    }
   }
   .project-link {
     display: inline-block;
     margin-top: 24px;
     color: $blue;
+    font-size: 13px;
     font-weight: 700;
+    line-height: 1.65;
     text-underline-offset: 4px;
   }
 
@@ -86,14 +104,13 @@
       object-fit: cover;
     }
   }
-
 }
 
 @media (max-width: $breakpoint-md) {
   .project-header {
     grid-template-columns: 1fr;
     gap: 36px;
-    padding: 0 20px 72px;
+    padding: 0 20px 40px;
 
     .info-box {
       padding-top: 0;
@@ -106,7 +123,7 @@
 
     .title {
       margin-top: 16px;
-      font-size: 46px;
+      font-size: 40px;
     }
 
     .description {
@@ -123,7 +140,6 @@
     }
 
     .project-images {
-      max-width: 280px;
       padding: 10px 0 0 10px;
 
       &::before {
