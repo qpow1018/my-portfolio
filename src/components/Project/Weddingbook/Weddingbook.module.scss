@@ -6,48 +6,24 @@
   .case-study {
     padding-top: 72px;
   }
-  .web-expansion {
-    padding: 0;
-  }
-  .group-header,
   .feature-header,
-  .web-case-list,
   .search-copy,
   .invitation-content,
   .home-copy,
   .shared-list {
     max-width: 660px;
   }
-  .group-title,
   .feature-group-title {
     font-size: 28px;
     font-weight: 700;
     line-height: 1.4;
     word-break: keep-all;
   }
-  .group-description,
   .feature-description {
     margin-top: 14px;
     color: $text-sec;
     font-size: 16px;
     line-height: 1.7;
-    word-break: keep-all;
-  }
-
-  .web-case-list {
-    margin-top: 56px;
-  }
-  .web-case {
-    padding-top: 40px;
-    border-top: 1px solid $blue-light;
-  }
-  .web-case + .web-case {
-    margin-top: 72px;
-  }
-  .case-title {
-    font-size: 21px;
-    font-weight: 700;
-    line-height: 1.5;
     word-break: keep-all;
   }
 
@@ -72,101 +48,6 @@
     word-break: keep-all;
   }
 
-  .web-expansion {
-    padding-top: 0;
-
-    .group-header {
-      position: relative;
-      max-width: 740px;
-      padding-top: 24px;
-      border-top: 1px solid $blue-light;
-
-      &::before {
-        position: absolute;
-        top: -2px;
-        left: 0;
-        width: 72px;
-        height: 3px;
-        background: $blue-accent;
-        content: "";
-      }
-    }
-
-    .group-title {
-      color: $text;
-      font-size: 36px;
-      font-weight: 900;
-      letter-spacing: -0.045em;
-      line-height: 1.25;
-    }
-
-    .group-description {
-      max-width: 620px;
-      margin-top: 18px;
-      color: $text-sec;
-      font-size: 17px;
-      line-height: 1.75;
-    }
-
-    .web-case-list {
-      max-width: 680px;
-      margin-top: 64px;
-      margin-left: 72px;
-    }
-
-    .web-case {
-      position: relative;
-      padding-top: 40px;
-      border-top-color: $blue-light;
-
-      &::before {
-        position: absolute;
-        top: -1px;
-        left: 0;
-        width: 42px;
-        height: 2px;
-        background: $blue-accent;
-        content: "";
-      }
-    }
-
-    .web-case + .web-case {
-      margin-top: 80px;
-    }
-
-    .case-title {
-      color: $text;
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: -0.035em;
-      line-height: 1.45;
-    }
-
-    .copy-group {
-      margin-top: 28px;
-    }
-
-    .copy-group + .copy-group {
-      margin-top: 26px;
-      padding-top: 0;
-      border-top: 0;
-    }
-
-    .copy-label {
-      margin-bottom: 12px;
-      color: $blue;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    .copy-content {
-      gap: 12px;
-      color: $text-sec;
-      font-size: 16px;
-      line-height: 1.8;
-    }
-  }
 
   .feature-group {
     margin-top: 112px;
@@ -257,24 +138,12 @@
     .case-study {
       padding: 56px 20px 0;
     }
-    .group-title,
     .feature-group-title {
       font-size: 25px;
     }
-    .group-description,
     .feature-description {
       font-size: 15px;
     }
-    .web-case-list {
-      margin-top: 44px;
-    }
-    .web-case {
-      padding-top: 28px;
-    }
-    .web-case + .web-case {
-      margin-top: 56px;
-    }
-    .case-title,
     .feature-title {
       font-size: 20px;
     }
@@ -315,58 +184,6 @@
     }
     .shared-item {
       padding: 24px 0;
-    }
-
-    .web-expansion {
-      padding-top: 0;
-
-      .group-header {
-        max-width: none;
-        padding-top: 20px;
-      }
-      .group-header::before {
-        width: 52px;
-      }
-      .group-title {
-        font-size: 29px;
-        line-height: 1.3;
-      }
-      .group-description {
-        margin-top: 14px;
-        font-size: 15px;
-        line-height: 1.75;
-      }
-      .web-case-list {
-        max-width: none;
-        margin-top: 48px;
-        margin-left: 0;
-      }
-      .web-case {
-        padding-top: 28px;
-      }
-      .web-case + .web-case {
-        margin-top: 64px;
-      }
-      .case-title {
-        font-size: 21px;
-        line-height: 1.45;
-      }
-      .copy-group {
-        margin-top: 24px;
-      }
-      .copy-group + .copy-group {
-        margin-top: 24px;
-        padding-top: 0;
-      }
-      .copy-label {
-        margin-bottom: 10px;
-        font-size: 12px;
-      }
-      .copy-content {
-        gap: 10px;
-        font-size: 15px;
-        line-height: 1.78;
-      }
     }
   }
 }
