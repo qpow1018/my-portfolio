@@ -172,16 +172,37 @@ function IntegratedSearchCase() {
   return (
     <section className={`${styles['case-section']} ${styles['large-case']}`}>
       <header className={styles['case-header']}>
-        <p className={styles['case-label']}>통합검색</p>
+        <p className={styles['case-label']}>01 통합검색</p>
         <div>
-          <h5 className={styles['case-title']}>분리된 검색 결과를 하나의 화면에서 다루기</h5>
-          <p className={styles['case-description']}>
-            통합 backend API가 없는 상태에서 세 검색 domain의 결과와 상태를 하나의 검색 UI에 연결했다.
-          </p>
+          <h5 className={styles['case-title']}>분리된 검색 결과를 하나의 화면에서 제공</h5>
         </div>
       </header>
 
       <div className={styles['large-case-content']}>
+        <div className={styles['case-copy']}>
+          <p className={styles['copy-label']}>문제 상황</p>
+          <p>
+            기존 검색은 웨딩홀·업체·스토어가 분리되어 있었지만, 새로운 통합검색 화면에서는 세 영역의 검색 결과를 한 번에 보여줘야 했습니다.
+          </p>
+          <p>
+            백엔드 개발자와 통합 API 추가를 논의했지만, 다른 작업이 우선되어 당장 개발하기 어려운 상황이었고 기존에는 각 영역별 검색 API만 제공되고 있었습니다.
+          </p>
+        </div>
+        <div className={styles['case-copy']}>
+          <p className={styles['copy-label']}>판단 + 해결</p>
+          <p>
+            전체 검색 결과가 없을 때와 특정 영역의 검색 결과만 없을 때 보여주는 UI가 달랐기 때문에, 세 영역의 결과를 함께 판단할 수 있어야 했습니다.
+          </p>
+          <p>
+            이를 위해 Next.js Route Handler에서 웨딩홀·업체·스토어 검색 API를 병렬로 호출하고, 각 영역의 결과를 하나의 응답으로 조합했습니다.
+          </p>
+          <p>
+            또한 일부 API 요청이 실패하더라도 정상적으로 응답한 영역의 검색 결과는 보여줄 수 있어야 했습니다.
+          </p>
+          <p>
+            따라서 <code>Promise.allSettled</code>를 사용해 각 요청의 성공과 실패를 개별적으로 처리했습니다.
+          </p>
+        </div>
         <SearchDiagram />
         <div className={styles['media-placeholder']} aria-label="추후 실제 통합검색 결과 화면이 들어갈 자리">
           <span>SCREENSHOT PLACEHOLDER</span>
