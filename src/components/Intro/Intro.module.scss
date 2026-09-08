@@ -4,7 +4,7 @@
   position: relative;
   height: 800px;
   overflow: hidden;
-  background-color: $color-gray-f;
+  background-color: $gray-bg;
 
   .visual {
     position: absolute;
@@ -20,7 +20,7 @@
       left: 0;
       width: 0;
       height: 0;
-      border-top: 800px solid $color-gray-f;
+      border-top: 800px solid $gray-bg;
       border-right: 160px solid transparent;
       content: '';
     }
@@ -50,7 +50,7 @@
   }
 
   .heading {
-    color: $color-text-primary;
+    color: $text;
     font-size: 32px;
     font-weight: 700;
     line-height: 40px;
@@ -59,7 +59,7 @@
 
   .introduction {
     margin-top: 28px;
-    color: $color-text-primary;
+    color: $text;
     font-size: 16px;
     word-break: keep-all;
   }
@@ -76,17 +76,17 @@
       align-items: center;
       width: fit-content;
       margin-bottom: 8px;
-      color: $color-text-primary;
+      color: $text;
 
       svg {
         width: 20px;
         height: 20px;
         margin-right: 8px;
-        color: $color-text-secondary;
+        color: $text-sec;
       }
 
       &:hover {
-        color: $color-primary;
+        color: $blue;
       }
     }
   }
@@ -95,7 +95,7 @@
     width: 420px;
     margin-top: 80px;
     padding-top: 14px;
-    border-top: 2px solid $color-primary;
+    border-top: 2px solid $blue;
 
     ul {
       display: flex;
@@ -107,7 +107,7 @@
       min-width: 54px;
       padding: 4px 10px 5px;
       border-radius: 30px;
-      background-color: $color-primary;
+      background-color: $blue;
       color: #fff;
       font-size: 12px;
       text-align: center;

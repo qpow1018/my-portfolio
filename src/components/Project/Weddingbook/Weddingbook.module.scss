@@ -1,7 +1,7 @@
 @use '../../../style/variables' as *;
 
 .weddingbook-case-study {
-  color: $color-text-primary;
+  color: $text;
 
   .project-header {
     display: grid;
@@ -9,7 +9,7 @@
     gap: 72px;
     align-items: end;
     padding: 40px 0 88px;
-    border-bottom: 1px solid #dce1eb;
+    border-bottom: 1px solid $blue-light;
   }
 
   .info-box {
@@ -19,14 +19,14 @@
       display: block;
       width: 42px;
       height: 4px;
-      background: #365da8;
+      background: $blue;
       content: '';
     }
   }
 
   .title {
     margin-top: 20px;
-    color: #18243a;
+    color: $text;
     font-size: 60px;
     font-weight: 900;
     letter-spacing: -0.06em;
@@ -34,10 +34,10 @@
     word-break: keep-all;
   }
 
-  .description { margin-top: 24px; color: #485569; font-size: 18px; line-height: 1.65; word-break: keep-all; }
-  .skills, .project-link { color: #657187; font-size: 13px; line-height: 1.65; }
+  .description { margin-top: 24px; color: $text-sec; font-size: 18px; line-height: 1.65; word-break: keep-all; }
+  .skills, .project-link { color: $text-sec; font-size: 13px; line-height: 1.65; }
   .skills { margin-top: 18px; }
-  .project-link { display: inline-block; margin-top: 24px; color: #294e96; font-weight: 700; text-underline-offset: 4px; }
+  .project-link { display: inline-block; margin-top: 24px; color: $blue; font-weight: 700; text-underline-offset: 4px; }
 
   .project-images {
     position: relative;
@@ -49,7 +49,7 @@
       left: 0;
       width: calc(100% - 14px);
       height: calc(100% - 14px);
-      background: #edf1f8;
+      background: $blue-tint;
       content: '';
     }
   }
@@ -60,7 +60,7 @@
     width: 100%;
     padding: 0;
     overflow: hidden;
-    border: 1px solid #d8deea;
+    border: 1px solid $blue-light;
     background: #fff;
     cursor: pointer;
 
@@ -71,17 +71,17 @@
   .web-expansion { padding: 0; }
   .group-header, .feature-header, .web-case-list, .search-copy, .invitation-content, .home-copy, .shared-list { max-width: 660px; }
   .group-title, .feature-group-title { font-size: 28px; font-weight: 700; line-height: 1.4; word-break: keep-all; }
-  .group-description, .feature-description { margin-top: 14px; color: $color-text-secondary; font-size: 16px; line-height: 1.7; word-break: keep-all; }
+  .group-description, .feature-description { margin-top: 14px; color: $text-sec; font-size: 16px; line-height: 1.7; word-break: keep-all; }
 
   .web-case-list { margin-top: 56px; }
-  .web-case { padding-top: 40px; border-top: 1px solid $color-border-default; }
+  .web-case { padding-top: 40px; border-top: 1px solid $blue-light; }
   .web-case + .web-case { margin-top: 72px; }
   .case-title { font-size: 21px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
 
   .copy-group { margin-top: 24px; }
   .copy-group + .copy-group { margin-top: 32px; }
-  .copy-label { margin-bottom: 10px; color: $color-text-secondary; font-size: 13px; font-weight: 700; }
-  .copy-content { display: grid; gap: 10px; color: $color-text-secondary; font-size: 16px; line-height: 1.75; word-break: keep-all; }
+  .copy-label { margin-bottom: 10px; color: $blue; font-size: 13px; font-weight: 700; }
+  .copy-content { display: grid; gap: 10px; color: $text-sec; font-size: 16px; line-height: 1.75; word-break: keep-all; }
 
   .web-expansion {
     padding-top: 0;
@@ -90,7 +90,7 @@
       position: relative;
       max-width: 740px;
       padding-top: 24px;
-      border-top: 1px solid #cfd8e8;
+      border-top: 1px solid $blue-light;
 
       &::before {
         position: absolute;
@@ -98,13 +98,13 @@
         left: 0;
         width: 72px;
         height: 3px;
-        background: #365da8;
+        background: $blue-accent;
         content: '';
       }
     }
 
     .group-title {
-      color: #18243a;
+      color: $text;
       font-size: 36px;
       font-weight: 900;
       letter-spacing: -0.045em;
@@ -114,7 +114,7 @@
     .group-description {
       max-width: 620px;
       margin-top: 18px;
-      color: #5b677a;
+      color: $text-sec;
       font-size: 17px;
       line-height: 1.75;
     }
@@ -128,7 +128,7 @@
     .web-case {
       position: relative;
       padding-top: 40px;
-      border-top-color: #dce1eb;
+      border-top-color: $blue-light;
 
       &::before {
         position: absolute;
@@ -136,7 +136,7 @@
         left: 0;
         width: 42px;
         height: 2px;
-        background: #365da8;
+        background: $blue-accent;
         content: '';
       }
     }
@@ -144,7 +144,7 @@
     .web-case + .web-case { margin-top: 80px; }
 
     .case-title {
-      color: #202c40;
+      color: $text;
       font-size: 24px;
       font-weight: 700;
       letter-spacing: -0.035em;
@@ -161,7 +161,7 @@
 
     .copy-label {
       margin-bottom: 12px;
-      color: #4665a0;
+      color: $blue;
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.02em;
@@ -169,7 +169,7 @@
 
     .copy-content {
       gap: 12px;
-      color: #525e70;
+      color: $text-sec;
       font-size: 16px;
       line-height: 1.8;
     }
@@ -178,21 +178,21 @@
   .feature-group {
     margin-top: 112px;
     padding-top: 112px;
-    border-top: 1px solid $color-border-default;
+    border-top: 1px solid $blue-light;
   }
 
   .feature-list { display: grid; gap: 96px; margin-top: 56px; }
   .feature-case { scroll-margin-top: 24px; }
-  .feature-title { font-size: 24px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
+  .feature-title { color: $text; font-size: 24px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
   .search-copy, .home-copy, .invitation-content { margin-top: 32px; }
 
   .subcase-list { display: grid; gap: 40px; max-width: 620px; margin-top: 48px; margin-left: 32px; }
   .subcase {
     padding-top: 28px;
-    border-top: 1px solid $color-border-default;
+    border-top: 1px solid $blue-light;
 
-    h5 { font-size: 18px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
-    p { margin-top: 16px; color: $color-text-secondary; font-size: 16px; line-height: 1.75; word-break: keep-all; }
+    h5 { color: $text; font-size: 18px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
+    p { margin-top: 16px; color: $text-sec; font-size: 16px; line-height: 1.75; word-break: keep-all; }
   }
 
   .shared-improvements { padding-bottom: 8px; }
@@ -200,10 +200,10 @@
   .shared-item {
     padding: 28px 0;
 
-    & + & { border-top: 1px solid $color-border-default; }
+    & + & { border-top: 1px solid $blue-light; }
 
-    h5 { font-size: 18px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
-    p { margin-top: 12px; color: $color-text-secondary; font-size: 15px; line-height: 1.7; word-break: keep-all; }
+    h5 { color: $text; font-size: 18px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
+    p { margin-top: 12px; color: $text-sec; font-size: 15px; line-height: 1.7; word-break: keep-all; }
   }
 }
 
@@ -234,10 +234,10 @@
 
     .project-header { gap: 36px; padding-bottom: 72px; }
     .info-box::before { width: 34px; height: 3px; }
-    .title { margin-top: 16px; color: #18243a; font-size: 46px; }
-    .description { margin-top: 20px; color: #485569; }
+    .title { margin-top: 16px; color: $text; font-size: 46px; }
+    .description { margin-top: 20px; color: $text-sec; }
     .skills { margin-top: 16px; }
-    .project-link { margin-top: 20px; color: #294e96; }
+    .project-link { margin-top: 20px; color: $blue; }
     .project-images { max-width: 280px; padding: 10px 0 0 10px; }
     .project-images::before { width: calc(100% - 10px); height: calc(100% - 10px); }
 

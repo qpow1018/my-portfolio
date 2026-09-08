@@ -1,16 +1,31 @@
-$color-primary: #0072ca;
-$color-secondary: #e23e57;
-$color-text-primary: #333;
-$color-text-secondary: #5a5a5a;
-$color-border-default: #e0e0e0;
-$color-border-dark: #bdbdbd;
-$color-border-light: #f2f2f2;
-$color-gray-f: #f5f5f5;
+$blue-100: #eff6ff;
+$blue-200: #dbeafe;
+$blue-300: #bfdbfe;
+$blue-400: #93c5fd;
+$blue-500: #3b82f6;
+$blue-600: #2563eb;
+$blue-700: #1d4ed8;
+$blue-800: #1e40af;
+$blue-900: #172554;
+
+$blue: $blue-600;
+$blue-light: $blue-200;
+$blue-accent: $blue-500;
+$blue-tint: rgba($blue, 0.12);
+$blue-surface: $blue-900;
+
+$text: #333;
+$text-sec: #5a5a5a;
+$gray-bg: #f5f5f5;
+
+$border: #e0e0e0;
+$border-dark: #bdbdbd;
+$border-light: #f2f2f2;
 
 $size-container-width: 960px;
 $breakpoint-md: 1024px;
 
-$font-family-default: 'Noto Sans KR', sans-serif;
+$font-family-default: "Noto Sans KR", sans-serif;
 $letter-spacing-default: -0.3px;
 $border-radius-default: 8px;
 $transition-default: 0.25s ease;
