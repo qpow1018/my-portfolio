@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import ProjectImagesModal from "@/components/Project/ProjectImagesModal";
 
-import styles from "./Weddingbook.module.scss";
+import styles from "./WeddingbookHeader.module.scss";
 
 import WeddingbookHomeImage from "@/images/weddingbook/weddingbook_home.png";
 import WeddingbookHonsuImage from "@/images/weddingbook/weddingbook_honsu.png";

@@ -3,94 +3,6 @@
 .weddingbook-project {
   color: $text;
 
-  .project-header {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 320px;
-    gap: 72px;
-    align-items: end;
-    padding: 40px 0 88px;
-    border-bottom: 1px solid $blue-light;
-  }
-
-  .info-box {
-    max-width: 520px;
-
-    &::before {
-      display: block;
-      width: 42px;
-      height: 4px;
-      background: $blue;
-      content: "";
-    }
-  }
-
-  .title {
-    margin-top: 20px;
-    color: $text;
-    font-size: 60px;
-    font-weight: 900;
-    letter-spacing: -0.06em;
-    line-height: 1;
-    word-break: keep-all;
-  }
-
-  .description {
-    margin-top: 24px;
-    color: $text-sec;
-    font-size: 18px;
-    line-height: 1.65;
-    word-break: keep-all;
-  }
-  .skills,
-  .project-link {
-    color: $text-sec;
-    font-size: 13px;
-    line-height: 1.65;
-  }
-  .skills {
-    margin-top: 18px;
-  }
-  .project-link {
-    display: inline-block;
-    margin-top: 24px;
-    color: $blue;
-    font-weight: 700;
-    text-underline-offset: 4px;
-  }
-
-  .project-images {
-    position: relative;
-    padding: 14px 0 0 14px;
-
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: calc(100% - 14px);
-      height: calc(100% - 14px);
-      background: $blue-tint;
-      content: "";
-    }
-  }
-
-  .image-button {
-    position: relative;
-    display: block;
-    width: 100%;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid $blue-light;
-    background: #fff;
-    cursor: pointer;
-
-    .image {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-    }
-  }
-
   .case-study {
     padding-top: 72px;
   }
@@ -342,24 +254,6 @@
 
 @media (max-width: $breakpoint-md) {
   .weddingbook-project {
-    .project-header {
-      grid-template-columns: 1fr;
-      gap: 28px;
-      padding: 0 20px 56px;
-    }
-    .info-box {
-      padding-top: 0;
-    }
-    .title {
-      font-size: 36px;
-    }
-    .description {
-      margin-top: 16px;
-      font-size: 15px;
-    }
-    .project-images {
-      max-width: 260px;
-    }
     .case-study {
       padding: 56px 20px 0;
     }
@@ -421,39 +315,6 @@
     }
     .shared-item {
       padding: 24px 0;
-    }
-
-    .project-header {
-      gap: 36px;
-      padding-bottom: 72px;
-    }
-    .info-box::before {
-      width: 34px;
-      height: 3px;
-    }
-    .title {
-      margin-top: 16px;
-      color: $text;
-      font-size: 46px;
-    }
-    .description {
-      margin-top: 20px;
-      color: $text-sec;
-    }
-    .skills {
-      margin-top: 16px;
-    }
-    .project-link {
-      margin-top: 20px;
-      color: $blue;
-    }
-    .project-images {
-      max-width: 280px;
-      padding: 10px 0 0 10px;
-    }
-    .project-images::before {
-      width: calc(100% - 10px);
-      height: calc(100% - 10px);
     }
 
     .web-expansion {
