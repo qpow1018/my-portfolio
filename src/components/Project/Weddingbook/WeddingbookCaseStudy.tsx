@@ -218,17 +218,16 @@ function InvitationCase() {
   return (
     <section className={`${styles['case-section']} ${styles['large-case']}`}>
       <header className={styles['case-header']}>
-        <p className={styles['case-label']}>청첩장 편집</p>
+        <p className={styles['case-label']}>02 모바일 청첩장</p>
         <div>
-          <h5 className={styles['case-title']}>편집 데이터가 저장되기까지의 흐름</h5>
+          <h5 className={styles['case-title']}>여러 영역의 정보를 입력하고 결과를 확인하며 청첩장을 완성하는 제작 기능 개발</h5>
           <p className={styles['case-description']}>
-            서버 응답을 편집 가능한 데이터로 변환하고, 사용자의 편집 내용을 검증·정리해 Preview와 Save 요청으로 연결했다.
+            여러 영역으로 구성된 모바일 청첩장의 작성·수정 화면을 개발했습니다. 서버에서 받은 데이터는 작성 화면에서 사용할 수 있는 형태로 변환하고, 사용자가 입력한 값은 검증과 정규화를 거쳐 저장할 수 있도록 구성했습니다.
           </p>
         </div>
       </header>
 
       <div className={styles['large-case-content']}>
-        <InvitationLifecycleDiagram />
         <div className={styles['invitation-image-layout']}>
           <img src={WeddingbookInvitationImage} alt="청첩장 기본 정보 편집 화면" />
           <p>기본 정보 편집 화면</p>
@@ -237,27 +236,24 @@ function InvitationCase() {
         <div className={styles['subcase-list']}>
           <article className={styles['subcase']}>
             <div>
-              <p className={styles['subcase-label']}>이미지 편집</p>
-              <h6>이미지 선택부터 저장 가능한 데이터까지</h6>
+              <h6>업로드한 이미지를 바로 확인할 수 있도록 처리</h6>
             </div>
-            <ImageEditingDiagram />
-            <p className={styles['media-note']}>Crop modal 화면은 추후 실제 screenshot을 추가할 수 있음</p>
+            <p>
+              이미지 업로드 후 서버에서 URL을 반환받더라도 실제 이미지 처리가 완료되기까지 시간차가 있어, 반환받은 URL을 바로 사용하면 이미지가 표시되지 않는 경우가 있었습니다.
+            </p>
+            <p>
+              사용자가 선택한 이미지로 <code>URL.createObjectURL()</code>을 이용해 화면 표시용 URL을 별도로 생성하고, 서버 저장에 사용하는 이미지 URL과 분리했습니다. 작성 화면과 실시간 미리보기에서는 화면 표시용 URL을 사용하고, 저장할 때는 화면에서만 필요한 값을 제외했습니다.
+            </p>
           </article>
           <article className={styles['subcase']}>
             <div>
-              <p className={styles['subcase-label']}>저장하지 않고 나가기</p>
-              <h6>이전 데이터와 현재 편집 데이터를 비교해 변경 여부를 판단</h6>
+              <h6>작성 중 변경사항 보호</h6>
             </div>
-            <ExitGuardDiagram />
-            <p className={styles['media-note']}>Exit modal 화면은 추후 실제 screenshot을 추가할 수 있음</p>
+            <p>
+              작성 중인 내용을 실수로 잃지 않도록 최초 데이터와 현재 데이터를 실제 저장 형태로 정규화해 변경 여부를 판단했습니다. 변경사항이 있는 상태에서 뒤로 가기가 발생하면 저장 여부를 확인할 수 있도록 이탈 확인 모달을 연결했습니다.
+            </p>
           </article>
         </div>
-
-        <aside className={styles['supporting-note']}>
-          <p>Supporting implementation</p>
-          <strong>useOverlayScrollLock</strong>
-          <span>nested overlay가 겹칠 때 lockCount를 기준으로 scroll lock 상태를 관리</span>
-        </aside>
       </div>
     </section>
   );
@@ -416,44 +412,6 @@ function SearchDiagram() {
           <li>error</li>
         </ul>
       </div>
-    </div>
-  );
-}
-
-function InvitationLifecycleDiagram() {
-  return (
-    <div className={styles['invitation-flow']} aria-label="청첩장 편집 데이터 흐름">
-      <div><span>Server Response</span><strong>초기 데이터</strong></div>
-      <span className={styles['diagram-arrow']} aria-hidden="true" />
-      <div><span>UI Data</span><strong>편집 가능한 데이터</strong></div>
-      <span className={styles['diagram-arrow']} aria-hidden="true" />
-      <div><span>User Edit</span><strong>현재 편집 데이터</strong></div>
-      <span className={styles['diagram-arrow']} aria-hidden="true" />
-      <div><span>Request Data</span><strong>validation · normalization</strong></div>
-      <span className={styles['diagram-arrow']} aria-hidden="true" />
-      <div><span>Preview / Save</span><strong>요청으로 연결</strong></div>
-    </div>
-  );
-}
-
-function ImageEditingDiagram() {
-  return (
-    <ol className={styles['inline-flow']} aria-label="청첩장 이미지 편집 흐름">
-      <li>이미지 선택</li>
-      <li>validation</li>
-      <li>preview / crop</li>
-      <li>순서 변경 / 삭제</li>
-      <li>request data</li>
-    </ol>
-  );
-}
-
-function ExitGuardDiagram() {
-  return (
-    <div className={styles['exit-flow']} aria-label="청첩장 저장하지 않고 나가기 흐름">
-      <div><span>이전 데이터</span><strong>현재 편집 데이터</strong></div>
-      <span className={styles['diagram-arrow']} aria-hidden="true" />
-      <div><span>변경 여부 판단</span><strong>나가기 확인</strong></div>
     </div>
   );
 }
