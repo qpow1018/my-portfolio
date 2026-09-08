@@ -89,31 +89,29 @@ function InvitationCase() {
         사용자가 입력한 값은 검증과 정규화를 거쳐 저장할 수 있도록 구성했습니다.
       </p>
 
-      <div className={styles["subcase-list"]}>
-        <article className={styles["subcase"]}>
-          <h5>업로드한 이미지를 바로 확인할 수 있도록 처리</h5>
+      <div className={styles["case-detail-list"]}>
+        <CaseDetailItem title="업로드한 이미지를 바로 확인할 수 있도록 처리">
           <p>
             이미지 업로드 후 서버에서 URL을 반환받더라도 실제 이미지 처리가
             완료되기까지 시간차가 있어, 반환받은 URL을 바로 사용하면 이미지가
             표시되지 않는 경우가 있었습니다.
           </p>
           <p>
-            사용자가 선택한 이미지로 <code>URL.createObjectURL()</code>을 이용해
-            화면 표시용 URL을 별도로 생성했습니다. 작성 화면과 실시간
-            미리보기에서는 화면 표시용 URL을 사용하고, 서버에서 받은 이미지
-            URL은 저장에 사용하도록 두 값을 분리했습니다. 저장할 때는 화면에서만
-            필요한 값을 제외했습니다.
+            사용자가 선택한 이미지로 URL.createObjectURL()을 이용해 화면 표시용
+            URL을 별도로 생성했습니다. 작성 화면과 실시간 미리보기에서는 화면
+            표시용 URL을 사용하고, 서버에서 받은 이미지 URL은 저장에 사용하도록
+            두 값을 분리했습니다. 저장할 때는 화면에서만 필요한 값을
+            제외했습니다.
           </p>
-        </article>
-        <article className={styles["subcase"]}>
-          <h5>작성 중 변경사항 보호</h5>
+        </CaseDetailItem>
+        <CaseDetailItem title="작성 중 변경사항 보호">
           <p>
             작성 중인 내용을 실수로 잃지 않도록 최초 데이터와 현재 데이터를 실제
             저장 형태로 정규화해 변경 여부를 판단했습니다. 변경사항이 있는
             상태에서 뒤로 가기가 발생하면 저장 여부를 확인할 수 있도록 이탈 확인
             모달을 연결했습니다.
           </p>
-        </article>
+        </CaseDetailItem>
       </div>
     </CaseBox>
   );
@@ -156,8 +154,8 @@ function SharedImprovements() {
       title="공통 UI"
       summary="서비스에서 반복해서 사용하는 공통 요소의 구조와 사용 방식 개선"
     >
-      <div className={styles["shared-list"]}>
-        <SharedItem title="Toast / Snackbar">
+      <div className={styles["case-detail-list"]}>
+        <CaseDetailItem title="Toast / Snackbar">
           <p>
             다양한 사용 방식이 추가되며 복잡해진 알림 구조를 역할에 맞게 분리
           </p>
@@ -172,8 +170,8 @@ function SharedImprovements() {
             사용처를 새로운 구조로 전환했으며, 이후 Next.js 웹에서도 기존 상태
             관리 방식은 유지하면서 같은 Toast/Snackbar 구조를 적용했습니다.
           </p>
-        </SharedItem>
-        <SharedItem title="Header">
+        </CaseDetailItem>
+        <CaseDetailItem title="Header">
           <p>여러 방식으로 사용되던 공통 Header의 역할과 사용 방식 정리</p>
           <p>
             기존에는 AppHeader와 CustomHeader가 함께 사용되고 있었고, 화면마다
@@ -193,19 +191,19 @@ function SharedImprovements() {
             작업도 진행했지만, 전체 Header 전환을 완료하기 전에 작업이
             종료되었습니다.
           </p>
-        </SharedItem>
-        <SharedItem title="Icon">
+        </CaseDetailItem>
+        <CaseDetailItem title="Icon">
           <p>아이콘의 종류와 표시 크기가 결합되어 있던 구조를 분리</p>
           <p>
-            기존 Icon은 <code>size</code> 값에 따라 서로 다른 디렉터리의 SVG를
+            기존 Icon은 size 값에 따라 서로 다른 디렉터리의 SVG를
             불러오는 구조였습니다. 같은 종류의 아이콘도 크기별 SVG가 따로
             존재했고, 필요한 경우에는 호출하는 쪽에서 사용할 SVG가 위치한
             디렉터리까지 지정해야 했습니다.
           </p>
           <p>
             아이콘의 종류와 화면에 표시할 크기는 서로 다른 정보라고 판단해 두
-            역할을 분리했습니다. SVG는 하나의 경로에서 <code>name</code>으로
-            선택하고, <code>size</code>는 표시 크기만 담당하도록 변경했으며
+            역할을 분리했습니다. SVG는 하나의 경로에서 name으로 선택하고,
+            size는 표시 크기만 담당하도록 변경했으며
             색상도 별도로 지정할 수 있도록 정리했습니다.
           </p>
           <p>
@@ -213,13 +211,13 @@ function SharedImprovements() {
             Icon 구현을 제거했습니다. 이후 추가된 화면과 아이콘에서도 같은
             구조가 사용되었습니다.
           </p>
-        </SharedItem>
+        </CaseDetailItem>
       </div>
     </CaseBox>
   );
 }
 
-function SharedItem({
+function CaseDetailItem({
   title,
   children,
 }: {
@@ -227,7 +225,7 @@ function SharedItem({
   children: ReactNode;
 }) {
   return (
-    <article className={styles["shared-item"]}>
+    <article className={styles["case-detail-item"]}>
       <h5>{title}</h5>
       <div>{children}</div>
     </article>
