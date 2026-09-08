@@ -68,14 +68,6 @@
       background-color: $blue;
     }
 
-    .case-description {
-      margin-top: 16px;
-      color: $text-sec;
-      font-size: 15px;
-      line-height: 1.75;
-      word-break: keep-all;
-    }
-
     .subcase-list {
       display: grid;
       gap: 40px;
@@ -178,7 +170,6 @@
         line-height: 1.75;
       }
 
-      .case-description,
       .subcase p {
         font-size: 15px;
         line-height: 1.75;
