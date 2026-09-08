@@ -9,12 +9,12 @@ import WeddingbookWeddinghallImage from '@/images/weddingbook/weddingbook_weddin
 import useWindowSize from '@/hooks/useWindowSize';
 
 import ProjectImagesModal from '../ProjectImagesModal';
-import styles from './WeddingbookCaseStudy.module.scss';
+import styles from './Weddingbook.module.scss';
 
 type TCopyGroupProps = { label: string; content: ReactNode[]; isLabelVisible: boolean };
 type TCaseCopyProps = { problem: ReactNode[]; solution: ReactNode[]; solutionLabel?: string; isLabelVisible?: boolean };
 
-export default function WeddingbookCaseStudy() {
+export default function Weddingbook() {
   return (
     <article className={styles['weddingbook-case-study']}>
       <WeddingbookHeader />

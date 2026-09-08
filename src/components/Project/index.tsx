@@ -1,4 +1,4 @@
-import WeddingbookService from "./Weddingbook/WeddingbookService";
+import Weddingbook from "./Weddingbook/Weddingbook";
 import styles from "./Project.module.scss";
 
 export default function Project() {
@@ -7,7 +7,7 @@ export default function Project() {
       <div className={styles["container"]}>
         <h2 className={styles["section-heading"]}>대표 프로젝트</h2>
         <div className={styles["project-content"]}>
-          <WeddingbookService />
+          <Weddingbook />
         </div>
       </div>
     </section>
