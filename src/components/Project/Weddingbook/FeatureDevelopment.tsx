@@ -23,27 +23,23 @@ export default function FeatureDevelopment() {
   );
 }
 
-function FeatureCase({
-  label,
-  title,
-  summary,
-  children,
-}: {
+function CaseBox(props: {
   label: string;
   title: string;
   summary: string;
   children: ReactNode;
 }) {
+  const { label, title, summary, children } = props;
+
   return (
-    <article className={styles["feature-case"]}>
+    <article className={styles["case-box"]}>
       <span className={styles["case-number"]} aria-hidden="true">
         {label}
       </span>
-
       <div className={styles["case-wrap"]}>
         <h4 className={styles["case-title"]}>{title}</h4>
         <p className={styles["case-summary"]}>{summary}</p>
-        {children}
+        <div className={styles["case-content"]}>{children}</div>
       </div>
     </article>
   );
@@ -51,42 +47,40 @@ function FeatureCase({
 
 function IntegratedSearchCase() {
   return (
-    <FeatureCase
+    <CaseBox
       label="01"
       title="통합검색"
       summary="분리되어 있던 검색 결과를 하나의 화면에서 제공"
     >
-      <div className={styles["case-content"]}>
-        <p>
-          기존 검색은 웨딩홀·업체·스토어가 각각 분리되어 있었지만, 새로운
-          통합검색에서는 세 영역의 검색 결과를 한 화면에서 함께 보여줘야
-          했습니다.
-        </p>
-        <p>
-          통합 API 추가를 백엔드 개발자와 논의했지만 다른 작업이 우선되어 바로
-          개발하기 어려웠고, 기존에는 각 영역별 검색 API만 제공되고 있었습니다.
-        </p>
-        <div className={styles["divider"]} />
-        <p>
-          전체 검색 결과가 없는 경우와 특정 영역의 검색 결과만 없는 경우에
-          보여주는 화면이 달랐기 때문에, 세 영역의 결과를 함께 확인할 수 있는
-          구조가 필요했습니다.
-        </p>
-        <p>
-          Next.js Route Handler에서 웨딩홀·업체·스토어 검색 API를 병렬로
-          호출하고 하나의 응답으로 조합했습니다. 또한 일부 요청이
-          실패하더라도 정상적으로 응답한 영역의 검색 결과는 보여줄 수 있도록{" "}
-          <code>Promise.allSettled</code>를 사용해 각 요청의 성공과 실패를
-          개별적으로 처리했습니다.
-        </p>
-      </div>
-    </FeatureCase>
+      <p>
+        기존 검색은 웨딩홀·업체·스토어가 각각 분리되어 있었지만, 새로운
+        통합검색에서는 세 영역의 검색 결과를 한 화면에서 함께 보여줘야
+        했습니다.
+      </p>
+      <p>
+        통합 API 추가를 백엔드 개발자와 논의했지만 다른 작업이 우선되어 바로
+        개발하기 어려웠고, 기존에는 각 영역별 검색 API만 제공되고 있었습니다.
+      </p>
+      <div className={styles["divider"]} />
+      <p>
+        전체 검색 결과가 없는 경우와 특정 영역의 검색 결과만 없는 경우에
+        보여주는 화면이 달랐기 때문에, 세 영역의 결과를 함께 확인할 수 있는
+        구조가 필요했습니다.
+      </p>
+      <p>
+        Next.js Route Handler에서 웨딩홀·업체·스토어 검색 API를 병렬로
+        호출하고 하나의 응답으로 조합했습니다. 또한 일부 요청이
+        실패하더라도 정상적으로 응답한 영역의 검색 결과는 보여줄 수 있도록{" "}
+        <code>Promise.allSettled</code>를 사용해 각 요청의 성공과 실패를
+        개별적으로 처리했습니다.
+      </p>
+    </CaseBox>
   );
 }
 
 function InvitationCase() {
   return (
-    <FeatureCase
+    <CaseBox
       label="02"
       title="모바일 청첩장"
       summary="여러 영역의 정보를 입력하고 결과를 확인하며 청첩장을 완성하는 제작 기능 개발"
@@ -122,45 +116,43 @@ function InvitationCase() {
           </p>
         </article>
       </div>
-    </FeatureCase>
+    </CaseBox>
   );
 }
 
 function HomeCase() {
   return (
-    <FeatureCase
+    <CaseBox
       label="03"
       title="홈 화면"
       summary="프론트엔드에 고정되어 있던 홈 화면을 어드민에서 관리할 수 있는 구조로 전환"
     >
-      <div className={styles["case-content"]}>
-        <p>
-          기존 홈 화면은 영역의 구성과 노출 순서뿐 아니라 배너, 문구, 이미지,
-          링크, 일부 업체 정보 등 화면을 구성하는 많은 내용이 프론트엔드 코드에
-          직접 작성되어 있었습니다.
-        </p>
-        <p>
-          이 때문에 홈 화면의 구성이나 내용을 변경하려면 프론트엔드 코드를 직접
-          수정해야 했습니다.
-        </p>
-        <div className={styles["divider"]} />
-        <p>
-          홈 화면을 어드민에서 구성하고 관리할 수 있도록, 서버에서 전달받은
-          타입과 설정에 따라 필요한 컴포넌트를 렌더링하는 구조로 변경했습니다.
-        </p>
-        <p>
-          배너, 메뉴, 상품 목록 등 홈을 구성하는 각 영역을 타입별 컴포넌트로
-          분리하고, 서버에서 전달받은 순서와 설정에 따라 조합해 화면을
-          렌더링했습니다.
-        </p>
-      </div>
-    </FeatureCase>
+      <p>
+        기존 홈 화면은 영역의 구성과 노출 순서뿐 아니라 배너, 문구, 이미지,
+        링크, 일부 업체 정보 등 화면을 구성하는 많은 내용이 프론트엔드 코드에
+        직접 작성되어 있었습니다.
+      </p>
+      <p>
+        이 때문에 홈 화면의 구성이나 내용을 변경하려면 프론트엔드 코드를 직접
+        수정해야 했습니다.
+      </p>
+      <div className={styles["divider"]} />
+      <p>
+        홈 화면을 어드민에서 구성하고 관리할 수 있도록, 서버에서 전달받은
+        타입과 설정에 따라 필요한 컴포넌트를 렌더링하는 구조로 변경했습니다.
+      </p>
+      <p>
+        배너, 메뉴, 상품 목록 등 홈을 구성하는 각 영역을 타입별 컴포넌트로
+        분리하고, 서버에서 전달받은 순서와 설정에 따라 조합해 화면을
+        렌더링했습니다.
+      </p>
+    </CaseBox>
   );
 }
 
 function SharedImprovements() {
   return (
-    <FeatureCase
+    <CaseBox
       label="04"
       title="공통 UI"
       summary="서비스에서 반복해서 사용하는 공통 요소의 구조와 사용 방식 개선"
@@ -224,7 +216,7 @@ function SharedImprovements() {
           </p>
         </SharedItem>
       </div>
-    </FeatureCase>
+    </CaseBox>
   );
 }
 
