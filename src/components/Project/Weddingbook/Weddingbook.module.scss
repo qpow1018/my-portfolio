@@ -1,6 +1,6 @@
-@use '../../../style/variables' as *;
+@use "style/variables" as *;
 
-.weddingbook-case-study {
+.weddingbook-project {
   color: $text;
 
   .project-header {
@@ -20,7 +20,7 @@
       width: 42px;
       height: 4px;
       background: $blue;
-      content: '';
+      content: "";
     }
   }
 
@@ -34,10 +34,29 @@
     word-break: keep-all;
   }
 
-  .description { margin-top: 24px; color: $text-sec; font-size: 18px; line-height: 1.65; word-break: keep-all; }
-  .skills, .project-link { color: $text-sec; font-size: 13px; line-height: 1.65; }
-  .skills { margin-top: 18px; }
-  .project-link { display: inline-block; margin-top: 24px; color: $blue; font-weight: 700; text-underline-offset: 4px; }
+  .description {
+    margin-top: 24px;
+    color: $text-sec;
+    font-size: 18px;
+    line-height: 1.65;
+    word-break: keep-all;
+  }
+  .skills,
+  .project-link {
+    color: $text-sec;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .skills {
+    margin-top: 18px;
+  }
+  .project-link {
+    display: inline-block;
+    margin-top: 24px;
+    color: $blue;
+    font-weight: 700;
+    text-underline-offset: 4px;
+  }
 
   .project-images {
     position: relative;
@@ -50,7 +69,7 @@
       width: calc(100% - 14px);
       height: calc(100% - 14px);
       background: $blue-tint;
-      content: '';
+      content: "";
     }
   }
 
@@ -64,24 +83,82 @@
     background: #fff;
     cursor: pointer;
 
-    .image { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
   }
 
-  .case-study { padding-top: 72px; }
-  .web-expansion { padding: 0; }
-  .group-header, .feature-header, .web-case-list, .search-copy, .invitation-content, .home-copy, .shared-list { max-width: 660px; }
-  .group-title, .feature-group-title { font-size: 28px; font-weight: 700; line-height: 1.4; word-break: keep-all; }
-  .group-description, .feature-description { margin-top: 14px; color: $text-sec; font-size: 16px; line-height: 1.7; word-break: keep-all; }
+  .case-study {
+    padding-top: 72px;
+  }
+  .web-expansion {
+    padding: 0;
+  }
+  .group-header,
+  .feature-header,
+  .web-case-list,
+  .search-copy,
+  .invitation-content,
+  .home-copy,
+  .shared-list {
+    max-width: 660px;
+  }
+  .group-title,
+  .feature-group-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.4;
+    word-break: keep-all;
+  }
+  .group-description,
+  .feature-description {
+    margin-top: 14px;
+    color: $text-sec;
+    font-size: 16px;
+    line-height: 1.7;
+    word-break: keep-all;
+  }
 
-  .web-case-list { margin-top: 56px; }
-  .web-case { padding-top: 40px; border-top: 1px solid $blue-light; }
-  .web-case + .web-case { margin-top: 72px; }
-  .case-title { font-size: 21px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
+  .web-case-list {
+    margin-top: 56px;
+  }
+  .web-case {
+    padding-top: 40px;
+    border-top: 1px solid $blue-light;
+  }
+  .web-case + .web-case {
+    margin-top: 72px;
+  }
+  .case-title {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
 
-  .copy-group { margin-top: 24px; }
-  .copy-group + .copy-group { margin-top: 32px; }
-  .copy-label { margin-bottom: 10px; color: $blue; font-size: 13px; font-weight: 700; }
-  .copy-content { display: grid; gap: 10px; color: $text-sec; font-size: 16px; line-height: 1.75; word-break: keep-all; }
+  .copy-group {
+    margin-top: 24px;
+  }
+  .copy-group + .copy-group {
+    margin-top: 32px;
+  }
+  .copy-label {
+    margin-bottom: 10px;
+    color: $blue;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .copy-content {
+    display: grid;
+    gap: 10px;
+    color: $text-sec;
+    font-size: 16px;
+    line-height: 1.75;
+    word-break: keep-all;
+  }
 
   .web-expansion {
     padding-top: 0;
@@ -99,7 +176,7 @@
         width: 72px;
         height: 3px;
         background: $blue-accent;
-        content: '';
+        content: "";
       }
     }
 
@@ -137,11 +214,13 @@
         width: 42px;
         height: 2px;
         background: $blue-accent;
-        content: '';
+        content: "";
       }
     }
 
-    .web-case + .web-case { margin-top: 80px; }
+    .web-case + .web-case {
+      margin-top: 80px;
+    }
 
     .case-title {
       color: $text;
@@ -151,7 +230,9 @@
       line-height: 1.45;
     }
 
-    .copy-group { margin-top: 28px; }
+    .copy-group {
+      margin-top: 28px;
+    }
 
     .copy-group + .copy-group {
       margin-top: 26px;
@@ -181,81 +262,250 @@
     border-top: 1px solid $blue-light;
   }
 
-  .feature-list { display: grid; gap: 96px; margin-top: 56px; }
-  .feature-case { scroll-margin-top: 24px; }
-  .feature-title { color: $text; font-size: 24px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
-  .search-copy, .home-copy, .invitation-content { margin-top: 32px; }
+  .feature-list {
+    display: grid;
+    gap: 96px;
+    margin-top: 56px;
+  }
+  .feature-case {
+    scroll-margin-top: 24px;
+  }
+  .feature-title {
+    color: $text;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+  .search-copy,
+  .home-copy,
+  .invitation-content {
+    margin-top: 32px;
+  }
 
-  .subcase-list { display: grid; gap: 40px; max-width: 620px; margin-top: 48px; margin-left: 32px; }
+  .subcase-list {
+    display: grid;
+    gap: 40px;
+    max-width: 620px;
+    margin-top: 48px;
+    margin-left: 32px;
+  }
   .subcase {
     padding-top: 28px;
     border-top: 1px solid $blue-light;
 
-    h5 { color: $text; font-size: 18px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
-    p { margin-top: 16px; color: $text-sec; font-size: 16px; line-height: 1.75; word-break: keep-all; }
+    h5 {
+      color: $text;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.5;
+      word-break: keep-all;
+    }
+    p {
+      margin-top: 16px;
+      color: $text-sec;
+      font-size: 16px;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
   }
 
-  .shared-improvements { padding-bottom: 8px; }
-  .shared-list { margin-top: 40px; }
+  .shared-improvements {
+    padding-bottom: 8px;
+  }
+  .shared-list {
+    margin-top: 40px;
+  }
   .shared-item {
     padding: 28px 0;
 
-    & + & { border-top: 1px solid $blue-light; }
+    & + & {
+      border-top: 1px solid $blue-light;
+    }
 
-    h5 { color: $text; font-size: 18px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
-    p { margin-top: 12px; color: $text-sec; font-size: 15px; line-height: 1.7; word-break: keep-all; }
+    h5 {
+      color: $text;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.5;
+      word-break: keep-all;
+    }
+    p {
+      margin-top: 12px;
+      color: $text-sec;
+      font-size: 15px;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
   }
 }
 
 @media (max-width: $breakpoint-md) {
-  .weddingbook-case-study {
-    .project-header { grid-template-columns: 1fr; gap: 28px; padding: 0 20px 56px; }
-    .info-box { padding-top: 0; }
-    .title { font-size: 36px; }
-    .description { margin-top: 16px; font-size: 15px; }
-    .project-images { max-width: 260px; }
-    .case-study { padding: 56px 20px 0; }
-    .group-title, .feature-group-title { font-size: 25px; }
-    .group-description, .feature-description { font-size: 15px; }
-    .web-case-list { margin-top: 44px; }
-    .web-case { padding-top: 28px; }
-    .web-case + .web-case { margin-top: 56px; }
-    .case-title, .feature-title { font-size: 20px; }
-    .copy-group { margin-top: 20px; }
-    .copy-group + .copy-group { margin-top: 28px; }
-    .copy-content, .subcase p { font-size: 15px; line-height: 1.7; }
-    .feature-group { margin-top: 80px; padding-top: 80px; }
-    .feature-list { gap: 72px; margin-top: 48px; }
-    .search-copy, .home-copy, .invitation-content { margin-top: 24px; }
-    .subcase-list { gap: 32px; margin-top: 40px; margin-left: 0; }
-    .subcase { padding-top: 24px; }
-    .shared-list { margin-top: 32px; }
-    .shared-item { padding: 24px 0; }
+  .weddingbook-project {
+    .project-header {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 0 20px 56px;
+    }
+    .info-box {
+      padding-top: 0;
+    }
+    .title {
+      font-size: 36px;
+    }
+    .description {
+      margin-top: 16px;
+      font-size: 15px;
+    }
+    .project-images {
+      max-width: 260px;
+    }
+    .case-study {
+      padding: 56px 20px 0;
+    }
+    .group-title,
+    .feature-group-title {
+      font-size: 25px;
+    }
+    .group-description,
+    .feature-description {
+      font-size: 15px;
+    }
+    .web-case-list {
+      margin-top: 44px;
+    }
+    .web-case {
+      padding-top: 28px;
+    }
+    .web-case + .web-case {
+      margin-top: 56px;
+    }
+    .case-title,
+    .feature-title {
+      font-size: 20px;
+    }
+    .copy-group {
+      margin-top: 20px;
+    }
+    .copy-group + .copy-group {
+      margin-top: 28px;
+    }
+    .copy-content,
+    .subcase p {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .feature-group {
+      margin-top: 80px;
+      padding-top: 80px;
+    }
+    .feature-list {
+      gap: 72px;
+      margin-top: 48px;
+    }
+    .search-copy,
+    .home-copy,
+    .invitation-content {
+      margin-top: 24px;
+    }
+    .subcase-list {
+      gap: 32px;
+      margin-top: 40px;
+      margin-left: 0;
+    }
+    .subcase {
+      padding-top: 24px;
+    }
+    .shared-list {
+      margin-top: 32px;
+    }
+    .shared-item {
+      padding: 24px 0;
+    }
 
-    .project-header { gap: 36px; padding-bottom: 72px; }
-    .info-box::before { width: 34px; height: 3px; }
-    .title { margin-top: 16px; color: $text; font-size: 46px; }
-    .description { margin-top: 20px; color: $text-sec; }
-    .skills { margin-top: 16px; }
-    .project-link { margin-top: 20px; color: $blue; }
-    .project-images { max-width: 280px; padding: 10px 0 0 10px; }
-    .project-images::before { width: calc(100% - 10px); height: calc(100% - 10px); }
+    .project-header {
+      gap: 36px;
+      padding-bottom: 72px;
+    }
+    .info-box::before {
+      width: 34px;
+      height: 3px;
+    }
+    .title {
+      margin-top: 16px;
+      color: $text;
+      font-size: 46px;
+    }
+    .description {
+      margin-top: 20px;
+      color: $text-sec;
+    }
+    .skills {
+      margin-top: 16px;
+    }
+    .project-link {
+      margin-top: 20px;
+      color: $blue;
+    }
+    .project-images {
+      max-width: 280px;
+      padding: 10px 0 0 10px;
+    }
+    .project-images::before {
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+    }
 
     .web-expansion {
       padding-top: 0;
 
-      .group-header { max-width: none; padding-top: 20px; }
-      .group-header::before { width: 52px; }
-      .group-title { font-size: 29px; line-height: 1.3; }
-      .group-description { margin-top: 14px; font-size: 15px; line-height: 1.75; }
-      .web-case-list { max-width: none; margin-top: 48px; margin-left: 0; }
-      .web-case { padding-top: 28px; }
-      .web-case + .web-case { margin-top: 64px; }
-      .case-title { font-size: 21px; line-height: 1.45; }
-      .copy-group { margin-top: 24px; }
-      .copy-group + .copy-group { margin-top: 24px; padding-top: 0; }
-      .copy-label { margin-bottom: 10px; font-size: 12px; }
-      .copy-content { gap: 10px; font-size: 15px; line-height: 1.78; }
+      .group-header {
+        max-width: none;
+        padding-top: 20px;
+      }
+      .group-header::before {
+        width: 52px;
+      }
+      .group-title {
+        font-size: 29px;
+        line-height: 1.3;
+      }
+      .group-description {
+        margin-top: 14px;
+        font-size: 15px;
+        line-height: 1.75;
+      }
+      .web-case-list {
+        max-width: none;
+        margin-top: 48px;
+        margin-left: 0;
+      }
+      .web-case {
+        padding-top: 28px;
+      }
+      .web-case + .web-case {
+        margin-top: 64px;
+      }
+      .case-title {
+        font-size: 21px;
+        line-height: 1.45;
+      }
+      .copy-group {
+        margin-top: 24px;
+      }
+      .copy-group + .copy-group {
+        margin-top: 24px;
+        padding-top: 0;
+      }
+      .copy-label {
+        margin-bottom: 10px;
+        font-size: 12px;
+      }
+      .copy-content {
+        gap: 10px;
+        font-size: 15px;
+        line-height: 1.78;
+      }
     }
   }
 }
