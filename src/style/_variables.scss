@@ -8,10 +8,10 @@ $blue-700: #365787;
 $blue-800: #294269;
 $blue-900: #1c2d49;
 
-$blue: $blue-600;
-$blue-light: $blue-200;
-$blue-accent: $blue-500;
-$blue-tint: rgba($blue, 0.12);
+$blue-tint: rgba($blue-500, 0.05);
+$blue-light: $blue-300;
+$blue: $blue-500;
+$blue-accent: $blue-700;
 $blue-surface: $blue-900;
 
 $text: #333;
