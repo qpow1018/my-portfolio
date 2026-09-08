@@ -1,977 +1,261 @@
 @use '../../../style/variables' as *;
 
 .weddingbook-case-study {
+  color: $color-text-primary;
+
   .project-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 64px;
-    padding: 24px 0 80px;
-    border-bottom: 1px solid $color-border-default;
-
-    .info-box {
-      max-width: 440px;
-      padding-top: 20px;
-    }
-
-    .title {
-      font-size: 48px;
-      font-weight: 700;
-      word-break: keep-all;
-    }
-
-    .description {
-      white-space: pre-line;
-      word-break: keep-all;
-      margin-top: 24px;
-      font-size: 18px;
-      color: $color-text-secondary;
-    }
-
-    .skills {
-      margin-top: 20px;
-      font-size: 12px;
-      font-weight: 500;
-      color: $color-primary;
-    }
-
-    .project-link {
-      margin-top: 20px;
-    }
-
-    .project-images {
-      flex-shrink: 0;
-      width: 440px;
-
-      .image-button {
-        aspect-ratio: 16 / 9;
-        background: $color-gray-f;
-        border: 1px solid $color-border-default;
-        border-radius: $border-radius-default;
-        cursor: pointer;
-        display: block;
-        overflow: hidden;
-        padding: 0;
-        width: 100%;
-
-        .image {
-          display: block;
-          height: 100%;
-          object-fit: cover;
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  .case-study {
-    padding-top: 72px;
-  }
-
-  .case-header {
     display: grid;
-    grid-template-columns: 180px minmax(0, 1fr);
-    gap: 56px;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 72px;
+    align-items: end;
+    padding: 40px 0 88px;
+    border-bottom: 1px solid #dce1eb;
+  }
 
-    .case-label {
-      color: $color-primary;
-      font-size: 24px;
-      font-weight: 700;
-      opacity: 0.5;
-    }
+  .info-box {
+    max-width: 520px;
 
-    .case-title {
-      color: $color-text-primary;
-      font-size: 24px;
-      font-weight: 700;
-      word-break: keep-all;
-    }
-
-    .case-description {
-      margin-top: 12px;
-      color: $color-text-secondary;
-      font-size: 15px;
-      word-break: keep-all;
+    &::before {
+      display: block;
+      width: 42px;
+      height: 4px;
+      background: #365da8;
+      content: '';
     }
   }
 
-  .web-expansion-header {
+  .title {
+    margin-top: 20px;
+    color: #18243a;
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: -0.06em;
+    line-height: 1;
+    word-break: keep-all;
+  }
+
+  .description { margin-top: 24px; color: #485569; font-size: 18px; line-height: 1.65; word-break: keep-all; }
+  .skills, .project-link { color: #657187; font-size: 13px; line-height: 1.65; }
+  .skills { margin-top: 18px; }
+  .project-link { display: inline-block; margin-top: 24px; color: #294e96; font-weight: 700; text-underline-offset: 4px; }
+
+  .project-images {
+    position: relative;
+    padding: 14px 0 0 14px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% - 14px);
+      height: calc(100% - 14px);
+      background: #edf1f8;
+      content: '';
+    }
+  }
+
+  .image-button {
+    position: relative;
     display: block;
-    max-width: 680px;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #d8deea;
+    background: #fff;
+    cursor: pointer;
+
+    .image { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
   }
+
+  .case-study { padding-top: 72px; }
+  .web-expansion { padding: 0; }
+  .group-header, .feature-header, .web-case-list, .search-copy, .invitation-content, .home-copy, .shared-list { max-width: 660px; }
+  .group-title, .feature-group-title { font-size: 28px; font-weight: 700; line-height: 1.4; word-break: keep-all; }
+  .group-description, .feature-description { margin-top: 14px; color: $color-text-secondary; font-size: 16px; line-height: 1.7; word-break: keep-all; }
+
+  .web-case-list { margin-top: 56px; }
+  .web-case { padding-top: 40px; border-top: 1px solid $color-border-default; }
+  .web-case + .web-case { margin-top: 72px; }
+  .case-title { font-size: 21px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
+
+  .copy-group { margin-top: 24px; }
+  .copy-group + .copy-group { margin-top: 32px; }
+  .copy-label { margin-bottom: 10px; color: $color-text-secondary; font-size: 13px; font-weight: 700; }
+  .copy-content { display: grid; gap: 10px; color: $color-text-secondary; font-size: 16px; line-height: 1.75; word-break: keep-all; }
 
   .web-expansion {
-    padding: 56px;
-    border-radius: 12px;
-    background-color: #f7faff;
-
-    .case-title {
-      font-size: 32px;
-      line-height: 1.35;
-    }
-
-    .case-description {
-      max-width: 640px;
-      margin-top: 16px;
-      font-size: 16px;
-      line-height: 1.65;
-    }
-  }
-
-  .case-list {
-    margin: 48px 0 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .case-item {
-    padding: 48px 0;
-    border-top: 1px solid #dfeaf3;
-
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-
-  .case-content {
-    .case-heading {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-
-    .case-number {
-      flex: 0 0 auto;
-      color: $color-primary;
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    h6 {
-      color: $color-text-primary;
-      font-size: 19px;
-      font-weight: 700;
-      word-break: keep-all;
-    }
-
-    .case-copy {
-      display: grid;
-      grid-template-columns: 120px minmax(0, 1fr);
-      column-gap: 24px;
-      row-gap: 8px;
-      padding-top: 20px;
-
-      .copy-label {
-        grid-row: span 4;
-        color: $color-text-secondary;
-        font-size: 12px;
-        font-weight: 700;
-      }
-
-      > p:not(.copy-label) {
-        color: $color-text-secondary;
-        font-size: 15px;
-        line-height: 1.6;
-        word-break: keep-all;
-      }
-    }
-
-    .case-copy + .case-copy {
-      margin-top: 12px;
-      border-top: 1px solid $color-border-light;
-    }
-  }
-
-  .navigation-flow {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) 24px minmax(0, 1fr) 24px minmax(0, 0.8fr);
-    align-items: stretch;
-    margin-top: 28px;
-
-    > div {
-      display: grid;
-      align-content: center;
-      gap: 8px;
-      min-width: 0;
-      padding: 16px;
-      border: 1px solid $color-border-default;
-      border-radius: $border-radius-default;
-      background-color: $color-gray-f;
-    }
-
-    .navigation-transform {
-      border-color: $color-border-dark;
-      background-color: #fff;
-    }
-
-    span {
-      color: $color-primary;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    strong {
-      color: $color-text-primary;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 1.5;
-      word-break: keep-all;
-    }
-
-    ul {
-      display: grid;
-      gap: 4px;
-      margin: 0;
-      padding-left: 20px;
-      color: $color-text-secondary;
-      font-size: 14px;
-      line-height: 1.6;
-      word-break: keep-all;
-    }
-  }
-
-  .state-comparison {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    margin-top: 20px;
-
-    > div {
-      padding: 14px 16px;
-      border: 1px solid $color-border-default;
-      border-radius: $border-radius-default;
-      background-color: $color-gray-f;
-    }
-  }
-
-  .auth-flow {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1.25fr) 24px minmax(0, 1fr);
-    align-items: stretch;
-    margin-top: 20px;
-
-    > div {
-      display: grid;
-      align-content: center;
-      gap: 8px;
-      min-width: 0;
-      padding: 14px 16px;
-      border: 1px solid $color-border-default;
-      border-radius: $border-radius-default;
-      background-color: $color-gray-f;
-    }
-  }
-
-  .auth-arrow {
-    position: relative;
-    align-self: center;
-    height: 1px;
-    background-color: $color-border-default;
-
-    &::after {
-      position: absolute;
-      top: -3px;
-      right: 0;
-      width: 6px;
-      height: 6px;
-      border-top: 1px solid $color-border-default;
-      border-right: 1px solid $color-border-default;
-      content: '';
-      transform: rotate(45deg);
-    }
-  }
-
-  .state-comparison,
-  .auth-flow {
-    span {
-      display: block;
-      margin-bottom: 4px;
-      color: $color-primary;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    strong {
-      color: $color-text-primary;
-      font-size: 14px;
-      font-weight: 500;
-      word-break: keep-all;
-    }
-  }
-
-  .state-comparison ul {
-    display: grid;
-    gap: 4px;
-    margin: 0;
-    padding-left: 20px;
-    color: $color-text-secondary;
-    font-size: 14px;
-    line-height: 1.6;
-    word-break: keep-all;
-  }
-
-  .auth-flow ul {
-    display: grid;
-    gap: 4px;
-    margin: 0;
-    padding-left: 20px;
-    color: $color-text-secondary;
-    font-size: 14px;
-    line-height: 1.6;
-    word-break: keep-all;
-  }
-
-  .project-link {
-    display: inline-block;
-    margin-top: 32px;
-    color: $color-primary;
-    font-size: 12px;
-    font-weight: 700;
-    text-decoration: none;
-  }
-
-  .case-section {
-    padding-top: 72px;
-
-    &.medium-case,
-    &.compact-case {
-      padding-top: 64px;
-    }
-  }
-
-  .large-case-content,
-  .medium-case-content,
-  .compact-list {
-    margin-left: 236px;
-    margin-top: 40px;
-  }
-
-  .large-case-content,
-  .medium-case-content {
-    display: grid;
-    gap: 24px;
-  }
-
-  .medium-case-content {
-    .case-copy {
-      display: grid;
-      grid-template-columns: 120px minmax(0, 1fr);
-      column-gap: 24px;
-      row-gap: 8px;
-
-      .copy-label {
-        grid-row: span 4;
-        color: $color-text-secondary;
-        font-size: 12px;
-        font-weight: 700;
-      }
-
-      > p:not(.copy-label) {
-        color: $color-text-secondary;
-        font-size: 15px;
-        line-height: 1.6;
-        word-break: keep-all;
-      }
-    }
-
-    .case-copy + .case-copy {
-      padding-top: 20px;
-      border-top: 1px solid $color-border-light;
-    }
-  }
-
-  .search-diagram,
-  .invitation-flow,
-  .honsu-flow {
-    display: grid;
-    align-items: stretch;
-    gap: 0;
-  }
-
-  .search-diagram {
-    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1.15fr) 24px minmax(0, 1fr);
-  }
-
-  .invitation-flow {
-    grid-template-columns: repeat(4, minmax(0, 1fr) 20px) minmax(0, 1fr);
-  }
-
-  .honsu-flow {
-    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr);
-  }
-
-  .search-domains,
-  .search-results,
-  .diagram-emphasis,
-  .invitation-flow > div,
-  .honsu-before,
-  .honsu-after {
-    display: grid;
-    align-content: center;
-    gap: 8px;
-    min-width: 0;
-    padding: 16px;
-    border: 1px solid $color-border-default;
-    border-radius: $border-radius-default;
-    background-color: $color-gray-f;
-
-    span {
-      color: $color-primary;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    strong {
-      color: $color-text-primary;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 1.5;
-      word-break: keep-all;
-    }
-
-    p {
-      color: $color-text-secondary;
-      font-size: 13px;
-      line-height: 1.55;
-      word-break: keep-all;
-    }
-  }
-
-  .search-domains,
-  .search-results {
-    ul {
-      display: grid;
-      gap: 4px;
-      margin: 0;
-      padding: 0;
-      color: $color-text-primary;
-      font-size: 14px;
-      font-weight: 500;
-      list-style: none;
-    }
-  }
-
-  .diagram-emphasis {
-    border-color: $color-border-dark;
-    background-color: #fff;
-  }
-
-  .diagram-arrow {
-    position: relative;
-    align-self: center;
-    height: 1px;
-    background-color: $color-border-default;
-
-    &::after {
-      position: absolute;
-      top: -3px;
-      right: 0;
-      width: 6px;
-      height: 6px;
-      border-top: 1px solid $color-border-default;
-      border-right: 1px solid $color-border-default;
-      content: '';
-      transform: rotate(45deg);
-    }
-  }
-
-  .media-placeholder {
-    display: grid;
-    place-items: center;
-    min-height: 180px;
-    padding: 24px;
-    border: 1px dashed $color-border-dark;
-    border-radius: $border-radius-default;
-    background: $color-gray-f;
-    text-align: center;
-
-    span,
-    strong,
-    p {
-      display: block;
-    }
-
-    span {
-      color: $color-primary;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    strong {
-      margin-top: 8px;
-      color: $color-text-primary;
-      font-size: 15px;
-      font-weight: 500;
-    }
-
-    p {
-      margin-top: 6px;
-      color: $color-text-secondary;
-      font-size: 13px;
-      word-break: keep-all;
-    }
-  }
-
-  .invitation-image-layout {
-    padding-top: 8px;
-
-    img {
-      display: block;
-      width: 100%;
-      border: 1px solid $color-border-default;
-      border-radius: $border-radius-default;
-    }
-
-    p {
-      margin-top: 8px;
-      color: $color-text-secondary;
-      font-size: 12px;
-    }
-  }
-
-  .subcase-list {
-    display: grid;
-    gap: 24px;
-  }
-
-  .subcase {
-    display: grid;
-    gap: 16px;
-    padding-top: 24px;
-    border-top: 1px solid $color-border-default;
-
-    h6 {
-      margin-top: 4px;
-      color: $color-text-primary;
-      font-size: 16px;
-      font-weight: 500;
-      word-break: keep-all;
-    }
-  }
-
-  .subcase-label,
-  .supporting-note > p {
-    color: $color-primary;
-    font-size: 12px;
-    font-weight: 700;
-  }
-
-  .inline-flow {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 0;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    li {
-      display: flex;
-      align-items: center;
-      color: $color-text-secondary;
-      font-size: 13px;
-
-      &:not(:last-child)::after {
-        width: 18px;
-        height: 1px;
-        margin: 0 8px;
-        background-color: $color-border-default;
+    padding-top: 0;
+
+    .group-header {
+      position: relative;
+      max-width: 740px;
+      padding-top: 24px;
+      border-top: 1px solid #cfd8e8;
+
+      &::before {
+        position: absolute;
+        top: -2px;
+        left: 0;
+        width: 72px;
+        height: 3px;
+        background: #365da8;
         content: '';
       }
     }
-  }
 
-  .exit-flow {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr);
-    align-items: center;
-
-    > div {
-      display: grid;
-      gap: 6px;
-      padding: 14px 16px;
-      border-left: 2px solid $color-primary;
-      background-color: $color-gray-f;
+    .group-title {
+      color: #18243a;
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      line-height: 1.25;
     }
 
-    span {
-      color: $color-primary;
-      font-size: 12px;
+    .group-description {
+      max-width: 620px;
+      margin-top: 18px;
+      color: #5b677a;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .web-case-list {
+      max-width: 680px;
+      margin-top: 64px;
+      margin-left: 72px;
+    }
+
+    .web-case {
+      position: relative;
+      padding-top: 40px;
+      border-top-color: #dce1eb;
+
+      &::before {
+        position: absolute;
+        top: -1px;
+        left: 0;
+        width: 42px;
+        height: 2px;
+        background: #365da8;
+        content: '';
+      }
+    }
+
+    .web-case + .web-case { margin-top: 80px; }
+
+    .case-title {
+      color: #202c40;
+      font-size: 24px;
       font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.45;
     }
 
-    strong {
-      color: $color-text-primary;
-      font-size: 14px;
-      font-weight: 500;
-      word-break: keep-all;
+    .copy-group { margin-top: 28px; }
+
+    .copy-group + .copy-group {
+      margin-top: 26px;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .copy-label {
+      margin-bottom: 12px;
+      color: #4665a0;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .copy-content {
+      gap: 12px;
+      color: #525e70;
+      font-size: 16px;
+      line-height: 1.8;
     }
   }
 
-  .media-note {
-    color: $color-text-secondary;
-    font-size: 12px;
-  }
-
-  .supporting-note {
-    display: grid;
-    grid-template-columns: 160px minmax(0, 1fr);
-    gap: 4px 16px;
-    padding: 20px 0 0 16px;
+  .feature-group {
+    margin-top: 112px;
+    padding-top: 112px;
     border-top: 1px solid $color-border-default;
-    border-left: 2px solid $color-primary;
-
-    > p {
-      grid-row: span 2;
-    }
-
-    strong {
-      color: $color-text-primary;
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    span {
-      color: $color-text-secondary;
-      font-size: 13px;
-      word-break: keep-all;
-    }
   }
 
-  .compact-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-    margin-top: 32px;
+  .feature-list { display: grid; gap: 96px; margin-top: 56px; }
+  .feature-case { scroll-margin-top: 24px; }
+  .feature-title { font-size: 24px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
+  .search-copy, .home-copy, .invitation-content { margin-top: 32px; }
 
-    article {
-      padding-top: 16px;
-      border-top: 1px solid $color-border-default;
-    }
+  .subcase-list { display: grid; gap: 40px; max-width: 620px; margin-top: 48px; margin-left: 32px; }
+  .subcase {
+    padding-top: 28px;
+    border-top: 1px solid $color-border-default;
 
-    h6 {
-      color: $color-text-primary;
-      font-size: 15px;
-      font-weight: 500;
-    }
+    h5 { font-size: 18px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
+    p { margin-top: 16px; color: $color-text-secondary; font-size: 16px; line-height: 1.75; word-break: keep-all; }
+  }
 
-    p {
-      margin-top: 10px;
-      color: $color-text-secondary;
-      font-size: 13px;
-      line-height: 1.6;
-      word-break: keep-all;
-    }
+  .shared-improvements { padding-bottom: 8px; }
+  .shared-list { margin-top: 40px; }
+  .shared-item {
+    padding: 28px 0;
+
+    & + & { border-top: 1px solid $color-border-default; }
+
+    h5 { font-size: 18px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
+    p { margin-top: 12px; color: $color-text-secondary; font-size: 15px; line-height: 1.7; word-break: keep-all; }
   }
 }
 
 @media (max-width: $breakpoint-md) {
   .weddingbook-case-study {
-    .project-header {
-      display: block;
-      padding: 0 20px 64px;
+    .project-header { grid-template-columns: 1fr; gap: 28px; padding: 0 20px 56px; }
+    .info-box { padding-top: 0; }
+    .title { font-size: 36px; }
+    .description { margin-top: 16px; font-size: 15px; }
+    .project-images { max-width: 260px; }
+    .case-study { padding: 56px 20px 0; }
+    .group-title, .feature-group-title { font-size: 25px; }
+    .group-description, .feature-description { font-size: 15px; }
+    .web-case-list { margin-top: 44px; }
+    .web-case { padding-top: 28px; }
+    .web-case + .web-case { margin-top: 56px; }
+    .case-title, .feature-title { font-size: 20px; }
+    .copy-group { margin-top: 20px; }
+    .copy-group + .copy-group { margin-top: 28px; }
+    .copy-content, .subcase p { font-size: 15px; line-height: 1.7; }
+    .feature-group { margin-top: 80px; padding-top: 80px; }
+    .feature-list { gap: 72px; margin-top: 48px; }
+    .search-copy, .home-copy, .invitation-content { margin-top: 24px; }
+    .subcase-list { gap: 32px; margin-top: 40px; margin-left: 0; }
+    .subcase { padding-top: 24px; }
+    .shared-list { margin-top: 32px; }
+    .shared-item { padding: 24px 0; }
 
-      .info-box {
-        padding-top: 0;
-
-        .title {
-          font-size: 32px;
-        }
-
-        .description {
-          font-size: 14px;
-          line-height: 1.65;
-          margin-top: 16px;
-        }
-
-        .skills {
-          line-height: 1.6;
-          margin-top: 14px;
-        }
-      }
-
-      .project-images {
-        margin-top: 32px;
-        width: 100%;
-      }
-    }
-
-    .case-study {
-      padding: 32px 20px 0;
-    }
-
-    .case-header,
-    .case-item {
-      display: block;
-    }
-
-    .case-header {
-      .case-label {
-        margin-bottom: 24px;
-        font-size: 16px;
-      }
-
-      .case-title {
-        font-size: 20px;
-      }
-
-      .case-description {
-        font-size: 13px;
-        line-height: 1.6;
-      }
-    }
-
-    .case-list {
-      margin: 32px 0 0;
-    }
+    .project-header { gap: 36px; padding-bottom: 72px; }
+    .info-box::before { width: 34px; height: 3px; }
+    .title { margin-top: 16px; color: #18243a; font-size: 46px; }
+    .description { margin-top: 20px; color: #485569; }
+    .skills { margin-top: 16px; }
+    .project-link { margin-top: 20px; color: #294e96; }
+    .project-images { max-width: 280px; padding: 10px 0 0 10px; }
+    .project-images::before { width: calc(100% - 10px); height: calc(100% - 10px); }
 
     .web-expansion {
-      margin: 0 -20px;
-      padding: 36px 20px 48px;
-      border-radius: 0;
+      padding-top: 0;
 
-      .case-title {
-        font-size: 24px;
-      }
-
-      .case-description {
-        margin-top: 12px;
-        font-size: 13px;
-      }
-    }
-
-    .case-item {
-      padding-bottom: 40px;
-
-      & + & {
-        padding-top: 40px;
-      }
-    }
-
-    .case-content {
-      .case-heading {
-        gap: 12px;
-        margin-bottom: 20px;
-      }
-
-      .case-number {
-        font-size: 16px;
-      }
-
-      h6 {
-        font-size: 15px;
-      }
-
-      .case-copy {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        padding-top: 16px;
-
-        .copy-label {
-          grid-row: auto;
-        }
-
-        > p:not(.copy-label) {
-          font-size: 13px;
-        }
-      }
-    }
-
-    .auth-flow {
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 16px;
-
-      > div {
-        padding: 12px;
-      }
-
-      .auth-arrow {
-        justify-self: center;
-        width: 1px;
-        height: 12px;
-
-        &::after {
-          top: auto;
-          right: -3px;
-          bottom: 0;
-          transform: rotate(135deg);
-        }
-      }
-    }
-
-    .navigation-flow {
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 20px;
-
-      > div {
-        padding: 12px;
-      }
-
-      .diagram-arrow {
-        justify-self: center;
-        width: 1px;
-        height: 12px;
-
-        &::after {
-          top: auto;
-          right: -3px;
-          bottom: 0;
-          transform: rotate(135deg);
-        }
-      }
-
-      ul {
-        font-size: 13px;
-      }
-    }
-
-    .state-comparison {
-      gap: 8px;
-      margin-top: 16px;
-
-      > div {
-        padding: 12px;
-      }
-    }
-
-    .state-comparison,
-    .auth-flow {
-      strong {
-        font-size: 13px;
-      }
-    }
-
-    .case-section,
-    .case-section.medium-case,
-    .case-section.compact-case {
-      padding-top: 48px;
-    }
-
-    .large-case-content,
-    .medium-case-content,
-    .compact-list {
-      margin-top: 24px;
-      margin-left: 0;
-    }
-
-    .large-case-content,
-    .medium-case-content {
-      gap: 16px;
-    }
-
-    .medium-case-content {
-      .case-copy {
-        grid-template-columns: 1fr;
-        gap: 8px;
-
-        .copy-label {
-          grid-row: auto;
-        }
-
-        > p:not(.copy-label) {
-          font-size: 13px;
-        }
-      }
-    }
-
-    .search-diagram,
-    .invitation-flow,
-    .honsu-flow {
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .diagram-arrow {
-      justify-self: center;
-      width: 1px;
-      height: 12px;
-
-      &::after {
-        top: auto;
-        right: -3px;
-        bottom: 0;
-        transform: rotate(135deg);
-      }
-    }
-
-    .search-domains,
-    .search-results,
-    .diagram-emphasis,
-    .invitation-flow > div,
-    .honsu-before,
-    .honsu-after {
-      padding: 12px;
-
-      strong {
-        font-size: 13px;
-      }
-    }
-
-    .media-placeholder {
-      min-height: 140px;
-      padding: 20px;
-    }
-
-    .subcase-list {
-      gap: 20px;
-    }
-
-    .subcase {
-      gap: 12px;
-      padding-top: 20px;
-
-      h6 {
-        font-size: 14px;
-      }
-    }
-
-    .inline-flow {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-
-      li {
-        &::after {
-          display: none;
-        }
-
-        &::before {
-          width: 4px;
-          height: 4px;
-          margin-right: 8px;
-          border-radius: 50%;
-          background-color: $color-primary;
-          content: '';
-        }
-      }
-    }
-
-    .exit-flow {
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .supporting-note {
-      grid-template-columns: 1fr;
-      gap: 4px;
-      padding: 16px 0 0 12px;
-
-      > p {
-        grid-row: auto;
-      }
-    }
-
-    .compact-list {
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 24px;
-
-      article {
-        padding-top: 12px;
-      }
+      .group-header { max-width: none; padding-top: 20px; }
+      .group-header::before { width: 52px; }
+      .group-title { font-size: 29px; line-height: 1.3; }
+      .group-description { margin-top: 14px; font-size: 15px; line-height: 1.75; }
+      .web-case-list { max-width: none; margin-top: 48px; margin-left: 0; }
+      .web-case { padding-top: 28px; }
+      .web-case + .web-case { margin-top: 64px; }
+      .case-title { font-size: 21px; line-height: 1.45; }
+      .copy-group { margin-top: 24px; }
+      .copy-group + .copy-group { margin-top: 24px; padding-top: 0; }
+      .copy-label { margin-bottom: 10px; font-size: 12px; }
+      .copy-content { gap: 10px; font-size: 15px; line-height: 1.78; }
     }
   }
 }
