@@ -3,12 +3,8 @@ import styles from "./Project.module.scss";
 
 export default function Project() {
   return (
-    <section aria-labelledby="projects-title" className={styles["project"]}>
+    <section aria-label="대표 프로젝트" className={styles["project"]}>
       <div className={styles["container"]}>
-        <h2 className={styles["section-title"]} id="projects-title">
-          My Project
-        </h2>
-
         <div className={styles["project-content"]}>
           <WeddingbookService />
         </div>
