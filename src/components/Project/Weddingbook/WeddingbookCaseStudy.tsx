@@ -174,7 +174,7 @@ function IntegratedSearchCase() {
       <header className={styles['case-header']}>
         <p className={styles['case-label']}>01 통합검색</p>
         <div>
-          <h5 className={styles['case-title']}>분리된 검색 결과를 하나의 화면에서 제공</h5>
+          <h5 className={styles['case-title']}>분리되어 있던 검색 결과를 하나의 화면에서 제공</h5>
         </div>
       </header>
 
@@ -182,25 +182,19 @@ function IntegratedSearchCase() {
         <div className={styles['case-copy']}>
           <p className={styles['copy-label']}>문제 상황</p>
           <p>
-            기존 검색은 웨딩홀·업체·스토어가 분리되어 있었지만, 새로운 통합검색 화면에서는 세 영역의 검색 결과를 한 번에 보여줘야 했습니다.
+            기존 검색은 웨딩홀·업체·스토어가 각각 분리되어 있었지만, 새로운 통합검색에서는 세 영역의 검색 결과를 한 화면에서 함께 보여줘야 했습니다.
           </p>
           <p>
-            백엔드 개발자와 통합 API 추가를 논의했지만, 다른 작업이 우선되어 당장 개발하기 어려운 상황이었고 기존에는 각 영역별 검색 API만 제공되고 있었습니다.
+            통합 API 추가를 백엔드 개발자와 논의했지만 다른 작업이 우선되어 바로 개발하기 어려웠고, 기존에는 각 영역별 검색 API만 제공되고 있었습니다.
           </p>
         </div>
         <div className={styles['case-copy']}>
           <p className={styles['copy-label']}>판단 + 해결</p>
           <p>
-            전체 검색 결과가 없을 때와 특정 영역의 검색 결과만 없을 때 보여주는 UI가 달랐기 때문에, 세 영역의 결과를 함께 판단할 수 있어야 했습니다.
+            전체 검색 결과가 없는 경우와 특정 영역의 검색 결과만 없는 경우에 보여주는 화면이 달랐기 때문에, 세 영역의 결과를 함께 확인할 수 있는 구조가 필요했습니다.
           </p>
           <p>
-            이를 위해 Next.js Route Handler에서 웨딩홀·업체·스토어 검색 API를 병렬로 호출하고, 각 영역의 결과를 하나의 응답으로 조합했습니다.
-          </p>
-          <p>
-            또한 일부 API 요청이 실패하더라도 정상적으로 응답한 영역의 검색 결과는 보여줄 수 있어야 했습니다.
-          </p>
-          <p>
-            따라서 <code>Promise.allSettled</code>를 사용해 각 요청의 성공과 실패를 개별적으로 처리했습니다.
+            Next.js Route Handler에서 웨딩홀·업체·스토어 검색 API를 병렬로 호출하고 하나의 응답으로 조합했습니다. 또한 일부 요청이 실패하더라도 정상적으로 응답한 영역의 검색 결과는 보여줄 수 있도록 <code>Promise.allSettled</code>를 사용해 각 요청의 성공과 실패를 개별적으로 처리했습니다.
           </p>
         </div>
         <SearchDiagram />
@@ -242,7 +236,7 @@ function InvitationCase() {
               이미지 업로드 후 서버에서 URL을 반환받더라도 실제 이미지 처리가 완료되기까지 시간차가 있어, 반환받은 URL을 바로 사용하면 이미지가 표시되지 않는 경우가 있었습니다.
             </p>
             <p>
-              사용자가 선택한 이미지로 <code>URL.createObjectURL()</code>을 이용해 화면 표시용 URL을 별도로 생성하고, 서버 저장에 사용하는 이미지 URL과 분리했습니다. 작성 화면과 실시간 미리보기에서는 화면 표시용 URL을 사용하고, 저장할 때는 화면에서만 필요한 값을 제외했습니다.
+            사용자가 선택한 이미지로 <code>URL.createObjectURL()</code>을 이용해 화면 표시용 URL을 별도로 생성했습니다. 작성 화면과 실시간 미리보기에서는 화면 표시용 URL을 사용하고, 서버에서 받은 이미지 URL은 저장에 사용하도록 두 값을 분리했습니다. 저장할 때는 화면에서만 필요한 값을 제외했습니다.
             </p>
           </article>
           <article className={styles['subcase']}>
@@ -263,15 +257,30 @@ function HonsuCase() {
   return (
     <section className={`${styles['case-section']} ${styles['medium-case']}`}>
       <header className={styles['case-header']}>
-        <p className={styles['case-label']}>혼수 홈</p>
+        <p className={styles['case-label']}>03 홈 화면</p>
         <div>
-          <h5 className={styles['case-title']}>코드에 고정된 화면 조합에서 block renderer 구조로</h5>
-          <p className={styles['case-description']}>
-            일부 block 데이터를 조회하던 기존 구조에서, 전달받은 block 목록의 type에 따라 화면을 조합하는 방식으로 전환했다.
-          </p>
+          <h5 className={styles['case-title']}>프론트엔드에 고정되어 있던 홈 화면을 어드민에서 관리할 수 있는 구조로 전환</h5>
         </div>
       </header>
       <div className={styles['medium-case-content']}>
+        <div className={styles['case-copy']}>
+          <p className={styles['copy-label']}>문제 상황</p>
+          <p>
+            기존 홈 화면은 영역의 구성과 노출 순서뿐 아니라 배너, 문구, 이미지, 링크, 일부 업체 정보 등 화면을 구성하는 많은 내용이 프론트엔드 코드에 직접 작성되어 있었습니다.
+          </p>
+          <p>
+            이 때문에 홈 화면의 구성이나 내용을 변경하려면 프론트엔드 코드를 직접 수정해야 했습니다.
+          </p>
+        </div>
+        <div className={styles['case-copy']}>
+          <p className={styles['copy-label']}>해결</p>
+          <p>
+            홈 화면을 어드민에서 구성하고 관리할 수 있도록, 서버에서 전달받은 타입과 설정에 따라 필요한 컴포넌트를 렌더링하는 구조로 변경했습니다.
+          </p>
+          <p>
+            배너, 메뉴, 상품 목록 등 홈을 구성하는 각 영역을 타입별 컴포넌트로 분리하고, 서버에서 전달받은 순서와 설정에 따라 조합해 화면을 렌더링했습니다.
+          </p>
+        </div>
         <HonsuDiagram />
       </div>
     </section>
@@ -292,36 +301,36 @@ function SharedImprovements() {
           <h6>Toast / Snackbar</h6>
           <p>다양한 사용 방식이 추가되며 복잡해진 알림 구조를 역할에 맞게 분리</p>
           <p>
-            기존 Toast는 서비스 운영 과정에서 다양한 알림 요구가 추가되면서, 짧게 노출되는 알림부터 사용자의 동작이 필요한 알림까지 하나의 구조에서 여러 옵션으로 처리하고 있었습니다.
+            기존 Toast는 서비스 운영 과정에서 다양한 기능이 추가되면서, 짧게 보여주는 알림과 지속적으로 보여주는 알림, 사용자의 동작이 필요한 알림 등을 하나의 구조에서 여러 옵션으로 처리하고 있었습니다.
           </p>
           <p>
-            서로 다른 성격의 알림을 하나의 구조에서 계속 확장하기보다, Toast와 Snackbar의 역할에 맞게 UI와 호출 방식을 분리했습니다. 기존 사용처를 새로운 구조로 전환했으며, 이후 Next.js 웹에서도 기존 상태 관리 방식은 유지하면서 같은 Toast/Snackbar의 UI와 호출 구조를 적용했습니다.
+            서로 다른 성격의 알림을 하나의 구조에서 계속 확장하기보다 Toast와 Snackbar로 역할을 나누고, 각각의 UI와 호출 방식을 분리했습니다. 기존 사용처를 새로운 구조로 전환했으며, 이후 Next.js 웹에서도 기존 상태 관리 방식은 유지하면서 같은 Toast/Snackbar 구조를 적용했습니다.
           </p>
         </article>
         <article>
           <h6>Header</h6>
           <p>여러 방식으로 사용되던 공통 Header의 역할과 사용 방식 정리</p>
           <p>
-            기존에는 AppHeader와 CustomHeader가 함께 사용되고 있었고, 화면마다 필요한 기능을 처리하면서 제목과 뒤로가기, 페이지별 액션, 서비스 상태와 관련된 여러 설정이 Header에 함께 존재했습니다.
+            기존에는 AppHeader와 CustomHeader가 함께 사용되고 있었고, 화면마다 필요한 기능이 추가되면서 제목과 뒤로가기뿐 아니라 페이지별 액션과 서비스 상태를 처리하기 위한 여러 설정이 Header에 함께 존재했습니다.
           </p>
           <p>
-            공통 컴포넌트는 사용하는 개발자가 필요한 기능과 사용 방법을 쉽게 파악할 수 있어야 한다고 생각했습니다. 기본 레이아웃을 담당하는 HeaderBase와 제목·뒤로가기 등 기본 동작을 담당하는 Header로 역할을 나누고, 기존 사용처를 새로운 구조로 단계적으로 전환했습니다.
+            공통 컴포넌트는 사용하는 개발자가 필요한 기능과 사용 방법을 쉽게 파악할 수 있어야 한다고 생각했습니다. 여러 요구사항을 하나의 Header에서 계속 처리하기보다, 대부분의 화면에서 공통으로 사용하는 역할을 단순하게 만드는 방향으로 구조를 정리했습니다.
           </p>
           <p>
-            페이지별 액션까지 조합할 수 있도록 확장하는 작업도 진행했지만, 전체 Header 전환을 완료하기 전에 작업이 종료되었습니다.
+            기본 레이아웃을 담당하는 HeaderBase와 제목·뒤로가기 등 기본 동작을 담당하는 Header로 역할을 나누고, 기존 사용처를 새로운 구조로 단계적으로 전환했습니다. 페이지별 액션을 조합할 수 있도록 확장하는 작업도 진행했지만, 전체 Header 전환을 완료하기 전에 작업이 종료되었습니다.
           </p>
         </article>
         <article>
           <h6>Icon</h6>
           <p>아이콘의 종류와 표시 크기가 결합되어 있던 구조를 분리</p>
           <p>
-            기존 Icon은 size 값에 따라 서로 다른 디렉터리의 SVG를 불러오는 구조여서, 호출하는 쪽에서 사용할 SVG의 위치까지 알아야 하는 경우가 있었습니다.
+            기존 Icon은 <code>size</code> 값에 따라 서로 다른 디렉터리의 SVG를 불러오는 구조였습니다. 같은 종류의 아이콘도 크기별 SVG가 따로 존재했고, 필요한 경우에는 호출하는 쪽에서 사용할 SVG가 위치한 디렉터리까지 지정해야 했습니다.
           </p>
           <p>
-            아이콘의 종류와 표시 크기를 분리해 SVG는 하나의 경로에서 name으로 선택하고, size는 표시 크기만 담당하도록 변경했습니다. 색상도 별도로 지정할 수 있도록 정리했습니다.
+            아이콘의 종류와 화면에 표시할 크기는 서로 다른 정보라고 판단해 두 역할을 분리했습니다. SVG는 하나의 경로에서 <code>name</code>으로 선택하고, <code>size</code>는 표시 크기만 담당하도록 변경했으며 색상도 별도로 지정할 수 있도록 정리했습니다.
           </p>
           <p>
-            기존 사용처를 새로운 구조로 전환한 뒤 크기별 SVG 디렉터리와 기존 Icon 구현을 제거했으며, 이후 추가된 화면과 아이콘에서도 같은 구조가 사용되었습니다.
+            기존 사용처를 새로운 Icon으로 전환한 뒤 크기별 SVG 디렉터리와 기존 Icon 구현을 제거했습니다. 이후 추가된 화면과 아이콘에서도 같은 구조가 사용되었습니다.
           </p>
         </article>
       </div>
@@ -442,17 +451,15 @@ function SearchDiagram() {
 
 function HonsuDiagram() {
   return (
-    <div className={styles['honsu-flow']} aria-label="혼수 홈의 Before와 After 구조">
+    <div className={styles['honsu-flow']} aria-label="홈 화면 구성과 콘텐츠 관리 방식의 변경">
       <div className={styles['honsu-before']}>
         <span>Before</span>
-        <strong>일부 block 데이터 조회</strong>
-        <p>+ HonsuHomeContent JSX에 section 구성과 순서가 직접 고정</p>
+        <strong>화면 구성과 많은 콘텐츠가 프론트엔드 코드에 직접 정의</strong>
       </div>
       <span className={styles['diagram-arrow']} aria-hidden="true" />
       <div className={styles['honsu-after']}>
         <span>After</span>
-        <strong>/v4/honsu-home/blocks</strong>
-        <p>id · type · config block 목록 → HonsuParser → type별 renderer → 화면 렌더링</p>
+        <strong>서버에서 전달받은 구성에 따라 타입별 컴포넌트를 조합해 화면 렌더링</strong>
       </div>
     </div>
   );

@@ -353,6 +353,34 @@
     gap: 24px;
   }
 
+  .medium-case-content {
+    .case-copy {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      column-gap: 24px;
+      row-gap: 8px;
+
+      .copy-label {
+        grid-row: span 4;
+        color: $color-text-secondary;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      > p:not(.copy-label) {
+        color: $color-text-secondary;
+        font-size: 15px;
+        line-height: 1.6;
+        word-break: keep-all;
+      }
+    }
+
+    .case-copy + .case-copy {
+      padding-top: 20px;
+      border-top: 1px solid $color-border-light;
+    }
+  }
+
   .search-diagram,
   .invitation-flow,
   .honsu-flow {
@@ -832,6 +860,21 @@
     .large-case-content,
     .medium-case-content {
       gap: 16px;
+    }
+
+    .medium-case-content {
+      .case-copy {
+        grid-template-columns: 1fr;
+        gap: 8px;
+
+        .copy-label {
+          grid-row: auto;
+        }
+
+        > p:not(.copy-label) {
+          font-size: 13px;
+        }
+      }
     }
 
     .search-diagram,
