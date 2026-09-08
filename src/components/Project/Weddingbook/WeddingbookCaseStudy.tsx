@@ -282,23 +282,47 @@ function SharedImprovements() {
   return (
     <section className={`${styles['case-section']} ${styles['compact-case']}`}>
       <header className={styles['case-header']}>
-        <p className={styles['case-label']}>공통 프론트엔드 개선</p>
+        <p className={styles['case-label']}>04 공통 프론트엔드 개선</p>
         <div>
-          <h5 className={styles['case-title']}>화면 전반에서 사용되는 표현과 구조 정리</h5>
+          <h5 className={styles['case-title']}>서비스에서 반복해서 사용하는 공통 요소의 구조와 사용 방식 개선</h5>
         </div>
       </header>
       <div className={styles['compact-list']}>
         <article>
-          <h6>Toast</h6>
-          <p>공통 구조를 팀 사용 방식에 맞춰 container, UI, utility 역할로 다시 나누어 조정.</p>
+          <h6>Toast / Snackbar</h6>
+          <p>다양한 사용 방식이 추가되며 복잡해진 알림 구조를 역할에 맞게 분리</p>
+          <p>
+            기존 Toast는 서비스 운영 과정에서 다양한 알림 요구가 추가되면서, 짧게 노출되는 알림부터 사용자의 동작이 필요한 알림까지 하나의 구조에서 여러 옵션으로 처리하고 있었습니다.
+          </p>
+          <p>
+            서로 다른 성격의 알림을 하나의 구조에서 계속 확장하기보다, Toast와 Snackbar의 역할에 맞게 UI와 호출 방식을 분리했습니다. 기존 사용처를 새로운 구조로 전환했으며, 이후 Next.js 웹에서도 기존 상태 관리 방식은 유지하면서 같은 Toast/Snackbar의 UI와 호출 구조를 적용했습니다.
+          </p>
         </article>
         <article>
           <h6>Header</h6>
-          <p>기존 AppHeader와 CustomHeader의 확장 한계를 확인하고, 조합 가능한 구조를 검토·적용.</p>
+          <p>여러 방식으로 사용되던 공통 Header의 역할과 사용 방식 정리</p>
+          <p>
+            기존에는 AppHeader와 CustomHeader가 함께 사용되고 있었고, 화면마다 필요한 기능을 처리하면서 제목과 뒤로가기, 페이지별 액션, 서비스 상태와 관련된 여러 설정이 Header에 함께 존재했습니다.
+          </p>
+          <p>
+            공통 컴포넌트는 사용하는 개발자가 필요한 기능과 사용 방법을 쉽게 파악할 수 있어야 한다고 생각했습니다. 기본 레이아웃을 담당하는 HeaderBase와 제목·뒤로가기 등 기본 동작을 담당하는 Header로 역할을 나누고, 기존 사용처를 새로운 구조로 단계적으로 전환했습니다.
+          </p>
+          <p>
+            페이지별 액션까지 조합할 수 있도록 확장하는 작업도 진행했지만, 전체 Header 전환을 완료하기 전에 작업이 종료되었습니다.
+          </p>
         </article>
         <article>
           <h6>Icon</h6>
-          <p>새 Icon interface를 도입하고 여러 사용처의 사용 방식을 옮기는 작업을 진행.</p>
+          <p>아이콘의 종류와 표시 크기가 결합되어 있던 구조를 분리</p>
+          <p>
+            기존 Icon은 size 값에 따라 서로 다른 디렉터리의 SVG를 불러오는 구조여서, 호출하는 쪽에서 사용할 SVG의 위치까지 알아야 하는 경우가 있었습니다.
+          </p>
+          <p>
+            아이콘의 종류와 표시 크기를 분리해 SVG는 하나의 경로에서 name으로 선택하고, size는 표시 크기만 담당하도록 변경했습니다. 색상도 별도로 지정할 수 있도록 정리했습니다.
+          </p>
+          <p>
+            기존 사용처를 새로운 구조로 전환한 뒤 크기별 SVG 디렉터리와 기존 Icon 구현을 제거했으며, 이후 추가된 화면과 아이콘에서도 같은 구조가 사용되었습니다.
+          </p>
         </article>
       </div>
     </section>
