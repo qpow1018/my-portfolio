@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom/client';
 
-import './style/fonts.css';
-import './style/reset.css';
-import './style/global.css';
+import './style/fonts.scss';
+import './style/reset.scss';
+import './style/global.scss';
 
 import Home from './page/Home';
 

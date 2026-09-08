@@ -1,0 +1,68 @@
+@use '../../style/variables' as *;
+
+.project {
+  padding-top: 40px;
+
+  .section-title {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto 40px;
+    color: $color-text-primary;
+    font-size: 22px;
+    font-weight: 700;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: calc(50% + 2px);
+      width: 40px;
+      height: 2px;
+      background-color: $color-text-primary;
+      content: '';
+    }
+
+    &::before {
+      left: -48px;
+    }
+
+    &::after {
+      right: -48px;
+    }
+  }
+
+  .project-content {
+    padding-bottom: 60px;
+  }
+}
+
+@media (min-width: ($breakpoint-md + 1px)) {
+  .project {
+    padding-top: 60px;
+
+    .container {
+      width: $size-container-width;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 32px;
+
+      &::before,
+      &::after {
+        width: 80px;
+      }
+
+      &::before {
+        left: -92px;
+      }
+
+      &::after {
+        right: -92px;
+      }
+    }
+
+    .project-content {
+      padding-bottom: 80px;
+    }
+  }
+}
