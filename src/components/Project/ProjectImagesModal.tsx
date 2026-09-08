@@ -1,127 +1,110 @@
-import { Box, ButtonBase, Modal } from '@mui/material';
-import theme from '@/style/theme';
-
+import { useEffect, useId, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { A11y, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export default function ProjectImagesModal(
-  props: {
-    isDesktop: boolean;
-    isOpen: boolean;
-    images: string[];
-    onClose: () => void;
-  }
-) {
-  const { isDesktop } = props;
+import styles from './ProjectImagesModal.module.scss';
 
-  return (
-    <Modal
-      open={props.isOpen}
-      onClose={props.onClose}
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+type TProjectImagesModalProps = {
+  isOpen: boolean;
+  images: { src: string; alt: string }[];
+  onClose: () => void;
+};
+
+export default function ProjectImagesModal({
+  isOpen,
+  images,
+  onClose,
+}: TProjectImagesModalProps) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
+  const hasMultipleImages = images.length > 1;
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!isOpen || !dialog) return;
+
+    const previousFocus = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
+    dialog.showModal();
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      dialog.close();
+      document.body.style.overflow = previousOverflow;
+      if (previousFocus instanceof HTMLElement) previousFocus.focus();
+    };
+  }, [isOpen]);
+
+  return createPortal(
+    <dialog
+      ref={dialogRef}
+      className={styles['project-images-modal']}
+      aria-labelledby={titleId}
+      onCancel={(event) => {
+        event.preventDefault();
+        onClose();
+      }}
+      onKeyDown={(event) => {
+        if (event.key !== 'Tab') return;
+
+        const controls = event.currentTarget.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), [tabindex="0"]',
+        );
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        const target = event.shiftKey ? first : last;
+        if (document.activeElement === target) {
+          event.preventDefault();
+          (event.shiftKey ? last : first).focus();
+        }
+      }}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose();
       }}
     >
-      <div style={{ outline: 'none' }}>
-        <Box
-          sx={[
-            {
-              borderRadius: theme.common.borderRadius,
-              background: '#fff',
-              overflow: 'hidden',
-              width: 'calc(100vw - 32px)',
-            },
-            isDesktop === true && {
-              width: '900px',
-            }
-          ]}
+      <div>
+        <header className={styles['header']}>
+          <h2 id={titleId} className={styles['title']}>프로젝트 화면</h2>
+          <button
+            className={styles['close-button']}
+            type="button"
+            onClick={onClose}
+            autoFocus
+          >
+            닫기
+          </button>
+        </header>
+        <Swiper
+          className={styles['gallery']}
+          modules={[A11y, Navigation, Pagination]}
+          loop={hasMultipleImages}
+          slidesPerView={1}
+          navigation={hasMultipleImages}
+          pagination={hasMultipleImages ? { clickable: true } : false}
+          a11y={{
+            prevSlideMessage: '이전 이미지',
+            nextSlideMessage: '다음 이미지',
+            paginationBulletMessage: '{{index}}번째 이미지로 이동',
+            slideLabelMessage: '{{slidesLength}}개 중 {{index}}번째 이미지',
+          }}
         >
-          <Box
-            sx={[
-              {
-                width: '100%'
-              },
-              isDesktop === true && {
-                padding: '16px',
-              }
-            ]}
-          >
-            <Swiper
-              modules={[Navigation, Pagination]}
-              loop={true}
-              slidesPerView={1}
-              navigation={true}
-              pagination={true}
-            >
-              { props.images.map((image, index) =>
-                <SwiperSlide key={index}>
-                  <Box
-                    sx={[
-                      {
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '100%',
-                        height: 360,
-                      },
-                      isDesktop === true && {
-                        height: 520,
-                      }
-                    ]}
-                  >
-                    <Box
-                      component={'img'}
-                      src={image}
-                      draggable={false}
-                      sx={{
-                        display: 'block',
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain',
-                      }}
-                    />
-                  </Box>
-                </SwiperSlide>
-              )}
-            </Swiper>
-          </Box>
-
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              borderTop: `1px solid ${theme.color.border.light}`,
-              background: theme.color.dark.grayF,
-              padding: '12px',
-            }}
-          >
-            <ButtonBase
-              onClick={props.onClose}
-              sx={[
-                {
-                  borderRadius: theme.common.borderRadius,
-                  width: 80,
-                  height: 36,
-                  backgroundColor: theme.color.primary,
-                  color: '#fff',
-                  fontSize: '13px',
-                  fontWeight: 500,
-                },
-                isDesktop === true && {
-                  fontSize: '15px',
-                }
-              ]}
-            >
-              닫기
-            </ButtonBase>
-          </Box>
-        </Box>
+          {images.map((image) => (
+            <SwiperSlide key={image.src}>
+              <img
+                className={styles['image']}
+                src={image.src}
+                alt={image.alt}
+                draggable={false}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-    </Modal>
+    </dialog>,
+    document.body,
   );
 }

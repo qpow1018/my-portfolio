@@ -1,8 +1,6 @@
 import { useState } from "react";
 import styles from "./LoamProjectDetail.module.scss";
 
-import useWindowSize from "@/hooks/useWindowSize";
-
 import ProjectImagesModal from "../ProjectImagesModal";
 
 type THighlight = {
@@ -76,7 +74,6 @@ function ProjectHeader(props: TProjectHeaderProps) {
 }
 
 function ProjectImages(props: { images: string[]; imageAlt: string }) {
-  const { isDesktop } = useWindowSize();
   const [isProjectImagesModalOpen, setIsProjectImagesModalOpen] =
     useState(false);
 
@@ -96,9 +93,11 @@ function ProjectImages(props: { images: string[]; imageAlt: string }) {
 
       {isProjectImagesModalOpen === true && (
         <ProjectImagesModal
-          isDesktop={isDesktop}
           isOpen={isProjectImagesModalOpen}
-          images={props.images}
+          images={props.images.map((src, index) => ({
+            src,
+            alt: `${props.imageAlt} ${index + 1}`,
+          }))}
           onClose={() => setIsProjectImagesModalOpen(false)}
         />
       )}

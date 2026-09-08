@@ -1,0 +1,111 @@
+@use 'style/variables' as *;
+
+.project-images-modal {
+  width: min(900px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid $border;
+  border-radius: $border-radius-default;
+  background: #fff;
+  color: $text;
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.65);
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 16px;
+    border-bottom: 1px solid $border-light;
+  }
+
+  .title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .close-button {
+    min-width: 64px;
+    min-height: 44px;
+    padding: 8px 16px;
+    border: 1px solid $border;
+    border-radius: $border-radius-default;
+    background: #fff;
+    color: $text;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+      background: $gray-bg;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $blue;
+      outline-offset: 2px;
+    }
+  }
+
+  .gallery {
+    --swiper-theme-color: #{$blue};
+    --swiper-navigation-size: 24px;
+    padding: 16px 0 32px;
+    -webkit-user-select: none;
+    user-select: none;
+
+    :global(.swiper-button-prev),
+    :global(.swiper-button-next) {
+      width: 44px;
+      height: 44px;
+      margin-top: -22px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+
+      &:focus-visible {
+        outline: 2px solid $blue;
+        outline-offset: -2px;
+      }
+    }
+
+    :global(.swiper-button-prev) {
+      left: 2px;
+    }
+
+    :global(.swiper-button-next) {
+      right: 2px;
+    }
+  }
+
+  .image {
+    display: block;
+    width: 100%;
+    height: min(520px, calc(100dvh - 152px));
+    padding: 0 48px;
+    box-sizing: border-box;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .project-images-modal {
+    .header {
+      padding: 8px 12px;
+    }
+
+    .gallery {
+      padding: 12px 0 32px;
+    }
+
+    .image {
+      height: min(360px, calc(100dvh - 140px));
+      padding: 0 8px;
+    }
+  }
+}

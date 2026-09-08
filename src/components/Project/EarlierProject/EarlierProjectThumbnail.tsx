@@ -50,9 +50,11 @@ export default function EarlierProjectThumbnail(
 
       { isProjectImagesModalOpen === true &&
         <ProjectImagesModal
-          isDesktop={isDesktop}
           isOpen={isProjectImagesModalOpen}
-          images={props.images}
+          images={props.images.map((src, index) => ({
+            src,
+            alt: `프로젝트 서비스 화면 ${index + 1}`,
+          }))}
           onClose={() => setIsProjectImagesModalOpen(false)}
         />
       }

@@ -1,23 +1,22 @@
 import { useState } from "react";
 
+import ProjectImagesModal from "@/components/Project/ProjectImagesModal";
+
+import styles from "./Weddingbook.module.scss";
+
 import WeddingbookHomeImage from "@/images/weddingbook/weddingbook_home.png";
 import WeddingbookHonsuImage from "@/images/weddingbook/weddingbook_honsu.png";
 import WeddingbookInvitationImage from "@/images/weddingbook/weddingbook_invitation.png";
 import WeddingbookWeddinghallImage from "@/images/weddingbook/weddingbook_weddinghall.png";
-import useWindowSize from "@/hooks/useWindowSize";
-
-import ProjectImagesModal from "../ProjectImagesModal";
-import styles from "./Weddingbook.module.scss";
 
 const PROJECT_IMAGES = [
-  WeddingbookInvitationImage,
-  WeddingbookWeddinghallImage,
-  WeddingbookHomeImage,
-  WeddingbookHonsuImage,
+  { src: WeddingbookInvitationImage, alt: "웨딩북 청첩장 화면" },
+  { src: WeddingbookWeddinghallImage, alt: "웨딩북 웨딩홀 화면" },
+  { src: WeddingbookHomeImage, alt: "웨딩북 홈 화면" },
+  { src: WeddingbookHonsuImage, alt: "웨딩북 혼수 화면" },
 ];
 
 export default function WeddingbookHeader() {
-  const { isDesktop } = useWindowSize();
   const [isProjectImagesModalOpen, setIsProjectImagesModalOpen] =
     useState(false);
 
@@ -49,13 +48,13 @@ export default function WeddingbookHeader() {
         >
           <img
             className={styles["image"]}
-            src={PROJECT_IMAGES[0]}
-            alt="프로젝트 서비스 화면"
+            src={PROJECT_IMAGES[0].src}
+            alt={PROJECT_IMAGES[0].alt}
           />
         </button>
+
         {isProjectImagesModalOpen === true && (
           <ProjectImagesModal
-            isDesktop={isDesktop}
             isOpen={isProjectImagesModalOpen}
             images={PROJECT_IMAGES}
             onClose={() => setIsProjectImagesModalOpen(false)}
