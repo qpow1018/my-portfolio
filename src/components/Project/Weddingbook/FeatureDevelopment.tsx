@@ -23,28 +23,6 @@ export default function FeatureDevelopment() {
   );
 }
 
-function CaseBox(props: {
-  label: string;
-  title: string;
-  summary: string;
-  children: ReactNode;
-}) {
-  const { label, title, summary, children } = props;
-
-  return (
-    <article className={styles["case-box"]}>
-      <span className={styles["case-number"]} aria-hidden="true">
-        {label}
-      </span>
-      <div className={styles["case-wrap"]}>
-        <h4 className={styles["case-title"]}>{title}</h4>
-        <p className={styles["case-summary"]}>{summary}</p>
-        <div className={styles["case-content"]}>{children}</div>
-      </div>
-    </article>
-  );
-}
-
 function IntegratedSearchCase() {
   return (
     <CaseBox
@@ -98,7 +76,10 @@ function IntegratedSearchCase() {
           <strong>Promise.allSettled</strong>
         </div>
 
-        <div className={styles["search-result-connection"]} aria-hidden="true" />
+        <div
+          className={styles["search-result-connection"]}
+          aria-hidden="true"
+        />
 
         <div className={styles["search-response"]}>
           <span>통합검색 응답</span>
@@ -126,16 +107,15 @@ function InvitationCase() {
       <div className={styles["case-detail-list"]}>
         <CaseDetailItem title="업로드한 이미지를 바로 확인할 수 있도록 처리">
           <p>
-            이미지 업로드 후 서버에서 URL을 반환받더라도 실제 이미지 처리가
+            미지 업로드 후 서버에서 URL을 반환받더라도 실제 이미지 처리가
             완료되기까지 시간차가 있어, 반환받은 URL을 바로 사용하면 이미지가
             표시되지 않는 경우가 있었습니다.
           </p>
           <p>
             사용자가 선택한 이미지로 URL.createObjectURL()을 이용해 화면 표시용
-            URL을 별도로 생성했습니다. 작성 화면과 실시간 미리보기에서는 화면
-            표시용 URL을 사용하고, 서버에서 받은 이미지 URL은 저장에 사용하도록
-            두 값을 분리했습니다. 저장할 때는 화면에서만 필요한 값을
-            제외했습니다.
+            URL을 생성하고, 작성 화면과 실시간 미리보기에서는 이 값을
+            사용했습니다. 서버에서 받은 이미지 URL은 저장용으로 분리하고, 저장
+            시 화면에서만 필요한 값들은 제외했습니다.
           </p>
         </CaseDetailItem>
         <CaseDetailItem title="작성 중 변경사항 보호">
@@ -248,6 +228,28 @@ function SharedImprovements() {
         </CaseDetailItem>
       </div>
     </CaseBox>
+  );
+}
+
+function CaseBox(props: {
+  label: string;
+  title: string;
+  summary: string;
+  children: ReactNode;
+}) {
+  const { label, title, summary, children } = props;
+
+  return (
+    <article className={styles["case-box"]}>
+      <span className={styles["case-number"]} aria-hidden="true">
+        {label}
+      </span>
+      <div className={styles["case-wrap"]}>
+        <h4 className={styles["case-title"]}>{title}</h4>
+        <p className={styles["case-summary"]}>{summary}</p>
+        <div className={styles["case-content"]}>{children}</div>
+      </div>
+    </article>
   );
 }
 
