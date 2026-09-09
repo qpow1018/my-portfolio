@@ -1,8 +1,6 @@
-import { Box } from '@mui/material';
-import theme from '@/style/theme';
-
 import EarlierProjectCard from './EarlierProjectCard';
 import EarlierProjectText from './EarlierProjectText';
+import styles from './EarlierProjects.module.scss';
 
 import DiscoveryImage1 from '@/images/discovery/discovery_1.jpg';
 import DiscoveryImage2 from '@/images/discovery/discovery_2.jpg';
@@ -28,7 +26,7 @@ export default function DiscoveryMall() {
       ]}
       skills={'Next.js, TypeScript, MUI, Axios'}
     >
-      <Box sx={{ marginBottom: '8px' }}>
+      <div className={styles['project-detail']}>
         <EarlierProjectText type='dot'>
           고객센터 기능 개발: 공지사항, FAQ, 매장 안내, 매장 교환 서비스
         </EarlierProjectText>
@@ -41,37 +39,34 @@ export default function DiscoveryMall() {
         <EarlierProjectText type='indent'>
           - Geolocation API를 사용하여 유저의 위치정보에 따른 거리순/이름순 목록 요청
         </EarlierProjectText>
-      </Box>
+      </div>
 
-      <Box sx={{ marginBottom: '8px' }}>
+      <div className={styles['project-detail']}>
         <EarlierProjectText type='dot'>
           디자인 명세와 구현 결과의 차이 수정
         </EarlierProjectText>
         <EarlierProjectText type='indent'>
           - 마이페이지, 트렌드 페이지, 프로모션 페이지 등
         </EarlierProjectText>
-      </Box>
+      </div>
 
-      <Box sx={{ marginBottom: '8px' }}>
+      <div className={styles['project-detail']}>
         <EarlierProjectText type='dot'>
           프로모션 이벤트 기능 개발 및 수정
         </EarlierProjectText>
-      </Box>
+      </div>
 
-      <Box>
+      <div className={styles['project-detail']}>
         <EarlierProjectText type='dot'>
-          <Box
-            component={'a'}
-            target='blank'
+          <a
+            target='_blank'
+            rel='noreferrer'
             href='https://www.discovery-expedition.com'
-            sx={{
-              color: theme.color.primary,
-            }}
           >
             https://www.discovery-expedition.com
-          </Box>
+          </a>
         </EarlierProjectText>
-      </Box>
+      </div>
     </EarlierProjectCard>
   );
 }

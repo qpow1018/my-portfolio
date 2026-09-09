@@ -1,8 +1,6 @@
-import { Box } from '@mui/material';
-import theme from '@/style/theme';
-
 import EarlierProjectCard from './EarlierProjectCard';
 import EarlierProjectText from './EarlierProjectText';
+import styles from './EarlierProjects.module.scss';
 
 import MediaFestivalImage1 from '@/images/mediaFestival/mediaFestival_1.jpg';
 import MediaFestivalImage2 from '@/images/mediaFestival/mediaFestival_2.jpg';
@@ -20,44 +18,41 @@ export default function MediaFestival() {
       ]}
       skills={'HTML, CSS, JavaScript, jQuery'}
     >
-      <Box sx={{ marginBottom: '8px' }}>
+      <div className={styles['project-detail']}>
         <EarlierProjectText type='dot'>
           CSS 미디어 쿼리를 활용한 반응형 웹 구현
         </EarlierProjectText>
-      </Box>
+      </div>
 
-      <Box sx={{ marginBottom: '8px' }}>
+      <div className={styles['project-detail']}>
         <EarlierProjectText type='dot'>
           Quill 에디터 기반 게시판 구현
         </EarlierProjectText>
-      </Box>
+      </div>
 
-      <Box sx={{ marginBottom: '8px' }}>
+      <div className={styles['project-detail']}>
         <EarlierProjectText type='dot'>
           jQuery Ajax를 통한 서버 통신
         </EarlierProjectText>
-      </Box>
+      </div>
 
-      <Box sx={{ marginBottom: '8px' }}>
+      <div className={styles['project-detail']}>
         <EarlierProjectText type='dot'>
           jQuery load를 활용한 공통 Header·Footer 처리
         </EarlierProjectText>
-      </Box>
+      </div>
 
-      <Box>
+      <div className={styles['project-detail']}>
         <EarlierProjectText type='dot'>
-          <Box
-            component={'a'}
-            target='blank'
+          <a
+            target='_blank'
+            rel='noreferrer'
             href='https://creatorfesta.co.kr'
-            sx={{
-              color: theme.color.primary
-            }}
           >
             https://creatorfesta.co.kr
-          </Box>
+          </a>
         </EarlierProjectText>
-      </Box>
+      </div>
     </EarlierProjectCard>
   );
 }
