@@ -1,5 +1,4 @@
 import EarlierProjectCard from './EarlierProjectCard';
-import EarlierProjectText from './EarlierProjectText';
 import styles from './EarlierProjects.module.scss';
 
 import FlaboCommunityImage1 from '@/images/flaboCommunity/flaboCommunity_1.webp';
@@ -36,39 +35,39 @@ export default function FlaboCommunity() {
       skills={'React, TypeScript, Redux, Axios, SCSS'}
     >
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           게시판 기능 개발
-        </EarlierProjectText>
-        <EarlierProjectText type='indent'>
+        </p>
+        <p className={styles['project-text-indent']}>
           - IntersectionObserver API를 사용하여 무한 스크롤 게시글 목록 개발
-        </EarlierProjectText>
-        <EarlierProjectText type='indent'>
+        </p>
+        <p className={styles['project-text-indent']}>
           - 게시글 작성 시 텍스트, 이미지, 동영상, 유튜브 링크를 추가 할 수 있는 에디터 개발
-        </EarlierProjectText>
+        </p>
       </div>
 
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           디아블로2 거래소 기능 개발
-        </EarlierProjectText>
-        <EarlierProjectText type='indent'>
+        </p>
+        <p className={styles['project-text-indent']}>
           - 원하는 아이템 검색을 위한 검색 필터 개발
-        </EarlierProjectText>
-        <EarlierProjectText type='indent'>
+        </p>
+        <p className={styles['project-text-indent']}>
           - WebSocket API를 이용한 거래 채팅방 개발
-        </EarlierProjectText>
+        </p>
       </div>
 
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           고차 컴포넌트를 활용한 공통 사용자 권한 확인 기능 구현
-        </EarlierProjectText>
+        </p>
       </div>
 
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           Redux를 사용하여 로그인 유저 정보, 새 알림 여부, 스낵바 메시지 등 공통 상태관리
-        </EarlierProjectText>
+        </p>
       </div>
     </EarlierProjectCard>
   );

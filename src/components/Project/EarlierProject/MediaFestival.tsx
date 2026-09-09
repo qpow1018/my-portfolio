@@ -1,5 +1,4 @@
 import EarlierProjectCard from './EarlierProjectCard';
-import EarlierProjectText from './EarlierProjectText';
 import styles from './EarlierProjects.module.scss';
 
 import MediaFestivalImage1 from '@/images/mediaFestival/mediaFestival_1.jpg';
@@ -19,31 +18,31 @@ export default function MediaFestival() {
       skills={'HTML, CSS, JavaScript, jQuery'}
     >
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           CSS 미디어 쿼리를 활용한 반응형 웹 구현
-        </EarlierProjectText>
+        </p>
       </div>
 
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           Quill 에디터 기반 게시판 구현
-        </EarlierProjectText>
+        </p>
       </div>
 
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           jQuery Ajax를 통한 서버 통신
-        </EarlierProjectText>
+        </p>
       </div>
 
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           jQuery load를 활용한 공통 Header·Footer 처리
-        </EarlierProjectText>
+        </p>
       </div>
 
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           <a
             target='_blank'
             rel='noreferrer'
@@ -51,7 +50,7 @@ export default function MediaFestival() {
           >
             https://creatorfesta.co.kr
           </a>
-        </EarlierProjectText>
+        </p>
       </div>
     </EarlierProjectCard>
   );

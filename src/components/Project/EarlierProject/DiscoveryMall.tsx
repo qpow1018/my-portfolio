@@ -1,5 +1,4 @@
 import EarlierProjectCard from './EarlierProjectCard';
-import EarlierProjectText from './EarlierProjectText';
 import styles from './EarlierProjects.module.scss';
 
 import DiscoveryImage1 from '@/images/discovery/discovery_1.jpg';
@@ -27,37 +26,37 @@ export default function DiscoveryMall() {
       skills={'Next.js, TypeScript, MUI, Axios'}
     >
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           고객센터 기능 개발: 공지사항, FAQ, 매장 안내, 매장 교환 서비스
-        </EarlierProjectText>
-        <EarlierProjectText type='indent'>
+        </p>
+        <p className={styles['project-text-indent']}>
           - URL 파라미터에 따라 필요한 UI 구성 및 유효하지 않은 파라미터일 경우 기본값 설정
-        </EarlierProjectText>
-        <EarlierProjectText type='indent'>
+        </p>
+        <p className={styles['project-text-indent']}>
           - SessionStorage 활용하여 중복되는 게시물 조회수 증가 요청을 최소화
-        </EarlierProjectText>
-        <EarlierProjectText type='indent'>
+        </p>
+        <p className={styles['project-text-indent']}>
           - Geolocation API를 사용하여 유저의 위치정보에 따른 거리순/이름순 목록 요청
-        </EarlierProjectText>
+        </p>
       </div>
 
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           디자인 명세와 구현 결과의 차이 수정
-        </EarlierProjectText>
-        <EarlierProjectText type='indent'>
+        </p>
+        <p className={styles['project-text-indent']}>
           - 마이페이지, 트렌드 페이지, 프로모션 페이지 등
-        </EarlierProjectText>
+        </p>
       </div>
 
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           프로모션 이벤트 기능 개발 및 수정
-        </EarlierProjectText>
+        </p>
       </div>
 
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           <a
             target='_blank'
             rel='noreferrer'
@@ -65,7 +64,7 @@ export default function DiscoveryMall() {
           >
             https://www.discovery-expedition.com
           </a>
-        </EarlierProjectText>
+        </p>
       </div>
     </EarlierProjectCard>
   );

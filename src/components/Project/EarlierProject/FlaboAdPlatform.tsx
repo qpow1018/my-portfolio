@@ -1,5 +1,4 @@
 import EarlierProjectCard from './EarlierProjectCard';
-import EarlierProjectText from './EarlierProjectText';
 import styles from './EarlierProjects.module.scss';
 
 import FlaboAdPlatformImage1 from '@/images/flaboAdPlatform/flaboAdPlatform_1.jpg';
@@ -24,24 +23,24 @@ export default function FlaboAdPlatform() {
       skills={'React, TypeScript, MUI, Axios, Redux'}
     >
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           공통 UI 컴포넌트 개발
-        </EarlierProjectText>
-        <EarlierProjectText type='indent'>
+        </p>
+        <p className={styles['project-text-indent']}>
           - 버튼, 텍스트인풋, 모달, 로딩박스 등
-        </EarlierProjectText>
+        </p>
       </div>
 
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           MUI Theme를 활용하여 색상, 크기 등 디자인 토큰 관리
-        </EarlierProjectText>
+        </p>
       </div>
 
       <div className={styles['project-detail']}>
-        <EarlierProjectText type='dot'>
+        <p className={styles['project-text-dot']}>
           자주 사용되는 Form Validation을 위한 유효성 검사 모듈 제작
-        </EarlierProjectText>
+        </p>
       </div>
     </EarlierProjectCard>
   );

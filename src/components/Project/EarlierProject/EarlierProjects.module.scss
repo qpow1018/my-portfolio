@@ -81,7 +81,8 @@
     }
   }
 
-  .project-text {
+  .project-text-dot,
+  .project-text-indent {
     display: flex;
     align-items: flex-start;
     margin: 0 0 4px;
@@ -90,23 +91,16 @@
     line-height: 20px;
     word-break: keep-all;
 
-    &.is-dot,
-    &.is-indent {
-      &::before {
-        display: block;
-        flex: 0 0 16px;
-        width: 16px;
-        height: 20px;
-        content: '';
-      }
-    }
-
-    .dot {
-      position: relative;
+    &::before {
       display: block;
       flex: 0 0 16px;
       width: 16px;
       height: 20px;
+      content: '';
+    }
+
+    &.project-text-dot {
+      position: relative;
 
       &::after {
         position: absolute;
@@ -172,25 +166,19 @@
       font-size: 13px;
     }
 
-    .project-text {
+    .project-text-dot,
+    .project-text-indent {
       margin-bottom: 0;
       font-size: 15px;
       line-height: 24px;
 
-      &.is-dot,
-      &.is-indent {
-        &::before {
-          flex-basis: 22px;
-          width: 22px;
-          height: 24px;
-        }
-      }
-
-      .dot {
+      &::before {
         flex-basis: 22px;
         width: 22px;
         height: 24px;
+      }
 
+      &.project-text-dot {
         &::after {
           top: 9px;
           left: 8px;
