@@ -1,22 +1,24 @@
-import { useState, type ReactNode } from 'react';
+import { useState } from 'react';
 
 import ProjectImagesModal from '../ProjectImagesModal';
-import styles from './EarlierProjects.module.scss';
+import styles from './EarlierProjectCard.module.scss';
 
 type TEarlierProjectCardProps = {
   title: string;
-  description: string[];
-  skills: string;
+  summary: string;
+  skills: string[];
+  highlights: string[];
+  serviceUrl?: string;
   images: string[];
-  children?: ReactNode;
 };
 
 export default function EarlierProjectCard({
   title,
-  description,
+  summary,
   skills,
+  highlights,
+  serviceUrl,
   images,
-  children,
 }: TEarlierProjectCardProps) {
   const hasImages = images.length > 0;
   const [isProjectImagesModalOpen, setIsProjectImagesModalOpen] = useState(false);
@@ -36,13 +38,23 @@ export default function EarlierProjectCard({
 
       <div className={styles['project-content']}>
         <h4 className={styles['project-title']}>{title}</h4>
-        <div className={styles['description']}>
-          {description.map((item) => (
-            <p key={item}>{item}</p>
+        <p className={styles['summary']}>{summary}</p>
+        {serviceUrl && (
+          <a
+            className={styles['service-link']}
+            href={serviceUrl}
+            target='_blank'
+            rel='noreferrer'
+          >
+            {serviceUrl}
+          </a>
+        )}
+        <p className={styles['skills']}>{skills.join(', ')}</p>
+        <div className={styles['highlights']}>
+          {highlights.map((highlight) => (
+            <p key={highlight}>{highlight}</p>
           ))}
         </div>
-        <p className={styles['skills']}>{skills}</p>
-        {children}
       </div>
       {isProjectImagesModalOpen && (
         <ProjectImagesModal

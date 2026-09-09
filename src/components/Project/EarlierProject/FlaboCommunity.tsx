@@ -1,5 +1,4 @@
 import EarlierProjectCard from './EarlierProjectCard';
-import styles from './EarlierProjects.module.scss';
 
 import FlaboCommunityImage1 from '@/images/flaboCommunity/flaboCommunity_1.webp';
 import FlaboCommunityImage2 from '@/images/flaboCommunity/flaboCommunity_2.webp';
@@ -16,9 +15,7 @@ export default function FlaboCommunity() {
   return (
     <EarlierProjectCard
       title='자사 커뮤니티 서비스'
-      description={[
-        '커뮤니티 및 디아블로2 아이템 거래 서비스',
-      ]}
+      summary='커뮤니티 및 디아블로2 아이템 거래 서비스'
       images={[
         FlaboCommunityImage1,
         FlaboCommunityImage2,
@@ -31,25 +28,12 @@ export default function FlaboCommunity() {
         FlaboCommunityImage9,
         FlaboCommunityImage10,
       ]}
-      skills={'React, TypeScript, Redux, Axios, SCSS'}
-    >
-      <div className={styles['project-detail']}>
-        <p className={styles['project-text-dot']}>
-          회원 전용 페이지의 반복 로그인 확인 로직을 HOC로 공통화
-        </p>
-      </div>
-
-      <div className={styles['project-detail']}>
-        <p className={styles['project-text-dot']}>
-          WebSocket 기반 아이템 거래 사용자 간 채팅 기능
-        </p>
-      </div>
-
-      <div className={styles['project-detail']}>
-        <p className={styles['project-text-dot']}>
-          커뮤니티 게시판 및 거래 서비스 화면 구현
-        </p>
-      </div>
-    </EarlierProjectCard>
+      skills={['React', 'TypeScript', 'Redux', 'Axios', 'SCSS']}
+      highlights={[
+        '회원 전용 페이지의 반복 로그인 확인 로직을 HOC로 공통화',
+        'WebSocket 기반 아이템 거래 사용자 간 채팅 기능',
+        '커뮤니티 게시판 및 거래 서비스 화면 구현',
+      ]}
+    />
   );
 }
