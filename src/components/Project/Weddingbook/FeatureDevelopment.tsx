@@ -107,7 +107,7 @@ function InvitationCase() {
       <div className={styles["case-detail-list"]}>
         <CaseDetailItem title="업로드한 이미지를 바로 확인할 수 있도록 처리">
           <p>
-            미지 업로드 후 서버에서 URL을 반환받더라도 실제 이미지 처리가
+            이미지 업로드 후 서버에서 URL을 반환받더라도 실제 이미지 처리가
             완료되기까지 시간차가 있어, 반환받은 URL을 바로 사용하면 이미지가
             표시되지 않는 경우가 있었습니다.
           </p>

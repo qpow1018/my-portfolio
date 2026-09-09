@@ -81,9 +81,10 @@ function Case1() {
         <div className={styles["result-connection"]} aria-hidden="true" />
 
         <div className={styles["route-result"]}>
-          <span className={styles["result-label"]}>현재 웹 경로</span>
+          <span className={styles["result-label"]}>변환된 웹 경로 예시</span>
           <div className={styles["result-paths"]}>
-            <code>{`/category/<id>/<path>`}</code>
+            <code>{`/category/<id>`}</code>
+            <code>{`/<path>`}</code>
           </div>
         </div>
       </figure>
