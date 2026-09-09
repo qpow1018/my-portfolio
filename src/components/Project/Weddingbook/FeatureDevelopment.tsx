@@ -219,18 +219,6 @@ function SharedImprovements() {
             상태 관리 방식은 유지하면서 같은 구조를 적용했습니다.
           </p>
         </CaseDetailItem>
-        <CaseDetailItem title="Header">
-          <p>
-            기존 공통 Header는 화면마다 필요한 기능이 추가되면서 제목·뒤로가기뿐
-            아니라 페이지별 액션과 서비스 상태를 위한 여러 설정을 함께 처리하고
-            있었습니다.
-          </p>
-          <p>
-            공통으로 사용하는 역할을 단순하게 만들기 위해 기본 레이아웃을
-            담당하는 HeaderBase와 제목·뒤로가기 등 기본 동작을 담당하는 Header로
-            역할을 나누고, 기존 사용처를 새로운 구조로 단계적으로 전환했습니다.
-          </p>
-        </CaseDetailItem>
         <CaseDetailItem title="Icon">
           <p>아이콘의 종류와 표시 크기가 결합되어 있던 구조를 분리</p>
           <p>
