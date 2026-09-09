@@ -161,7 +161,10 @@ function HomeCase() {
               <strong>프론트엔드 코드</strong>
               <span>구성 · 순서 · 화면 내용</span>
             </div>
-            <span className={styles["home-structure-arrow"]} aria-hidden="true" />
+            <span
+              className={styles["home-structure-arrow"]}
+              aria-hidden="true"
+            />
             <strong className={styles["home-result"]}>홈 화면</strong>
           </div>
         </section>
@@ -170,14 +173,23 @@ function HomeCase() {
           <h5>변경 후</h5>
           <div className={styles["home-structure-steps"]}>
             <strong>어드민에서 구성</strong>
-            <span className={styles["home-structure-arrow"]} aria-hidden="true" />
+            <span
+              className={styles["home-structure-arrow"]}
+              aria-hidden="true"
+            />
             <div className={styles["home-structure-step"]}>
               <strong>서버에서 전달</strong>
               <span>타입 · 설정 · 순서</span>
             </div>
-            <span className={styles["home-structure-arrow"]} aria-hidden="true" />
+            <span
+              className={styles["home-structure-arrow"]}
+              aria-hidden="true"
+            />
             <strong>타입별 컴포넌트 조합</strong>
-            <span className={styles["home-structure-arrow"]} aria-hidden="true" />
+            <span
+              className={styles["home-structure-arrow"]}
+              aria-hidden="true"
+            />
             <strong className={styles["home-result"]}>홈 화면</strong>
           </div>
         </section>
@@ -194,41 +206,29 @@ function SharedImprovements() {
       summary="서비스에서 반복해서 사용하는 공통 요소의 구조와 사용 방식 개선"
     >
       <div className={styles["case-detail-list"]}>
-        <CaseDetailItem title="Toast / Snackbar">
-          <p>
-            다양한 사용 방식이 추가되며 복잡해진 알림 구조를 역할에 맞게 분리
-          </p>
+        <CaseDetailItem title="Toast">
           <p>
             기존 Toast는 서비스 운영 과정에서 다양한 기능이 추가되면서, 짧게
-            보여주는 알림과 지속적으로 보여주는 알림, 사용자의 동작이 필요한
-            알림 등을 하나의 구조에서 여러 옵션으로 처리하고 있었습니다.
+            보여주는 알림부터 지속적으로 노출하거나 사용자의 동작이 필요한
+            알림까지 하나의 구조에서 여러 옵션으로 처리하고 있었습니다.
           </p>
           <p>
-            서로 다른 성격의 알림을 하나의 구조에서 계속 확장하기보다 Toast와
-            Snackbar로 역할을 나누고, 각각의 UI와 호출 방식을 분리했습니다. 기존
-            사용처를 새로운 구조로 전환했으며, 이후 Next.js 웹에서도 기존 상태
-            관리 방식은 유지하면서 같은 Toast/Snackbar 구조를 적용했습니다.
+            하나의 Toast에서 여러 사용 방식을 계속 처리하기보다, 서비스에서
+            사용하는 알림 UI의 형태에 맞게 컴포넌트와 호출 방식을 분리했습니다.
+            기존 사용처를 새로운 구조로 전환하고, 이후 Next.js 웹에서도 기존
+            상태 관리 방식은 유지하면서 같은 구조를 적용했습니다.
           </p>
         </CaseDetailItem>
         <CaseDetailItem title="Header">
-          <p>여러 방식으로 사용되던 공통 Header의 역할과 사용 방식 정리</p>
           <p>
-            기존에는 AppHeader와 CustomHeader가 함께 사용되고 있었고, 화면마다
-            필요한 기능이 추가되면서 제목과 뒤로가기뿐 아니라 페이지별 액션과
-            서비스 상태를 처리하기 위한 여러 설정이 Header에 함께 존재했습니다.
+            기존 공통 Header는 화면마다 필요한 기능이 추가되면서 제목·뒤로가기뿐
+            아니라 페이지별 액션과 서비스 상태를 위한 여러 설정을 함께 처리하고
+            있었습니다.
           </p>
           <p>
-            공통 컴포넌트는 사용하는 개발자가 필요한 기능과 사용 방법을 쉽게
-            파악할 수 있어야 한다고 생각했습니다. 여러 요구사항을 하나의
-            Header에서 계속 처리하기보다, 대부분의 화면에서 공통으로 사용하는
-            역할을 단순하게 만드는 방향으로 구조를 정리했습니다.
-          </p>
-          <p>
-            기본 레이아웃을 담당하는 HeaderBase와 제목·뒤로가기 등 기본 동작을
-            담당하는 Header로 역할을 나누고, 기존 사용처를 새로운 구조로
-            단계적으로 전환했습니다. 페이지별 액션을 조합할 수 있도록 확장하는
-            작업도 진행했지만, 전체 Header 전환을 완료하기 전에 작업이
-            종료되었습니다.
+            공통으로 사용하는 역할을 단순하게 만들기 위해 기본 레이아웃을
+            담당하는 HeaderBase와 제목·뒤로가기 등 기본 동작을 담당하는 Header로
+            역할을 나누고, 기존 사용처를 새로운 구조로 단계적으로 전환했습니다.
           </p>
         </CaseDetailItem>
         <CaseDetailItem title="Icon">
