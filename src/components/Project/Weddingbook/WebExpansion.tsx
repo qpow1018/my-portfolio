@@ -48,6 +48,45 @@ function Case1() {
         하나씩 변경하기보다, 기존 공통 라우터의 정규화를 확장해 주소 형식에 따라
         현재 웹에서 사용할 수 있는 경로로 변환했습니다.
       </p>
+
+      <figure className={styles["route-flow"]} aria-label="주소 정규화 흐름">
+        <div className={styles["route-input-list"]}>
+          <div className={styles["route-input"]}>
+            <span className={styles["route-label"]}>App Scheme</span>
+            <code>{`<app-scheme>://partner?categoryType=<id>`}</code>
+          </div>
+          <div className={styles["route-input"]}>
+            <span className={styles["route-label"]}>WebView Wrapper</span>
+            <code>
+              {`<app-scheme>://webview?url=https://<previous-web-domain>/<path>`}
+            </code>
+          </div>
+          <div className={styles["route-input"]}>
+            <span className={styles["route-label"]}>기존 Web URL</span>
+            <code>{`https://<previous-web-domain>/<path>`}</code>
+          </div>
+        </div>
+
+        <div className={styles["route-divider"]} aria-hidden="true" />
+
+        <div className={styles["flow-arrow"]} aria-hidden="true" />
+
+        <div className={styles["normalization-point"]}>
+          <span className={styles["normalization-label"]}>
+            기존 공통 라우터
+          </span>
+          <strong>URL 정규화</strong>
+        </div>
+
+        <div className={styles["result-connection"]} aria-hidden="true" />
+
+        <div className={styles["route-result"]}>
+          <span className={styles["result-label"]}>현재 웹 경로</span>
+          <div className={styles["result-paths"]}>
+            <code>{`/category/<id>/<path>`}</code>
+          </div>
+        </div>
+      </figure>
     </CaseBox>
   );
 }

@@ -67,6 +67,138 @@
       border-radius: $border-radius-default;
     }
   }
+
+  .route-flow {
+    margin: 12px 0 0;
+    padding: 28px 32px;
+    border: 1px solid $border;
+
+    .route-input-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .route-input {
+      display: grid;
+      min-width: 0;
+      grid-template-columns: 140px minmax(0, 1fr);
+      column-gap: 24px;
+      align-items: start;
+
+      .route-label {
+        font-size: 12px;
+        font-weight: 700;
+        color: $blue-accent;
+      }
+
+      code {
+        overflow-wrap: normal;
+        word-break: normal;
+        font-size: 12px;
+        color: $text-sec;
+      }
+    }
+
+    .route-divider {
+      height: 1px;
+      margin-top: 28px;
+      background-color: $border-dark;
+    }
+
+    .flow-arrow {
+      position: relative;
+      width: 1px;
+      height: 34px;
+      margin: 0 auto;
+      background-color: $blue-400;
+
+      &::after {
+        position: absolute;
+        right: -3px;
+        bottom: 1px;
+        width: 7px;
+        height: 7px;
+        border-right: 1px solid $blue-400;
+        border-bottom: 1px solid $blue-400;
+        content: "";
+        transform: rotate(45deg);
+      }
+    }
+
+    .normalization-point {
+      display: flex;
+      margin: 0 auto;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      text-align: center;
+
+      .normalization-label {
+        font-size: 12px;
+        font-weight: 700;
+        color: $text-sec;
+      }
+
+      strong {
+        font-size: 15px;
+        font-weight: 700;
+        color: $text;
+      }
+    }
+
+    .result-connection {
+      position: relative;
+      width: 1px;
+      height: 38px;
+      margin: 0 auto;
+      background-color: $blue-400;
+
+      &::after {
+        position: absolute;
+        right: -3px;
+        bottom: 1px;
+        width: 7px;
+        height: 7px;
+        border-right: 1px solid $blue-400;
+        border-bottom: 1px solid $blue-400;
+        content: "";
+        transform: rotate(45deg);
+      }
+    }
+
+    .route-result {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+
+      .result-label {
+        font-size: 12px;
+        font-weight: 700;
+        color: $text;
+      }
+
+      .result-paths {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 16px;
+
+        code {
+          font-family:
+            ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+          font-size: 13px;
+          color: $blue-accent;
+        }
+
+        .url-token {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: $breakpoint-md) {
@@ -109,6 +241,56 @@
       }
       .case-content {
         line-height: 1.75;
+      }
+
+      .route-flow {
+        margin-top: 20px;
+        padding: 20px;
+
+        .route-input-list {
+          gap: 18px;
+        }
+
+        .route-input {
+          grid-template-columns: 1fr;
+          row-gap: 6px;
+
+          code {
+            font-size: 11px;
+            line-height: 1.7;
+            overflow-wrap: normal;
+            word-break: normal;
+          }
+        }
+
+        .route-divider {
+          margin-top: 22px;
+        }
+
+        .flow-arrow {
+          height: 30px;
+        }
+
+        .normalization-point {
+          min-width: 0;
+          margin: 0 auto;
+          align-items: center;
+          text-align: center;
+        }
+
+        .result-connection {
+          height: 32px;
+          margin: 0 auto;
+        }
+
+        .route-result {
+          align-items: center;
+          text-align: center;
+
+          .result-paths {
+            justify-content: center;
+          }
+        }
       }
     }
   }
