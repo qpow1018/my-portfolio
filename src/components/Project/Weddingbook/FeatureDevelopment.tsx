@@ -150,6 +150,38 @@ function HomeCase() {
         목록 등 각 영역을 타입별 컴포넌트로 분리하고, 전달받은 순서와 설정에
         따라 조합했습니다.
       </p>
+      <figure
+        className={styles["home-composition-comparison"]}
+        aria-label="프론트엔드 코드에 고정된 기존 홈 화면 구조와 서버 구성에 따라 조합하는 변경 후 구조 비교"
+      >
+        <section className={styles["home-structure"]}>
+          <h5>기존</h5>
+          <div className={styles["home-structure-steps"]}>
+            <div className={styles["home-structure-step"]}>
+              <strong>프론트엔드 코드</strong>
+              <span>구성 · 순서 · 화면 내용</span>
+            </div>
+            <span className={styles["home-structure-arrow"]} aria-hidden="true" />
+            <strong className={styles["home-result"]}>홈 화면</strong>
+          </div>
+        </section>
+
+        <section className={styles["home-structure"]}>
+          <h5>변경 후</h5>
+          <div className={styles["home-structure-steps"]}>
+            <strong>어드민에서 구성</strong>
+            <span className={styles["home-structure-arrow"]} aria-hidden="true" />
+            <div className={styles["home-structure-step"]}>
+              <strong>서버에서 전달</strong>
+              <span>타입 · 설정 · 순서</span>
+            </div>
+            <span className={styles["home-structure-arrow"]} aria-hidden="true" />
+            <strong>타입별 컴포넌트 조합</strong>
+            <span className={styles["home-structure-arrow"]} aria-hidden="true" />
+            <strong className={styles["home-result"]}>홈 화면</strong>
+          </div>
+        </section>
+      </figure>
     </CaseBox>
   );
 }
