@@ -11,8 +11,7 @@ export default function FlaboAdPlatform() {
     <EarlierProjectCard
       title='인플루언서 광고 플랫폼'
       description={[
-        '- 광고주·MCN·인플루언서 간 광고 제안 및 진행 현황 공유 플랫폼 개발',
-        '- MCN의 인플루언서 계약, 일정, 정산 관리 업무 자동화',
+        '광고주·MCN·인플루언서 간 광고 진행과 관리 업무를 지원하는 플랫폼',
       ]}
       images={[
         FlaboAdPlatformImage1,
@@ -20,26 +19,23 @@ export default function FlaboAdPlatform() {
         FlaboAdPlatformImage3,
         FlaboAdPlatformImage4,
       ]}
-      skills={'React, TypeScript, MUI, Axios, Redux'}
+      skills={'React, TypeScript, MUI, Redux, Axios'}
     >
       <div className={styles['project-detail']}>
         <p className={styles['project-text-dot']}>
-          공통 UI 컴포넌트 개발
-        </p>
-        <p className={styles['project-text-indent']}>
-          - 버튼, 텍스트인풋, 모달, 로딩박스 등
+          반복적으로 사용되는 UI를 공통 컴포넌트로 구성
         </p>
       </div>
 
       <div className={styles['project-detail']}>
         <p className={styles['project-text-dot']}>
-          MUI Theme를 활용하여 색상, 크기 등 디자인 토큰 관리
+          MUI Theme을 활용한 공통 디자인 값 관리
         </p>
       </div>
 
       <div className={styles['project-detail']}>
         <p className={styles['project-text-dot']}>
-          자주 사용되는 Form Validation을 위한 유효성 검사 모듈 제작
+          광고 제안·진행 현황 및 계약·일정·정산 관련 화면 구성
         </p>
       </div>
     </EarlierProjectCard>

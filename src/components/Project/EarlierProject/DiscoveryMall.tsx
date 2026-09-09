@@ -13,7 +13,7 @@ export default function DiscoveryMall() {
     <EarlierProjectCard
       title='디스커버리 공식 온라인몰 리뉴얼'
       description={[
-        '- 의류 브랜드 \'디스커버리\'의 공식 온라인 쇼핑몰 리뉴얼 프로젝트 참여',
+        '의류 브랜드 디스커버리의 공식 온라인 쇼핑몰 리뉴얼',
       ]}
       images={[
         DiscoveryImage1,
@@ -27,31 +27,19 @@ export default function DiscoveryMall() {
     >
       <div className={styles['project-detail']}>
         <p className={styles['project-text-dot']}>
-          고객센터 기능 개발: 공지사항, FAQ, 매장 안내, 매장 교환 서비스
-        </p>
-        <p className={styles['project-text-indent']}>
-          - URL 파라미터에 따라 필요한 UI 구성 및 유효하지 않은 파라미터일 경우 기본값 설정
-        </p>
-        <p className={styles['project-text-indent']}>
-          - SessionStorage 활용하여 중복되는 게시물 조회수 증가 요청을 최소화
-        </p>
-        <p className={styles['project-text-indent']}>
-          - Geolocation API를 사용하여 유저의 위치정보에 따른 거리순/이름순 목록 요청
+          고객센터 영역 개발: 공지사항, FAQ, 매장 안내, 매장 교환
         </p>
       </div>
 
       <div className={styles['project-detail']}>
         <p className={styles['project-text-dot']}>
-          디자인 명세와 구현 결과의 차이 수정
-        </p>
-        <p className={styles['project-text-indent']}>
-          - 마이페이지, 트렌드 페이지, 프로모션 페이지 등
+          프로모션 이벤트 페이지 개발
         </p>
       </div>
 
       <div className={styles['project-detail']}>
         <p className={styles['project-text-dot']}>
-          프로모션 이벤트 기능 개발 및 수정
+          기존 페이지의 디자인 시안과 구현 화면 간 UI 차이 수정 및 보완
         </p>
       </div>
 

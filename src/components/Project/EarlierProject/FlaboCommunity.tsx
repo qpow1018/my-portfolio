@@ -17,8 +17,7 @@ export default function FlaboCommunity() {
     <EarlierProjectCard
       title='자사 커뮤니티 서비스'
       description={[
-        '- 유머, 영화, 게임 등 다양한 주제를 다루는 커뮤니티 서비스 개발',
-        '- 디아블로2 거래소 서비스 개발: 상점 생성, 아이템 등록·검색, 채팅',
+        '커뮤니티 및 디아블로2 아이템 거래 서비스',
       ]}
       images={[
         FlaboCommunityImage1,
@@ -36,37 +35,19 @@ export default function FlaboCommunity() {
     >
       <div className={styles['project-detail']}>
         <p className={styles['project-text-dot']}>
-          게시판 기능 개발
-        </p>
-        <p className={styles['project-text-indent']}>
-          - IntersectionObserver API를 사용하여 무한 스크롤 게시글 목록 개발
-        </p>
-        <p className={styles['project-text-indent']}>
-          - 게시글 작성 시 텍스트, 이미지, 동영상, 유튜브 링크를 추가 할 수 있는 에디터 개발
+          회원 전용 페이지의 반복 로그인 확인 로직을 HOC로 공통화
         </p>
       </div>
 
       <div className={styles['project-detail']}>
         <p className={styles['project-text-dot']}>
-          디아블로2 거래소 기능 개발
-        </p>
-        <p className={styles['project-text-indent']}>
-          - 원하는 아이템 검색을 위한 검색 필터 개발
-        </p>
-        <p className={styles['project-text-indent']}>
-          - WebSocket API를 이용한 거래 채팅방 개발
+          WebSocket 기반 아이템 거래 사용자 간 채팅 기능
         </p>
       </div>
 
       <div className={styles['project-detail']}>
         <p className={styles['project-text-dot']}>
-          고차 컴포넌트를 활용한 공통 사용자 권한 확인 기능 구현
-        </p>
-      </div>
-
-      <div className={styles['project-detail']}>
-        <p className={styles['project-text-dot']}>
-          Redux를 사용하여 로그인 유저 정보, 새 알림 여부, 스낵바 메시지 등 공통 상태관리
+          커뮤니티 게시판 및 거래 서비스 화면 구현
         </p>
       </div>
     </EarlierProjectCard>
