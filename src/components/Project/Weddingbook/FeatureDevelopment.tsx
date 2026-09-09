@@ -66,6 +66,46 @@ function IntegratedSearchCase() {
         영역의 결과는 보여줄 수 있도록 Promise.allSettled로 각 요청의 성공과
         실패를 개별 처리했습니다.
       </p>
+      <figure
+        className={styles["integrated-search-flow"]}
+        aria-label="일부 검색 요청이 실패해도 성공한 영역의 결과를 유지하는 통합검색 처리 예시"
+      >
+        <div className={styles["search-request-list"]}>
+          <div className={styles["search-request"]}>
+            <span>웨딩홀 검색 API</span>
+            <span className={styles["request-status"]}>성공</span>
+          </div>
+          <div className={styles["search-request"]}>
+            <span>업체 검색 API</span>
+            <span
+              className={`${styles["request-status"]} ${styles["is-failed"]}`}
+            >
+              실패
+            </span>
+          </div>
+          <div className={styles["search-request"]}>
+            <span>스토어 검색 API</span>
+            <span className={styles["request-status"]}>성공</span>
+          </div>
+        </div>
+
+        <div className={styles["search-flow-divider"]} aria-hidden="true" />
+
+        <div className={styles["search-flow-arrow"]} aria-hidden="true" />
+
+        <div className={styles["search-handler"]}>
+          <span>Next.js Route Handler</span>
+          <strong>Promise.allSettled</strong>
+        </div>
+
+        <div className={styles["search-result-connection"]} aria-hidden="true" />
+
+        <div className={styles["search-response"]}>
+          <span>통합검색 응답</span>
+          <strong>성공한 영역의 결과 유지</strong>
+          <small>웨딩홀 · 스토어</small>
+        </div>
+      </figure>
     </CaseBox>
   );
 }
