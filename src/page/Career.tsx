@@ -5,6 +5,7 @@ import styles from './Career.module.scss';
 type TExperienceEntryProps = {
   company: string;
   period: string;
+  isPageBreakBefore?: boolean;
   children: ReactNode;
 };
 
@@ -54,7 +55,7 @@ export default function Career() {
             />
           </ExperienceEntry>
 
-          <ExperienceEntry company='시스기어' period='2023.10 - 2024.01'>
+          <ExperienceEntry company='시스기어' period='2023.10 - 2024.01' isPageBreakBefore>
             <Project
               title='디스커버리 공식 온라인몰 리뉴얼'
               skills='Next.js, TypeScript, MUI, Axios'
@@ -119,9 +120,11 @@ export default function Career() {
   );
 }
 
-function ExperienceEntry({ company, period, children }: TExperienceEntryProps) {
+function ExperienceEntry({ company, period, isPageBreakBefore = false, children }: TExperienceEntryProps) {
   return (
-    <article className={styles['experience-entry']}>
+    <article
+      className={`${styles['experience-entry']} ${isPageBreakBefore ? styles['page-break-before'] : ''}`}
+    >
       <header className={styles['company-header']}>
         <h3>{company}</h3>
         <p>{period}</p>

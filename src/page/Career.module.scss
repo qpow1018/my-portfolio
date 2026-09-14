@@ -2,7 +2,7 @@
 
 @page {
   size: A4;
-  margin: 14mm 14mm;
+  margin: 10mm 14mm 8mm 14mm;
 }
 
 .career {
@@ -63,7 +63,9 @@
   .experience-entry {
     padding: 40px 0;
     border-bottom: 1px solid $border;
-    break-inside: avoid;
+  }
+  .page-break-before {
+    break-before: page;
   }
   .company-header {
     display: flex;
@@ -83,17 +85,20 @@
     }
   }
   .project-list {
-    display: grid;
-    gap: 32px;
     margin-top: 28px;
+  }
+  .project {
+    break-inside: avoid;
+
+    + .project,
+    + .company-note {
+      margin-top: 32px;
+    }
   }
   .project h4 {
     font-size: 18px;
     font-weight: 700;
     line-height: 1.5;
-  }
-  .project {
-    break-inside: avoid;
   }
   .project-description {
     margin-top: 6px;
@@ -101,27 +106,19 @@
     font-size: 14px;
   }
   .responsibilities {
-    display: grid;
-    gap: 8px;
     margin-top: 16px;
-    padding: 0;
-    list-style: none;
+    padding-left: 20px;
+    list-style: disc;
     li {
-      position: relative;
-      padding-left: 14px;
       color: $text-sec;
       font-size: 15px;
       line-height: 1.7;
       word-break: keep-all;
-      &::before {
-        position: absolute;
-        top: 0.8em;
-        left: 0;
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
-        background: $blue;
-        content: "";
+      &::marker {
+        color: $blue;
+      }
+      + li {
+        margin-top: 8px;
       }
     }
   }
