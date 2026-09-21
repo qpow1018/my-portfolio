@@ -55,24 +55,20 @@ function IntegratedSearchCase() {
 
       <figure
         className={styles["integrated-search-flow"]}
-        aria-label="일부 검색 요청이 실패해도 성공한 영역의 결과를 유지하는 통합검색 처리 예시"
+        aria-label="도메인별 검색 결과를 Route Handler에서 통합하고, 통합검색 화면에서 전체 및 부분 상태를 판단하는 흐름"
       >
         <div className={styles["search-request-list"]}>
           <div className={styles["search-request"]}>
-            <span>웨딩홀 검색 API</span>
-            <span className={styles["request-status"]}>성공</span>
+            <span>웨딩홀</span>
+            <strong>검색 API</strong>
           </div>
           <div className={styles["search-request"]}>
-            <span>업체 검색 API</span>
-            <span
-              className={`${styles["request-status"]} ${styles["is-failed"]}`}
-            >
-              실패
-            </span>
+            <span>업체</span>
+            <strong>검색 API</strong>
           </div>
           <div className={styles["search-request"]}>
-            <span>스토어 검색 API</span>
-            <span className={styles["request-status"]}>성공</span>
+            <span>스토어</span>
+            <strong>검색 API</strong>
           </div>
         </div>
 
@@ -92,8 +88,19 @@ function IntegratedSearchCase() {
 
         <div className={styles["search-response"]}>
           <span>통합검색 응답</span>
-          <strong>성공한 영역의 결과 유지</strong>
-          <small>웨딩홀 · 스토어</small>
+          <strong>hall / partner / store</strong>
+          <small>결과 + 영역별 오류 상태</small>
+        </div>
+
+        <div
+          className={styles["search-screen-connection"]}
+          aria-hidden="true"
+        />
+
+        <div className={styles["search-screen"]}>
+          <span>통합검색 화면</span>
+          <strong>전체 / 부분 상태 판단</strong>
+          <small>전체 결과 없음 · 일부 영역 결과 없음 · 일부 영역 오류</small>
         </div>
       </figure>
     </CaseBox>
