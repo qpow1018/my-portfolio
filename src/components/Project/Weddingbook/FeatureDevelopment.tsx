@@ -28,22 +28,31 @@ function IntegratedSearchCase() {
     <CaseBox
       label="01"
       title="통합검색"
-      summary="분리되어 있던 검색 결과를 하나의 화면에서 제공"
+      summary="분리되어 있던 검색 흐름을 하나의 화면으로 통합"
     >
       <p>
         기존 검색은 웨딩홀·업체·스토어가 각각 분리되어 있었지만, 새로운
         통합검색에서는 세 영역의 검색 결과를 한 화면에서 함께 보여줘야 했습니다.
-        통합 API 추가를 백엔드 개발자와 논의했지만 다른 작업이 우선되어 바로
-        개발하기 어려웠고, 기존에는 영역별 검색 API만 제공되고 있었습니다.
       </p>
-      <div className={styles["divider"]} />
+
+      <div className="divider" />
+
       <p>
-        전체 검색 결과가 없는 경우와 특정 영역의 결과만 없는 경우의 화면이
-        달랐기 때문에, Next.js Route Handler에서 세 검색 API를 병렬 호출해
-        하나의 응답으로 조합했습니다. 일부 요청이 실패하더라도 정상 응답한
-        영역의 결과는 보여줄 수 있도록 Promise.allSettled로 각 요청의 성공과
-        실패를 개별 처리했습니다.
+        전체 결과 없음과 일부 영역의 결과 없음을 구분해야 했기 때문에, 세 영역의
+        결과를 한 곳에서 함께 판단하는 구조로 정리했습니다. 다만 당시 백엔드
+        통합검색 API를 바로 제공하기 어려워 기존 도메인별 API를 활용해야
+        했습니다.
       </p>
+
+      <div className="divider" />
+
+      <p>
+        그래서 Next.js Route Handler에서 세 영역의 검색 결과를 하나의 응답으로
+        조합하고, 한 영역의 요청 실패가 전체 검색 실패로 이어지지 않도록
+        Promise.allSettled를 사용했습니다. 실패한 영역만 오류 상태로 분리해 정상
+        응답한 영역의 검색 결과는 그대로 보여줄 수 있도록 했습니다.
+      </p>
+
       <figure
         className={styles["integrated-search-flow"]}
         aria-label="일부 검색 요청이 실패해도 성공한 영역의 결과를 유지하는 통합검색 처리 예시"
