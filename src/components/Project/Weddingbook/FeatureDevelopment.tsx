@@ -89,7 +89,7 @@ function IntegratedSearchCase() {
       <div className={styles["divider"]} />
       <p>
         전체 결과 없음과 일부 영역의 결과 없음을 구분해야 했기 때문에, 세 영역의
-        결과를 한 곳에서 함께 판단하는 구조로 정리했습니다. 다만 당시 백엔드
+        결과를 하나의 응답에서 함께 판단하도록 했습니다. 다만 당시 백엔드
         통합검색 API를 바로 제공하기 어려워 기존 도메인별 API를 활용해야
         했습니다.
       </p>
@@ -277,7 +277,7 @@ function SharedImprovements() {
           </p>
           <p>
             Toast와 Snackbar의 UI와 호출 API를 분리하고, 각 알림 형태에 필요한
-            옵션을 구분해 호출 코드에 사용 의도가 직접 드러나도록 정리했습니다.
+            옵션을 구분해 호출 코드만으로 사용 의도가 드러나도록 했습니다.
           </p>
           <CodeCompare examples={TOAST_SNACKBAR_COMPARISON} />
         </CaseDetailItem>
