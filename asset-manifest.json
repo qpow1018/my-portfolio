@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.c64cb657.css",
-    "main.js": "/my-portfolio/static/js/main.8fe470df.js",
+    "main.css": "/my-portfolio/static/css/main.1d35a5f5.css",
+    "main.js": "/my-portfolio/static/js/main.bb5626d6.js",
     "static/media/weddingbook_weddinghall.png": "/my-portfolio/static/media/weddingbook_weddinghall.74b25756698f007cebbb.png",
     "static/media/weddingbook_honsu.png": "/my-portfolio/static/media/weddingbook_honsu.5d7d77cfe9d2ee1194b1.png",
     "static/media/weddingbook_home.png": "/my-portfolio/static/media/weddingbook_home.55538a9e59eabbb1b21d.png",
@@ -38,11 +38,11 @@
     "static/media/flaboCommunity_5.webp": "/my-portfolio/static/media/flaboCommunity_5.7e55743ff213ba536e97.webp",
     "static/media/flaboCommunity_10.webp": "/my-portfolio/static/media/flaboCommunity_10.6d40996f055e588c608d.webp",
     "index.html": "/my-portfolio/index.html",
-    "main.c64cb657.css.map": "/my-portfolio/static/css/main.c64cb657.css.map",
-    "main.8fe470df.js.map": "/my-portfolio/static/js/main.8fe470df.js.map"
+    "main.1d35a5f5.css.map": "/my-portfolio/static/css/main.1d35a5f5.css.map",
+    "main.bb5626d6.js.map": "/my-portfolio/static/js/main.bb5626d6.js.map"
   },
   "entrypoints": [
-    "static/css/main.c64cb657.css",
-    "static/js/main.8fe470df.js"
+    "static/css/main.1d35a5f5.css",
+    "static/js/main.bb5626d6.js"
   ]
 }
