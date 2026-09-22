@@ -275,6 +275,61 @@
         font-size: 15px;
         word-break: keep-all;
       }
+
+      .code-compare {
+        overflow: hidden;
+        margin-top: 20px;
+        border: 1px solid $border;
+        border-radius: $border-radius-default;
+
+        .code-compare-header,
+        .code-example-row {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+        }
+
+        .code-compare-header {
+          border-bottom: 1px solid $border;
+
+          h6 {
+            padding: 14px 18px;
+            color: $blue-accent;
+            font-size: 12px;
+            font-weight: 700;
+          }
+        }
+
+        .code-example {
+          & + & {
+            border-top: 1px solid $border;
+          }
+        }
+
+        .code-panel {
+          min-width: 0;
+          padding: 20px 18px;
+
+          pre {
+            overflow-x: auto;
+            margin: 0;
+            color: $text;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+              monospace;
+            font-size: 13px;
+            line-height: 1.65;
+            letter-spacing: 0;
+            white-space: pre;
+          }
+        }
+
+        .code-panel-label {
+          display: none;
+        }
+
+        .code-compare-divider {
+          background-color: $border;
+        }
+      }
     }
   }
 }
@@ -355,9 +410,45 @@
         }
       }
 
-      .case-detail-item p {
-        font-size: 15px;
-        line-height: 1.75;
+      .case-detail-item {
+        p {
+          font-size: 15px;
+          line-height: 1.75;
+        }
+
+        .code-compare {
+          margin-top: 16px;
+
+          .code-compare-header {
+            display: none;
+          }
+
+          .code-example-row {
+            grid-template-columns: 1fr;
+          }
+
+          .code-panel {
+            padding: 16px;
+
+            pre {
+              font-size: 13px;
+            }
+          }
+
+          .code-panel-label {
+            display: block;
+            margin-bottom: 8px;
+            color: $blue-accent;
+            font-family: $font-family-default;
+            font-size: 12px;
+            font-weight: 700;
+          }
+
+          .code-compare-divider {
+            width: 100%;
+            height: 1px;
+          }
+        }
       }
 
       .case-detail-list {
@@ -365,6 +456,7 @@
         margin-top: 24px;
         padding-top: 24px;
       }
+
     }
   }
 }

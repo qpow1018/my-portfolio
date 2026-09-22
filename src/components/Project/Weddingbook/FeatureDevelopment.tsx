@@ -2,6 +2,57 @@ import type { ReactNode } from "react";
 
 import styles from "./FeatureDevelopment.module.scss";
 
+type TCodeCompareExample = {
+  before: string;
+  after: string;
+};
+
+const TOAST_SNACKBAR_COMPARISON = [
+  {
+    before: `toast.success(message, {
+  isSnackbar: true,
+  removeTime: 3600000,
+  link: {
+    text: "목록 보기",
+    url,
+  },
+});`,
+    after: `toast.showSnackbar(message, {
+  isAutoRemove: false,
+  buttonText: "목록 보기",
+  onClick: () => {
+    router.push(url);
+  },
+});`,
+  },
+] as const satisfies readonly TCodeCompareExample[];
+
+const ICON_COMPARISON = [
+  {
+    before: `<Icon
+  name="Close"
+  size={22}
+  folderName="40"
+/>`,
+    after: `<Icon
+  name="Close"
+  size={22}
+/>`,
+  },
+  {
+    before: `import { Search } from "../icons/40";
+
+<Icon
+  IconComponent={<Search />}
+  size={40}
+/>`,
+    after: `<Icon
+  name="Search"
+  size={40}
+/>`,
+  },
+] as const satisfies readonly TCodeCompareExample[];
+
 export default function FeatureDevelopment() {
   return (
     <section
@@ -228,6 +279,7 @@ function SharedImprovements() {
             Toast와 Snackbar의 UI와 호출 API를 분리하고, 각 알림 형태에 필요한
             옵션을 구분해 호출 코드에 사용 의도가 직접 드러나도록 정리했습니다.
           </p>
+          <CodeCompare examples={TOAST_SNACKBAR_COMPARISON} />
         </CaseDetailItem>
 
         <CaseDetailItem title="Icon">
@@ -243,6 +295,7 @@ function SharedImprovements() {
             표현을 분리해, 내부 디렉터리 구조에 의존하지 않고 동일한 아이콘을
             필요한 크기와 색상으로 사용할 수 있도록 했습니다.
           </p>
+          <CodeCompare examples={ICON_COMPARISON} />
         </CaseDetailItem>
       </div>
     </CaseBox>
@@ -283,5 +336,51 @@ function CaseDetailItem({
       <h5>{title}</h5>
       <div>{children}</div>
     </article>
+  );
+}
+
+function CodeCompare({
+  examples,
+}: {
+  examples: readonly TCodeCompareExample[];
+}) {
+  return (
+    <div className={styles["code-compare"]}>
+      <header className={styles["code-compare-header"]}>
+        <h6>Before</h6>
+        <span className={styles["code-compare-divider"]} aria-hidden="true" />
+        <h6>After</h6>
+      </header>
+      <div className={styles["code-example-list"]}>
+        {examples.map((example) => (
+          <div className={styles["code-example"]} key={example.before}>
+            <div className={styles["code-example-row"]}>
+              <section
+                className={`${styles["code-panel"]} ${styles["code-panel-before"]}`}
+                aria-label="Before 사용 방식"
+              >
+                <span className={styles["code-panel-label"]}>Before</span>
+                <pre>
+                  <code>{example.before}</code>
+                </pre>
+              </section>
+              <span
+                className={styles["code-compare-divider"]}
+                aria-hidden="true"
+              />
+              <section
+                className={`${styles["code-panel"]} ${styles["code-panel-after"]}`}
+                aria-label="After 사용 방식"
+              >
+                <span className={styles["code-panel-label"]}>After</span>
+                <pre>
+                  <code>{example.after}</code>
+                </pre>
+              </section>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
