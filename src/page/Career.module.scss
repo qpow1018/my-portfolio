@@ -64,9 +64,6 @@
     padding: 40px 0;
     border-bottom: 1px solid $border;
   }
-  .page-break-before {
-    break-before: page;
-  }
   .company-header {
     display: flex;
     flex-direction: column;
@@ -82,18 +79,27 @@
       flex: none;
       color: $text-sec;
       font-size: 15px;
+
+      span {
+        &::before {
+          margin: 0 8px;
+          content: '·';
+        }
+      }
     }
   }
   .project-list {
     margin-top: 28px;
   }
   .project {
-    break-inside: avoid;
-
     + .project,
     + .company-note {
       margin-top: 32px;
     }
+  }
+  .project-header {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
   }
   .project h4 {
     font-size: 18px;
@@ -105,6 +111,13 @@
     color: $text-sec;
     font-size: 14px;
   }
+  .project-introduction {
+    margin-top: 14px;
+    color: $text-sec;
+    font-size: 15px;
+    line-height: 1.7;
+    word-break: keep-all;
+  }
   .responsibilities {
     margin-top: 16px;
     padding-left: 20px;
@@ -115,11 +128,38 @@
       line-height: 1.7;
       word-break: keep-all;
       &::marker {
-        color: $blue;
+        color: currentcolor;
+        font-size: 0.72em;
       }
       + li {
         margin-top: 8px;
       }
+    }
+  }
+  .responsibility-item {
+    list-style: none;
+    margin-left: -20px;
+    padding-left: 20px;
+
+    + .responsibility-item {
+      margin-top: 20px;
+    }
+  }
+  .responsibility-title {
+    display: block;
+    color: $text;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+  .responsibility-description {
+    color: $text-sec;
+    font-size: 15px;
+    line-height: 1.7;
+    word-break: keep-all;
+
+    + .responsibility-description {
+      margin-top: 2px;
     }
   }
   .project-skills,
@@ -139,6 +179,16 @@
       color: $text-sec;
       font-size: 15px;
       line-height: 1.7;
+    }
+  }
+}
+
+@media print {
+  .career {
+    .project-header,
+    .responsibility-item {
+      break-inside: avoid-page;
+      page-break-inside: avoid;
     }
   }
 }
