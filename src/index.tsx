@@ -16,6 +16,7 @@ import "./style/global.scss";
 import Home from "@/page/Home";
 import Career from "@/page/Career";
 import Etc from "@/page/Etc";
+import Loam from "@/page/Loam";
 import Header from "@/components/Header/Header";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
     <Routes>
       <Route element={<PortfolioLayout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/loam" element={<Loam />} />
         <Route path="/etc" element={<Etc />} />
       </Route>
       <Route path="/career" element={<Career />} />

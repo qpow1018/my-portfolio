@@ -49,6 +49,7 @@ export default function Header() {
         <Link className={styles['name']} to='/'>최원진 포트폴리오</Link>
         <nav className={styles['desktop-menu']} aria-label='프로젝트'>
           <NavLink to='/' end>웨딩북</NavLink>
+          <NavLink to='/loam'>LoaM</NavLink>
           <NavLink to='/etc'>ETC</NavLink>
         </nav>
         <button
@@ -100,6 +101,7 @@ export default function Header() {
           </div>
           <nav aria-label='프로젝트'>
             <NavLink to='/' end onClick={handleMenuClose}>웨딩북</NavLink>
+            <NavLink to='/loam' onClick={handleMenuClose}>LoaM</NavLink>
             <NavLink to='/etc' onClick={handleMenuClose}>ETC</NavLink>
           </nav>
         </div>

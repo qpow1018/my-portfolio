@@ -1,0 +1,14 @@
+@use '../style/variables' as *;
+
+.loam-page {
+  width: min(980px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 60px 0 80px;
+}
+
+@media (max-width: $breakpoint-md) {
+  .loam-page {
+    width: 100%;
+    padding: 40px 0 60px;
+  }
+}
