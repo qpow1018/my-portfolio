@@ -11,9 +11,9 @@ export default function EarlierProjects() {
       aria-labelledby='earlier-projects-title'
     >
       <div className={styles['container']}>
-        <h3 id='earlier-projects-title' className={styles['title']}>
-          Earlier Projects
-        </h3>
+        <h1 id='earlier-projects-title' className={styles['title']}>
+          기타 프로젝트
+        </h1>
 
         <DiscoveryMall />
         <FlaboCommunity />

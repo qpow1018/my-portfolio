@@ -1,5 +1,3 @@
-import MainBannerImage from "@/images/main_banner_1.jpg";
-
 import styles from "./Intro.module.scss";
 
 const SKILLS = [
@@ -9,24 +7,17 @@ const SKILLS = [
   "TypeScript",
   "HTML",
   "CSS",
-  "GitHub",
 ] as const;
 
 export default function Intro() {
   return (
     <section className={styles["intro"]} aria-labelledby="intro-heading">
-      <div className={styles["visual"]} aria-hidden="true">
-        <img src={MainBannerImage} alt="" />
-      </div>
-
       <div className={styles["content"]}>
         <div className={styles["summary"]}>
           <h1 id="intro-heading" className={styles["heading"]}>
             안녕하세요.
             <br />
-            6년 차 프론트엔드 개발자
-            <br />
-            최원진입니다.
+            프론트엔드 개발자 최원진입니다.
           </h1>
           <p className={styles["introduction"]}>
             사용자에게는 편리한 사용 경험을,

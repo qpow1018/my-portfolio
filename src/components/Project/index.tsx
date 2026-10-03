@@ -1,5 +1,4 @@
 import Weddingbook from "./Weddingbook/Weddingbook";
-import EarlierProjects from "./EarlierProject/EarlierProjects";
 
 import styles from "./Project.module.scss";
 
@@ -12,8 +11,6 @@ export default function Project() {
           <Weddingbook />
         </div>
       </div>
-
-      <EarlierProjects />
     </section>
   );
 }

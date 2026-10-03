@@ -37,7 +37,7 @@ export default function EarlierProjectCard({
       )}
 
       <div className={styles['project-content']}>
-        <h4 className={styles['project-title']}>{title}</h4>
+        <h2 className={styles['project-title']}>{title}</h2>
         <p className={styles['summary']}>{summary}</p>
         {serviceUrl && (
           <a
