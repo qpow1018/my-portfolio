@@ -2,6 +2,7 @@ import DiscoveryMall from './DiscoveryMall';
 import FlaboCommunity from './FlaboCommunity';
 import MediaFestival from './MediaFestival';
 import FlaboAdPlatform from './FlaboAdPlatform';
+import WebsitePublishing from './WebsitePublishing';
 import styles from './EarlierProjects.module.scss';
 
 export default function EarlierProjects() {
@@ -19,6 +20,7 @@ export default function EarlierProjects() {
         <FlaboCommunity />
         <MediaFestival />
         <FlaboAdPlatform />
+        <WebsitePublishing />
       </div>
     </section>
   );
