@@ -332,16 +332,18 @@ function StructureImprovements() {
         <CaseDetailItem title="사용 범위에 따른 코드 구조 개선">
           <p>
             기존에는 페이지 전용 코드와 특정 도메인에서만 사용하는 코드가 공통
-            디렉터리에 혼재해 있어, 실제 사용 범위와 역할을 파악하기 어려웠습니다.
+            디렉터리에 혼재해 있어, 실제 사용 범위와 역할을 파악하기
+            어려웠습니다.
           </p>
           <p>
             이를 개선하기 위해 각 코드의 사용처를 확인하고, 페이지 전용 코드는
-            해당 페이지에서, 여러 화면에서 사용하는 코드는 관련 도메인에서,
-            앱 전역 코드는 별도 영역에서 관리하도록 구조를 정리했습니다.
+            해당 페이지에서, 여러 화면에서 사용하는 코드는 관련 도메인에서, 앱
+            전역 코드는 별도 영역에서 관리하도록 구조를 정리했습니다.
           </p>
           <p>
-            특정 기능에서만 사용하는 유틸리티도 같은 기준으로 정리해, 관련 코드를
-            기능 가까이에서 찾고 불필요하게 공유 범위를 넓히지 않도록 개선했습니다.
+            특정 기능에서만 사용하는 유틸리티도 같은 기준으로 정리해, 관련
+            코드를 기능 가까이에서 찾고 불필요하게 공유 범위를 넓히지 않도록
+            개선했습니다.
           </p>
           <figure className={styles["structure-comparison"]}>
             <figcaption>사용 범위에 따른 대표 경로 변경</figcaption>
@@ -351,11 +353,15 @@ function StructureImprovements() {
                 <dl>
                   <div>
                     <dt>Before</dt>
-                    <dd><code>{example.before}</code></dd>
+                    <dd>
+                      <code>{example.before}</code>
+                    </dd>
                   </div>
                   <div>
                     <dt>After</dt>
-                    <dd><code>{example.after}</code></dd>
+                    <dd>
+                      <code>{example.after}</code>
+                    </dd>
                   </div>
                 </dl>
               </div>
@@ -364,12 +370,13 @@ function StructureImprovements() {
         </CaseDetailItem>
         <CaseDetailItem title="SCSS Modules 도입 및 적용">
           <p>
-            전역 SCSS의 클래스 이름이 충돌하면서 다른 화면의 스타일에 영향을 주는
-            문제가 있었습니다.
+            전역 SCSS의 클래스 이름이 충돌하면서 다른 화면의 스타일에 영향을
+            주는 문제가 있었습니다.
           </p>
           <p>
-            이를 개선하기 위해 SCSS Modules 적용을 제안하고, 기존 스타일을 전환해
-            각 컴포넌트의 스타일이 다른 화면에 미치는 영향을 줄이도록 했습니다.
+            이를 개선하기 위해 SCSS Modules 적용을 도입하고, 기존 스타일을
+            전환해 각 컴포넌트의 스타일이 다른 화면에 미치는 영향을 줄이도록
+            했습니다.
           </p>
         </CaseDetailItem>
       </div>
