@@ -252,6 +252,61 @@
       }
     }
 
+    .structure-comparison {
+      margin: 20px 0 0;
+      padding: 20px;
+      border: 1px solid $border;
+      border-radius: $border-radius-default;
+
+      figcaption {
+        font-size: 12px;
+        font-weight: 700;
+        color: $blue-accent;
+      }
+
+      .structure-example {
+        margin-top: 16px;
+
+        & + .structure-example {
+          padding-top: 16px;
+          border-top: 1px solid $border;
+        }
+
+        strong {
+          font-size: 13px;
+          font-weight: 700;
+          color: $text;
+        }
+
+        dl {
+          display: grid;
+          gap: 8px;
+          margin-top: 8px;
+
+          div {
+            display: grid;
+            grid-template-columns: 48px minmax(0, 1fr);
+            gap: 8px;
+          }
+
+          dt {
+            font-size: 12px;
+            color: $blue-accent;
+          }
+
+          dd {
+            min-width: 0;
+          }
+
+          code {
+            font-size: 12px;
+            overflow-wrap: anywhere;
+            word-break: normal;
+          }
+        }
+      }
+    }
+
     .case-detail-list {
       display: grid;
       gap: 40px;
