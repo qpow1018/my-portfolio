@@ -5,6 +5,7 @@ import ProjectImagesModal from "../ProjectImagesModal";
 
 type THighlight = {
   title: string;
+  introduction?: string;
   details: string[];
 };
 
@@ -109,6 +110,9 @@ function HighlightItem(props: THighlight) {
   return (
     <article className={styles["highlight"]}>
       <h6 className={styles["highlight-title"]}>{props.title}</h6>
+      {props.introduction && (
+        <p className={styles['highlight-introduction']}>{props.introduction}</p>
+      )}
       {props.details.length > 0 && (
         <ul className={styles["highlight-details"]}>
           {props.details.map((detail) => (

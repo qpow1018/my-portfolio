@@ -69,6 +69,7 @@ export default function FeatureDevelopment() {
         <InvitationCase />
         <HomeCase />
         <SharedImprovements />
+        <StructureImprovements />
       </div>
     </section>
   );
@@ -296,6 +297,87 @@ function SharedImprovements() {
             필요한 크기와 색상으로 사용할 수 있도록 했습니다.
           </p>
           <CodeCompare examples={ICON_COMPARISON} />
+        </CaseDetailItem>
+      </div>
+    </CaseBox>
+  );
+}
+
+function StructureImprovements() {
+  const examples = [
+    {
+      scope: "페이지 전용 · 웨거진",
+      before: "src/components/wegazine/wegazine-list/",
+      after: "src/app/wegazine/_component/",
+    },
+    {
+      scope: "도메인 공유 · 웨딩홀",
+      before: "src/components/common/ranking/",
+      after: "src/components/weddinghall/ranking/",
+    },
+    {
+      scope: "앱 전역 · 인증 처리",
+      before: "src/components/common/AppBridgeAuthHandler.tsx",
+      after: "src/components/app-global-layout/AppBridgeAuthHandler.tsx",
+    },
+  ];
+
+  return (
+    <CaseBox
+      label="05"
+      title="컴포넌트 및 스타일 구조 개선"
+      summary="실제 사용 범위에 맞춰 코드를 재배치하고 스타일 적용 범위를 구분"
+    >
+      <div className={styles["case-detail-list"]}>
+        <CaseDetailItem title="사용 범위에 따른 코드 구조 개선">
+          <p>
+            기존에는 페이지 전용 코드와 특정 도메인에서만 사용하는 코드가 공통
+            디렉터리에 혼재해 있어, 실제 사용 범위와 역할을 파악하기
+            어려웠습니다.
+          </p>
+          <p>
+            이를 개선하기 위해 각 코드의 사용처를 확인하고, 페이지 전용 코드는
+            해당 페이지에서, 여러 화면에서 사용하는 코드는 관련 도메인에서, 앱
+            전역 코드는 별도 영역에서 관리하도록 구조를 정리했습니다.
+          </p>
+          <p>
+            특정 기능에서만 사용하는 유틸리티도 같은 기준으로 정리해, 관련
+            코드를 기능 가까이에서 찾고 불필요하게 공유 범위를 넓히지 않도록
+            개선했습니다.
+          </p>
+          <figure className={styles["structure-comparison"]}>
+            <figcaption>사용 범위에 따른 대표 경로 변경</figcaption>
+            {examples.map((example) => (
+              <div className={styles["structure-example"]} key={example.scope}>
+                <strong>{example.scope}</strong>
+                <dl>
+                  <div>
+                    <dt>Before</dt>
+                    <dd>
+                      <code>{example.before}</code>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>After</dt>
+                    <dd>
+                      <code>{example.after}</code>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            ))}
+          </figure>
+        </CaseDetailItem>
+        <CaseDetailItem title="SCSS Modules 도입 및 적용">
+          <p>
+            전역 SCSS의 클래스 이름이 충돌하면서 다른 화면의 스타일에 영향을
+            주는 문제가 있었습니다.
+          </p>
+          <p>
+            이를 개선하기 위해 SCSS Modules 적용을 도입하고, 기존 스타일을
+            전환해 각 컴포넌트의 스타일이 다른 화면에 미치는 영향을 줄이도록
+            했습니다.
+          </p>
         </CaseDetailItem>
       </div>
     </CaseBox>

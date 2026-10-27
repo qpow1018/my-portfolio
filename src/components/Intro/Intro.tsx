@@ -13,18 +13,9 @@ export default function Intro() {
   return (
     <section className={styles["intro"]} aria-labelledby="intro-heading">
       <div className={styles["content"]}>
-        <div className={styles["summary"]}>
-          <h1 id="intro-heading" className={styles["heading"]}>
-            안녕하세요.
-            <br />
-            프론트엔드 개발자 최원진입니다.
-          </h1>
-          <p className={styles["introduction"]}>
-            사용자에게는 편리한 사용 경험을,
-            <br />
-            개발자에게는 이해하고 유지보수하기 쉬운 코드를 생각하며 개발합니다.
-          </p>
-        </div>
+        <h1 id="intro-heading" className={styles["heading"]}>
+          프론트엔드 개발자 최원진
+        </h1>
 
         <address className={styles["contact"]}>
           <a href="mailto:qpow1018@gmail.com">
