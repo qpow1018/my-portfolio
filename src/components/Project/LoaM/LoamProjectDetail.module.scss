@@ -93,6 +93,13 @@
         word-break: keep-all;
       }
 
+      .highlight-introduction {
+        margin-bottom: 12px;
+        font-size: 15px;
+        color: $text-sec;
+        word-break: keep-all;
+      }
+
       .highlight-details {
         display: flex;
         flex-direction: column;
@@ -183,6 +190,7 @@
             margin-bottom: 10px;
           }
 
+          .highlight-introduction,
           .highlight-details {
             font-size: 13px;
           }

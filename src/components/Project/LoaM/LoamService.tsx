@@ -10,9 +10,9 @@ export default function LoamService() {
     <LoamProjectDetail
       label='PERSONAL PROJECT'
       title='LoaM'
-      description={`여러 캐릭터의 반복 콘텐츠와 정보를 한곳에서 관리하기 위해 만든 개인용 게임 관리 도구입니다.
+      description={`로스트아크의 여러 캐릭터에 대한 콘텐츠와 정보를 한곳에서 관리하기 위해 만든 개인용 게임 관리 도구입니다.
 
-실제 게임 중 계속 켜두고 사용하며 필요한 기능을 추가했고, 사용 방식의 변화에 맞춰 저장 구조와 실행 환경도 함께 변경해 왔습니다.`}
+직접 사용하면서 필요한 기능을 추가해 왔으며, 숙제 관리뿐 아니라 캐릭터 정보 확인과 성장 판단을 돕는 기능으로 확장했습니다.`}
       skills='Next.js, TypeScript, TanStack Query, Supabase, PWA, SCSS, CSS Modules'
       images={[
         LoamTaskTableImage,
@@ -23,11 +23,14 @@ export default function LoamService() {
       imageAlt='LoaM 서비스 화면'
       highlights={[
         {
-          title: '기능 확장에 따라 저장 구조 분리',
+          title: '캐릭터별 콘텐츠 관리',
+          introduction:
+            '여러 캐릭터의 콘텐츠 수행 여부를 한눈에 확인하고, 원하는 방식으로 관리할 수 있도록 테이블 형태의 화면을 구성했습니다.',
           details: [
-            '단순한 캐릭터 목록에서 상세 정보까지 관리하게 되면서, 캐릭터 관련 데이터는 localStorage에서 Supabase Database로 옮겼습니다.',
-            '체크리스트와 메모처럼 즉시 수정하는 상태는 localStorage에 유지하고, 계정 단위로 관리할 데이터는 DB에 저장하도록 역할을 나눴습니다.',
-            '개인용 프로젝트지만 웹에 배포되는 만큼 외부 접근으로 데이터가 섞이지 않도록 인증을 추가했습니다.',
+            '캐릭터를 열, 콘텐츠를 행으로 배치하고 행·열 추가 및 순서 변경 기능 구현',
+            '셀별 일간·주간·월간·무제한 반복 주기 설정으로 하나의 행에서 서로 다른 주기의 콘텐츠 관리',
+            '게임의 초기화 시간과 휴식 게이지 규칙을 반영한 콘텐츠 수행 상태 관리',
+            '별도 메모장이나 브라우저 북마크에 기록하던 정보를 함께 확인할 수 있도록 메모 영역 추가',
           ],
         },
         {
